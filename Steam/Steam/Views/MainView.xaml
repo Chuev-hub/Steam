@@ -11,12 +11,16 @@
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
     <Grid>
-        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding cars}">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name" Binding="{Binding Path=Title}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Mark" Binding="{Binding Path=Mark}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Photo" Binding="{Binding Path=Photo}"></DataGridTextColumn>
-            </DataGrid.Columns>
-        </DataGrid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+        </Grid>
+        <UserControl  Grid.Row="1" Content="{Binding CurrentView}"></UserControl>
     </Grid>
 </Window>
