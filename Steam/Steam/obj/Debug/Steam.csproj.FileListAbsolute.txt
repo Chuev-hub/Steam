@@ -1,0 +1,16 @@
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe.config
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.pdb
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csprojAssemblyReference.cache
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.g.cs
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\App.g.cs
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.cache
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.lref
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.baml
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.g.resources
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.Properties.Resources.resources
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.GenerateResource.cache
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.cache
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
