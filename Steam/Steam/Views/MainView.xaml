@@ -6,21 +6,108 @@
         xmlns:local="clr-namespace:Steam"
         xmlns:vm="clr-namespace:Steam.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" WindowStyle="None"
+ Height="600" Width="1000" Background="{x:Null}" MinWidth="800" MinHeight="450" AllowsTransparency="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+        CaptionHeight="0"
+        ResizeBorderThickness="5" />
+    </WindowChrome.WindowChrome>
     <Window.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Window.DataContext>
+    <Window.Resources>
+        <Style x:Key="XButtonStyle"
+           TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Window.Resources>
+
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="60"></RowDefinition>
             <RowDefinition></RowDefinition>
+            <RowDefinition  Height="60"></RowDefinition>
         </Grid.RowDefinitions>
-        <Grid Background="Black">
-            <Grid.RowDefinitions>
-                <RowDefinition></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
+        <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" >
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF202123" Offset="1"/>
+                    <GradientStop Color="#FF1F2632"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Button Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="30,0,0,0">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    SHOP
+                </Button>
+                <Button Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    LIBRARY
+                </Button>
+                <Button Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    NAMEbind
+                </Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment ="Right" VerticalAlignment="Top">
+                <Button Content="X" Style="{StaticResource XButtonStyle}" Width="30" Height="30" Margin="0 10 10 0"  FontWeight="Bold" FontSize="14" Background="#FF1F2530" Click="Button_Click" >
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Foreground>
+                        <SolidColorBrush Color="#FF959595"/>
+                    </Button.Foreground>
+
+                </Button>
+
+            </StackPanel>
+
+
         </Grid>
-        <UserControl  Grid.Row="1" Content="{Binding CurrentView}"></UserControl>
+        <UserControl  Grid.Row="1" Content="{Binding CurrentView}" Background="#FF1A415D" Loaded="UserControl_Loaded"/>
+        <Grid Grid.Row="2" Background="#FF2A2E33">
+            <Button Background="{x:Null}" Style="{StaticResource XButtonStyle}" HorizontalAlignment="Right" Foreground="#FFC8D0DC" FontSize="14" Margin="0,0,20,0">
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+                CHAT
+                
+            </Button>
+        </Grid>
     </Grid>
 </Window>
