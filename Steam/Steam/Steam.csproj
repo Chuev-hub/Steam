@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="Infrastructure\INavigate.cs" />
     <Compile Include="Infrastructure\Switcher.cs" />
+    <Compile Include="Infrastructure\SteamClient.cs" />
     <Compile Include="ViewModels\IdetifyViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\IdentifyViewChilds\LoginView.xaml.cs">

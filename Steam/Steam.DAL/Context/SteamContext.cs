@@ -18,12 +18,21 @@ namespace Steam.DAL.Context
         public virtual DbSet<Game> Game { get; set; }
         public virtual DbSet<ProfileComment> ProfileComment { get; set; }
         public virtual DbSet<Message> Message { get; set; }
+        public virtual DbSet<Developer> Developers { get; set; }
+        public virtual DbSet<DevelopersInGames> DevelopersInGames { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<GenresInGames> GenresInGames { get; set; }
+        public virtual DbSet<Screenshot> Screenshots { get; set; }
+        public virtual DbSet<ScreenshotsInGames> ScreenshotsInGames { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<AccountsInChats>().HasKey(u => new { u.AccountId, u.ChatId });
             modelBuilder.Entity<GamesInAccounts>().HasKey(u => new { u.AccountId, u.GameId });
+            modelBuilder.Entity<DevelopersInGames>().HasKey(u => new { u.DeveloperId, u.GameId });
+            modelBuilder.Entity<GenresInGames>().HasKey(u => new { u.GameId, u.GenreId });
+            modelBuilder.Entity<ScreenshotsInGames>().HasKey(u => new { u.GameId, u.ScreenshotId });
 
             //modelBuilder.Entity<Account>()
             //    .HasMany(e => e.Games)
