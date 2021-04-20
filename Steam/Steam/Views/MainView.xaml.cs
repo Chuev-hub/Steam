@@ -43,6 +43,7 @@ namespace Steam
         private void Grid_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
+
         }
     }
 }
