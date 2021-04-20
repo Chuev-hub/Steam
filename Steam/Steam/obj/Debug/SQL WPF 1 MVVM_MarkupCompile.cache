@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
-21090113405
+4-1741828857
 
-12107383915
+13-2137020989
 13-1505183044
-Views\IdetifyView.xaml;Views\MainView.xaml;
+Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdetifyView.xaml;Views\MainView.xaml;
 
-True
+False
 
