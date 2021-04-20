@@ -22,12 +22,16 @@ namespace Steam.DAL.Context
 
         [StringLength(2048)]
         public string GameInfo { get; set; }
+        public string Description { get; set; }
+        public string HeaderImageURL { get; set; }
+        public string Requirements { get; set; }
+        public string RealeaseDate { get; set; }
 
+        public virtual ICollection<ScreenshotsInGames> Screenshots { get; set; }
         public virtual ICollection<GamesInAccounts> GamesInAccounts { get; set; } // 8
 
-        public int GenreId { get; set; }
-
-        public virtual Genre Genre {get; set;}
+        public virtual ICollection<GenresInGames> Genre { get; set; }
+        public virtual ICollection<DevelopersInGames> Developers { get; set; }
     }
 
 }

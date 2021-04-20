@@ -81,6 +81,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Infrastructure\SteamClient.cs" />
     <Compile Include="ViewModels\IdetifyViewModel.cs" />
     <Compile Include="Views\IdentifyViewChilds\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
