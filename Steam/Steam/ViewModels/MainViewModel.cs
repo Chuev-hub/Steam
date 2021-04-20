@@ -12,6 +12,7 @@ namespace Steam.ViewModels
 {
     class MainViewModel : BaseNotifyPropertyChanged
     {
+        public Account Account { get; set; }
         public UserControl CurrentView { get; set; }
         public MainViewModel()
         {
