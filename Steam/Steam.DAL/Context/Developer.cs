@@ -7,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Steam.DAL.Context
 {
-    public class Genre
+    public class Developer
     {
         [Key]
-        public int GenreId { get; set; }
-        public string GenreName { get; set; }
-
-        public virtual ICollection<Game> Games { get; set; } // 9
+        public int DeveloperId { get; set; }
+        public string DeveloperName { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
     }
 }

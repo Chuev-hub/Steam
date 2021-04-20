@@ -16,6 +16,12 @@ namespace Steam.DAL.Context
         public virtual DbSet<Game> Game { get; set; }
         public virtual DbSet<ProfileComment> ProfileComment { get; set; }
         public virtual DbSet<Message> Message { get; set; }
+        public virtual DbSet<Developer> Developers { get; set; }
+        public virtual DbSet<DevelopersInGames> DevelopersInGames { get; set; }
+        public virtual DbSet<Genre> Genres { get; set; }
+        public virtual DbSet<GenresInGames> GenresInGames { get; set; }
+        public virtual DbSet<Screenshot> Screenshots { get; set; }
+        public virtual DbSet<ScreenshotsInGames> ScreenshotsInGames { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -53,10 +59,27 @@ namespace Steam.DAL.Context
                 .WithRequired(e => e.Chat)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<Developer>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.Developers)
+                .Map(m => m.ToTable("DevelopersInGames").MapLeftKey("GameId").MapRightKey("DeveloperId"));
+
             modelBuilder.Entity<Genre>()
                 .HasMany(e => e.Games)
-                .WithRequired(e => e.Genre)
-                .WillCascadeOnDelete(false);
+                .WithMany(e => e.Genres)
+                .Map(m => m.ToTable("GenresInGames").MapLeftKey("GameId").MapRightKey("GenreId"));
+
+            modelBuilder.Entity<Screenshot>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.Screenshots)
+                .Map(m => m.ToTable("ScreenshotsInGames").MapLeftKey("GameId").MapRightKey("ScreenshotId"));
+
+
+            modelBuilder.Entity<DevelopersInGames>().HasKey(u => new { u.DeveloperId, u.GameId });
+            modelBuilder.Entity<GenresInGames>().HasKey(u => new { u.GameId, u.GenreId });
+            modelBuilder.Entity<ScreenshotsInGames>().HasKey(u => new { u.GameId, u.ScreenshotId });
+
+
         }
     }
 }

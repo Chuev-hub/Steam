@@ -36,6 +36,7 @@ C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\View
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.g.cs
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.baml
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.baml
+<<<<<<< HEAD
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.dll
@@ -60,3 +61,13 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyVi
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
+=======
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.dll
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.pdb
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll.config
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.xml
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
+>>>>>>> 2fcde455a4b29bc358676d7e7f696007ddd9445a

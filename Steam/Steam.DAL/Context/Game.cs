@@ -12,6 +12,7 @@ namespace Steam.DAL.Context
         public Game()
         {
             GamesInAccounts = new HashSet<Account>();
+            Genres = new HashSet<Genre>();
         }
 
         [Key]
@@ -22,12 +23,16 @@ namespace Steam.DAL.Context
 
         [StringLength(2048)]
         public string GameInfo { get; set; }
+        public string Description { get; set; }
+        public string HeaderImageURL { get; set; }
+        public string Requirements { get; set; }
+        public string RealeaseDate { get; set; }
 
         public virtual ICollection<Account> GamesInAccounts { get; set; } // 8
+        public virtual ICollection<Screenshot> Screenshots { get; set; }
 
-        public int GenreId { get; set; }
-
-        public virtual Genre Genre {get; set;}
+        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<Developer> Developers { get; set; }
     }
 
 }
