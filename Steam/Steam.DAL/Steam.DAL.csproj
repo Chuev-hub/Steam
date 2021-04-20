@@ -56,28 +56,22 @@
     <Compile Include="Context\Account.cs" />
     <Compile Include="Context\Chat.cs" />
     <Compile Include="Context\Developer.cs" />
-    <Compile Include="Context\DevelopersInGames.cs" />
     <Compile Include="Context\Genre.cs" />
-    <Compile Include="Context\GenresInGames.cs" />
     <Compile Include="Context\ProfileComment.cs" />
     <Compile Include="Context\Game.cs" />
     <Compile Include="Context\Message.cs" />
     <Compile Include="Context\Screenshot.cs" />
-    <Compile Include="Context\ScreenshotsInGames.cs" />
     <Compile Include="Context\SteamContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\ChatRepository.cs" />
     <Compile Include="Repositories\CommentRepository.cs" />
     <Compile Include="Repositories\DeveloperRepository.cs" />
-    <Compile Include="Repositories\DevelopersInGamesRepository.cs" />
     <Compile Include="Repositories\GameRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\GenreInGamesRepository.cs" />
     <Compile Include="Repositories\GenreRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
-    <Compile Include="Repositories\ScreenshotInGameRepository.cs" />
     <Compile Include="Repositories\ScreenshotRepository.cs" />
   </ItemGroup>
   <ItemGroup>

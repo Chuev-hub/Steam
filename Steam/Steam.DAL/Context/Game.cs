@@ -13,6 +13,8 @@ namespace Steam.DAL.Context
         {
             GamesInAccounts = new HashSet<Account>();
             Genres = new HashSet<Genre>();
+            Screenshots = new HashSet<Screenshot>();
+            Developers = new HashSet<Developer>();
         }
 
         [Key]

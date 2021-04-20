@@ -17,11 +17,8 @@ namespace Steam.DAL.Context
         public virtual DbSet<ProfileComment> ProfileComment { get; set; }
         public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Developer> Developers { get; set; }
-        public virtual DbSet<DevelopersInGames> DevelopersInGames { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<GenresInGames> GenresInGames { get; set; }
         public virtual DbSet<Screenshot> Screenshots { get; set; }
-        public virtual DbSet<ScreenshotsInGames> ScreenshotsInGames { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -73,12 +70,6 @@ namespace Steam.DAL.Context
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Screenshots)
                 .Map(m => m.ToTable("ScreenshotsInGames").MapLeftKey("GameId").MapRightKey("ScreenshotId"));
-
-
-            modelBuilder.Entity<DevelopersInGames>().HasKey(u => new { u.DeveloperId, u.GameId });
-            modelBuilder.Entity<GenresInGames>().HasKey(u => new { u.GameId, u.GenreId });
-            modelBuilder.Entity<ScreenshotsInGames>().HasKey(u => new { u.GameId, u.ScreenshotId });
-
 
         }
     }
