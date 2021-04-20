@@ -30,10 +30,17 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.Gen
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.cache
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
-
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.g.cs
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.g.cs
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.g.cs
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.baml
 C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.baml
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.dll
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.pdb
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll.config
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.xml
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete

@@ -4,17 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steam.Views"
+        xmlns:vm="clr-namespace:Steam.ViewModels"
         mc:Ignorable="d"
-        Title="Steam" Height="330" Width="480"  Background="{x:Null}" MinWidth="800" MinHeight="450" AllowsTransparency="True" WindowStyle="None">
-    <Grid>
-        
-        <UserControl  Content="{Binding CurrentView}" Background="#FF1A415D"/>
-    </Grid>
+        Title="Steam" Height="330" Width="480"  Background="{x:Null}" MinWidth="480" MinHeight="330" AllowsTransparency="True" WindowStyle="None">
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
         ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
+    <Window.DataContext>
+        <vm:IdetifyViewModel></vm:IdetifyViewModel>
+    </Window.DataContext>
     <Window.Resources>
         <Style x:Key="XButtonStyle"
            TargetType="{x:Type Button}">
@@ -48,4 +48,43 @@
         </Style>
 
     </Window.Resources>
+    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF23272C" Offset="0"/>
+                <GradientStop Color="#FF2A2E33" Offset="0.216"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.ColumnSpan="3" >
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Label Foreground="#FFA6A4A5" Margin="10,2,0,0">
+                    <Label.Background>
+                        <SolidColorBrush Color="#FFDEDEDD" Opacity="0"/>
+                    </Label.Background> Login to Steam
+                </Label>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Content="X" Style="{StaticResource XButtonStyle}" HorizontalAlignment="Right"  Width="30" Height="30" Margin="0 0 10 0" Click="Button_Click" FontFamily="Microsoft Yi Baiti" FontSize="18" FontWeight="Bold" >
+                    <Button.Background>
+                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                    </Button.Background>
+                    <Button.BorderBrush>
+                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                    </Button.BorderBrush>
+                    <Button.Foreground>
+                        <SolidColorBrush Color="#FFA6A4A5"/>
+                    </Button.Foreground>
+
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <UserControl Grid.Row="1"  Content="{Binding Current}" Grid.ColumnSpan="3" Loaded="UserControl_Loaded"/>
+    </Grid>
+
 </Window>

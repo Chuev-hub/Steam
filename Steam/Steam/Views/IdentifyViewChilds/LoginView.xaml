@@ -4,9 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Steam.Views.IdentifyViewChilds"
+             xmlns:vm="clr-namespace:Steam.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="480">
+    <UserControl.DataContext>
+        <vm:LoginViewModel>
+
+        </vm:LoginViewModel>
+    </UserControl.DataContext>
     <Grid>
-            
+        <Label Foreground="#FFD0D0CF" FontSize="18" Margin="106,10,0,0" Width="100" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" FontWeight="Bold" >
+            <Label.Background>
+                <SolidColorBrush Color="#FFF1EFF1" Opacity="0"/>
+            </Label.Background> STEAM
+        </Label>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="34" Margin="73,8,0,0" VerticalAlignment="Top" Width="33" Source="{Binding Logo}"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="112,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" BorderThickness="0.25"/>
     </Grid>
 </UserControl>
