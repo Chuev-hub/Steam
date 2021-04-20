@@ -11,7 +11,7 @@ namespace Steam.DAL.Context
     {
         public Game()
         {
-            GamesInAccounts = new HashSet<GamesInAccounts>();
+            GamesInAccounts = new HashSet<Account>();
         }
 
         [Key]
@@ -23,7 +23,7 @@ namespace Steam.DAL.Context
         [StringLength(2048)]
         public string GameInfo { get; set; }
 
-        public virtual ICollection<GamesInAccounts> GamesInAccounts { get; set; } // 8
+        public virtual ICollection<Account> GamesInAccounts { get; set; } // 8
 
         public int GenreId { get; set; }
 

@@ -1,4 +1,4 @@
-SQL WPF 1 MVVM
+﻿SQL WPF 1 MVVM
 
 
 winexe
@@ -9,12 +9,11 @@ Steam
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
 4-1741828857
 
 13-2137020989
-13-1505183044
+23-2110837890
 Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdetifyView.xaml;Views\MainView.xaml;
 
 False

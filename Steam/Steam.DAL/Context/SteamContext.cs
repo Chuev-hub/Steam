@@ -12,8 +12,6 @@ namespace Steam.DAL.Context
         }
 
         public virtual DbSet<Account> Account { get; set; }
-        public virtual DbSet<GamesInAccounts> GamesInAccounts { get; set; }
-        public virtual DbSet<AccountsInChats> AccountsInChats { get; set; }
         public virtual DbSet<Chat> Chat { get; set; }
         public virtual DbSet<Game> Game { get; set; }
         public virtual DbSet<ProfileComment> ProfileComment { get; set; }
@@ -22,52 +20,42 @@ namespace Steam.DAL.Context
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AccountsInChats>().HasKey(u => new { u.AccountId, u.ChatId });
-            modelBuilder.Entity<GamesInAccounts>().HasKey(u => new { u.AccountId, u.GameId });
-
-            modelBuilder.Entity<Account>()
-                .HasMany(e => e.Games)
-                .WithOptional(e => e.Account)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Account>()
-                .HasMany(e => e.Chats)
-                .WithOptional(e => e.Account)
-                .WillCascadeOnDelete(false);
-
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Messages)
-                .WithOptional(e => e.Sender)
+                .WithRequired(e => e.Sender)
+                .HasForeignKey(e => e.SenderId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Account>()
-                .HasMany(e => e.AccountComments)
-                .WithOptional(e => e.Profile)
+                .HasMany(e => e.ProfileComments)
+                .WithRequired(e => e.Profile)
+                .HasForeignKey(e => e.ProfileId)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.LeftComments)
-                .WithOptional(e => e.Author)
+                .WithRequired(e => e.Author)
+                .HasForeignKey(e => e.AuthorId)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Chat>()
-                .HasMany(e => e.AccountsInChats)
-                .WithOptional(e => e.Chat)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Chats)
+                .WithMany(e => e.AccountsInChats)
+                .Map(m => m.ToTable("AccountsInChats").MapLeftKey("AccountId").MapRightKey("ChatId"));
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.GamesInAccounts)
+                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("AccountId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Chat>()
                 .HasMany(e => e.Messages)
-                .WithOptional(e => e.Chat)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<Game>()
-                .HasMany(e => e.GamesInAccounts)
-                .WithOptional(e => e.Game)
+                .WithRequired(e => e.Chat)
                 .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<Genre>()
                 .HasMany(e => e.Games)
-                .WithOptional(e => e.Genre)
+                .WithRequired(e => e.Genre)
                 .WillCascadeOnDelete(false);
         }
     }
