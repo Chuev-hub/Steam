@@ -1,4 +1,6 @@
-﻿using Steam.Infrastructure;
+﻿using Steam.DAL.Context;
+using Steam.DAL.Repositories;
+using Steam.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,6 +17,8 @@ namespace Steam.ViewModels
         public UserControl CurrentView { get; set; }
         public MainViewModel()
         {
+            AccountRepository repository = new AccountRepository(new SteamContext());
+            repository.CreateOrUpdate(new Account() {  Login = "123",PassHash="shashasha", Email ="milo", ProfileName ="Chel"});
             InitCommands();
             
         }
