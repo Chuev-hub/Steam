@@ -81,6 +81,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModels\IdetifyViewModel.cs" />
+    <Compile Include="Views\IdetifyView.xaml.cs">
+      <DependentUpon>IdetifyView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\IdetifyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -89,6 +97,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Infrastructure\Account.cs" />
     <Compile Include="Infrastructure\BaseNotifyPropertyChanged.cs" />
     <Compile Include="Infrastructure\RelayCommand.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
@@ -126,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\MainViewChilds\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Steam.DAL\Steam.DAL.csproj">

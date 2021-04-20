@@ -30,6 +30,7 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.Gen
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.cache
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+<<<<<<< HEAD
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Buffers.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Memory.dll
@@ -48,3 +49,9 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.pdb
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll.config
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.xml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.xml
+=======
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.g.cs
+C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
+>>>>>>> e5f72955b653b97bdc925c6fd353e72f86d38424
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
