@@ -11,13 +11,13 @@ namespace Steam.DAL.Context
     {
         public Chat()
         {
-            AccountsInChats = new HashSet<Account>();
+            Accounts = new HashSet<Account>();
             Messages = new HashSet<Message>();
         }
 
         public int ChatId { get; set; }
 
-        public virtual ICollection<Account> AccountsInChats { get; set; } //6
+        public virtual ICollection<Account> Accounts { get; set; } //6
 
         public virtual ICollection<Message> Messages { get; set; } //7
     }
