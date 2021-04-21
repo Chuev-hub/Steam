@@ -19,11 +19,14 @@ namespace Steam.ViewModels
         public MainViewModel()
         {
 
-            AccountRepository repository = new AccountRepository(new SteamContext());
-            repository.CreateOrUpdate(new Account() {  Login = "123",PassHash="shashasha", Email ="milo", ProfileName ="Chel"});
-            repository.SaveChanges();
+            //AccountRepository repository = new AccountRepository(new SteamContext());
+            //repository.CreateOrUpdate(new Account() {  Login = "123",PassHash="shashasha", Email ="milo", ProfileName ="Chel"});
+            //repository.SaveChanges();
             InitCommands();
-            
+            SteamClient.GetAndSaveGamesByList(new List<string>()
+            {
+                "The Witcher 3: Wild Hunt"
+            });
         }
         public void InitCommands()
         {
