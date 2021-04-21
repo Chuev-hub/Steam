@@ -17,7 +17,6 @@ C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CoreCompileInputs.cache
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CopyComplete
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll

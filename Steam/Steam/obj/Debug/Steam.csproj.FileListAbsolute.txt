@@ -58,3 +58,11 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\AutoMapper.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Ninject.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Steam.BLL.pdb
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll.config
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\AutoMapper.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Ninject.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\App.baml

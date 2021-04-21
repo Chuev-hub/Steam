@@ -11,7 +11,7 @@ namespace Steam.BLL.DTO
         public int AccountId { get; set; }
         public string Login { get; set; }
         public string PassHash { get; set; }
-        public string Email { get; set; }
+        public string Email     { get; set; }
         public string ProfileName { get; set; }
         public string RealName { get; set; }
         public string Country { get; set; }
