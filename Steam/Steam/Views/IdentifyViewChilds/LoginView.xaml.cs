@@ -29,5 +29,10 @@ namespace Steam.Views.IdentifyViewChilds
         {
 
         }
+
+        private void button_Copy_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

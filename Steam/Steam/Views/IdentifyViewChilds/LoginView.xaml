@@ -12,24 +12,80 @@
 
         </vm:LoginViewModel>
     </UserControl.DataContext>
+    <UserControl.Resources>
+        <Style x:Key="XButtonStyle"
+           TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
     <Grid>
-        <Label Foreground="#FFD0D0CF" FontSize="18" Margin="106,10,0,0" Width="100" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" FontWeight="Bold" >
+        <Label Foreground="#FFD0D0CF" FontSize="18" Margin="112,10,0,0" Width="100" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" FontWeight="Bold" Content="STEAM" >
             <Label.Background>
                 <SolidColorBrush Color="#FFF1EFF1" Opacity="0"/>
-            </Label.Background> STEAM
+            </Label.Background>
         </Label>
-        <Image x:Name="image" HorizontalAlignment="Left" Height="34" Margin="73,8,0,0" VerticalAlignment="Top" Width="33" Source="{Binding Logo}"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="112,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
-        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="112,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
-        <Label x:Name="label" Content="Name
-               " HorizontalAlignment="Left" Margin="67,58,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="45" FontFamily="Nirmala UI Semilight" FontSize="11"/>
-        <Label x:Name="label_Copy" Content="Password                " HorizontalAlignment="Left" Margin="53,95,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="54" FontFamily="Nirmala UI Semilight" FontSize="11"/>
-        <CheckBox x:Name="checkBox" Content="Remember password" HorizontalAlignment="Left" Margin="112,132,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" BorderBrush="#FF4B5466" Foreground="#FFD0D0CF">
+        <Image x:Name="image" HorizontalAlignment="Left" Height="35" Margin="74,8,0,0" VerticalAlignment="Top" Width="35" Source="{Binding Logo}"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="118,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="119,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
+        <Label x:Name="label" Content="Name                " HorizontalAlignment="Left" Margin="73,54,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="45" FontFamily="Nirmala UI Semilight" FontSize="11"/>
+        <Label x:Name="label_Copy" Content="Password                " HorizontalAlignment="Left" Margin="60,90,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="54" FontFamily="Nirmala UI Semilight" FontSize="11"/>
+        <CheckBox x:Name="checkBox"  Content="Remember password" HorizontalAlignment="Left" Margin="117,124,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" BorderBrush="#FF919191" Foreground="#FFD0D0CF">
             <CheckBox.Background>
                 <SolidColorBrush Color="#FF4B5466" Opacity="0"/>
             </CheckBox.Background>
         </CheckBox>
-        <Button HorizontalContentAlignment="Left" Padding="10 0 0 0" x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="275,162,0,0" VerticalAlignment="Top" Width="166" BorderThickness="0"/>
-        <Button HorizontalContentAlignment="Left" Padding="10 0 0 0" x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="112,162,0,0" VerticalAlignment="Top" Width="158" BorderThickness="0"/>
+        <Button HorizontalContentAlignment="Left" Padding="5,0,0,4.6" Style="{StaticResource ResourceKey=XButtonStyle}" x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="287,152,0,0" VerticalAlignment="Top" Width="161" BorderThickness="0" Foreground="#FFC8D0DC" Height="24">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF33383E" Offset="1"/>
+                    <GradientStop Color="#FF434953"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Rectangle Fill="#FF3E454C" HorizontalAlignment="Left" Height="2" Margin="27,191,0,0" Stroke="#FF3E454C" VerticalAlignment="Top" Width="420"/>
+        <Button HorizontalContentAlignment="Left" Style="{StaticResource XButtonStyle}" Padding="5,0,0,4.6" x:Name="button_Copy" Content="Login" HorizontalAlignment="Left" Margin="117,152,0,0" VerticalAlignment="Top" Width="160" BorderThickness="0" Foreground="#FFC8D0DC" Height="24" Click="button_Copy_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF33383E" Offset="1"/>
+                    <GradientStop Color="#FF434953"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button HorizontalContentAlignment="Left" Padding="5,0,0,4.6" Style="{StaticResource ResourceKey=XButtonStyle}" x:Name="button_Copy1" Content="Create new account" HorizontalAlignment="Left" Margin="211,240,0,0" VerticalAlignment="Top" Width="237" BorderThickness="0" Foreground="#FFC8D0DC" Height="24">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF33383E" Offset="1"/>
+                    <GradientStop Color="#FF434953"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="label_Copy1" Content="Don`t have an account?" HorizontalAlignment="Left" Margin="84,240,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="122" FontFamily="Nirmala UI Semilight" FontSize="11"/>
     </Grid>
 </UserControl>
