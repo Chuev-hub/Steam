@@ -11,7 +11,10 @@ namespace Steam.DAL.Context
     {
         public Game()
         {
-            GamesInAccounts = new HashSet<GamesInAccounts>();
+            GamesInAccounts = new HashSet<Account>();
+            Genres = new HashSet<Genre>();
+            Screenshots = new HashSet<Screenshot>();
+            Developers = new HashSet<Developer>();
         }
 
         [Key]
@@ -27,11 +30,11 @@ namespace Steam.DAL.Context
         public string Requirements { get; set; }
         public string RealeaseDate { get; set; }
 
-        public virtual ICollection<ScreenshotsInGames> Screenshots { get; set; }
-        public virtual ICollection<GamesInAccounts> GamesInAccounts { get; set; } // 8
+        public virtual ICollection<Account> GamesInAccounts { get; set; } // 8
+        public virtual ICollection<Screenshot> Screenshots { get; set; }
 
-        public virtual ICollection<GenresInGames> Genre { get; set; }
-        public virtual ICollection<DevelopersInGames> Developers { get; set; }
+        public virtual ICollection<Genre> Genres { get; set; }
+        public virtual ICollection<Developer> Developers { get; set; }
     }
 
 }

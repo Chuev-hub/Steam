@@ -40,10 +40,5 @@ namespace Steam
             Environment.Exit(0);
         }
 
-        private void Grid_MouseLeftButtonDown_1(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-
-        }
     }
 }

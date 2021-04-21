@@ -50,7 +50,7 @@
 
     </Window.Resources>
 
-    <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown_1" >
+    <Grid>
         <Grid >
             <Grid.RowDefinitions>
                 <RowDefinition Height="60"></RowDefinition>

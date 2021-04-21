@@ -1,46 +1,30 @@
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe.config
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.pdb
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csprojAssemblyReference.cache
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.g.cs
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\App.g.cs
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.cache
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.lref
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.baml
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.g.resources
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.Properties.Resources.resources
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.GenerateResource.cache
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.cache
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe.config
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.pdb
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csprojAssemblyReference.cache
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\App.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.cache
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.lref
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe.config
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll.config
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.g.resources
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.Properties.Resources.resources
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.GenerateResource.cache
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.cache
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.g.cs
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.g.cs
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.g.cs
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.baml
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.baml
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.dll
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.pdb
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.DAL.dll.config
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.xml
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\chuev\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete

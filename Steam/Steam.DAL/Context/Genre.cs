@@ -9,10 +9,15 @@ namespace Steam.DAL.Context
 {
     public class Genre
     {
+        public Genre()
+        {
+            Games = new HashSet<Game>();
+        }
+
         [Key]
         public int GenreId { get; set; }
         public string GenreName { get; set; }
 
-        public virtual ICollection<GenresInGames> Games { get; set; } // 9
+        public virtual ICollection<Game> Games { get; set; } // 9
     }
 }

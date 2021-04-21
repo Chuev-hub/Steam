@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CF7CD61F-F419-461D-AA65-45C0969697F1}</ProjectGuid>
+    <ProjectGuid>{A06A9A8E-181F-44EE-803A-E94847E02284}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Steam.DAL</RootNamespace>
@@ -43,8 +43,6 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,41 +52,30 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context\Account.cs" />
-    <Compile Include="Context\AccountsInChats.cs" />
     <Compile Include="Context\Chat.cs" />
     <Compile Include="Context\Developer.cs" />
-    <Compile Include="Context\DevelopersInGames.cs" />
-    <Compile Include="Context\Genre.cs" />
-    <Compile Include="Context\GenresInGames.cs" />
-    <Compile Include="Context\ProfileComment.cs" />
     <Compile Include="Context\Game.cs" />
-    <Compile Include="Context\GamesInAccounts.cs" />
+    <Compile Include="Context\Genre.cs" />
     <Compile Include="Context\Message.cs" />
+    <Compile Include="Context\ProfileComment.cs" />
     <Compile Include="Context\Screenshot.cs" />
-    <Compile Include="Context\ScreenshotsInGames.cs" />
     <Compile Include="Context\SteamContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
-    <Compile Include="Repositories\AccountsInChatsRepository.cs" />
     <Compile Include="Repositories\ChatRepository.cs" />
     <Compile Include="Repositories\CommentRepository.cs" />
     <Compile Include="Repositories\DeveloperRepository.cs" />
-    <Compile Include="Repositories\DevelopersInGamesRepository.cs" />
     <Compile Include="Repositories\GameRepository.cs" />
-    <Compile Include="Repositories\GamesInAccountsRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
-    <Compile Include="Repositories\GenreInGamesRepository.cs" />
     <Compile Include="Repositories\GenreRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\MessageRepository.cs" />
-    <Compile Include="Repositories\ScreenshotInGameRepository.cs" />
     <Compile Include="Repositories\ScreenshotRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

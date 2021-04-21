@@ -12,6 +12,6 @@ namespace Steam.DAL.Context
         [Key]
         public int DeveloperId { get; set; }
         public string DeveloperName { get; set; }
-        public virtual ICollection<DevelopersInGames> Games { get; set; }
+        public virtual ICollection<Game> Games { get; set; }
     }
 }

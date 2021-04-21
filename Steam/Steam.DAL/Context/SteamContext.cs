@@ -12,72 +12,65 @@ namespace Steam.DAL.Context
         }
 
         public virtual DbSet<Account> Account { get; set; }
-        public virtual DbSet<GamesInAccounts> GamesInAccounts { get; set; }
-        public virtual DbSet<AccountsInChats> AccountsInChats { get; set; }
         public virtual DbSet<Chat> Chat { get; set; }
         public virtual DbSet<Game> Game { get; set; }
         public virtual DbSet<ProfileComment> ProfileComment { get; set; }
         public virtual DbSet<Message> Message { get; set; }
         public virtual DbSet<Developer> Developers { get; set; }
-        public virtual DbSet<DevelopersInGames> DevelopersInGames { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
-        public virtual DbSet<GenresInGames> GenresInGames { get; set; }
         public virtual DbSet<Screenshot> Screenshots { get; set; }
-        public virtual DbSet<ScreenshotsInGames> ScreenshotsInGames { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<AccountsInChats>().HasKey(u => new { u.AccountId, u.ChatId });
-            modelBuilder.Entity<GamesInAccounts>().HasKey(u => new { u.AccountId, u.GameId });
-            modelBuilder.Entity<DevelopersInGames>().HasKey(u => new { u.DeveloperId, u.GameId });
-            modelBuilder.Entity<GenresInGames>().HasKey(u => new { u.GameId, u.GenreId });
-            modelBuilder.Entity<ScreenshotsInGames>().HasKey(u => new { u.GameId, u.ScreenshotId });
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Messages)
+                .WithRequired(e => e.Sender)
+                .HasForeignKey(e => e.SenderId)
+                .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Account>()
-            //    .HasMany(e => e.Games)
-            //    .WithOptional(e => e.Account)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.ProfileComments)
+                .WithRequired(e => e.Profile)
+                .HasForeignKey(e => e.ProfileId)
+                .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Account>()
-            //    .HasMany(e => e.Chats)
-            //    .WithOptional(e => e.Account)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.LeftComments)
+                .WithRequired(e => e.Author)
+                .HasForeignKey(e => e.AuthorId)
+                .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Account>()
-            //    .HasMany(e => e.Messages)
-            //    .WithOptional(e => e.Sender)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Chats)
+                .WithMany(e => e.AccountsInChats)
+                .Map(m => m.ToTable("AccountsInChats").MapLeftKey("AccountId").MapRightKey("ChatId"));
 
-            //modelBuilder.Entity<Account>()
-            //    .HasMany(e => e.AccountComments)
-            //    .WithOptional(e => e.Profile)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.GamesInAccounts)
+                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("AccountId").MapRightKey("GameId"));
 
-            //modelBuilder.Entity<Account>()
-            //    .HasMany(e => e.LeftComments)
-            //    .WithOptional(e => e.Author)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Chat>()
+                .HasMany(e => e.Messages)
+                .WithRequired(e => e.Chat)
+                .WillCascadeOnDelete(false);
 
-            //modelBuilder.Entity<Chat>()
-            //    .HasMany(e => e.AccountsInChats)
-            //    .WithOptional(e => e.Chat)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Developer>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.Developers)
+                .Map(m => m.ToTable("DevelopersInGames").MapLeftKey("GameId").MapRightKey("DeveloperId"));
 
-            //modelBuilder.Entity<Chat>()
-            //    .HasMany(e => e.Messages)
-            //    .WithOptional(e => e.Chat)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Genre>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.Genres)
+                .Map(m => m.ToTable("GenresInGames").MapLeftKey("GameId").MapRightKey("GenreId"));
 
-            //modelBuilder.Entity<Game>()
-            //    .HasMany(e => e.GamesInAccounts)
-            //    .WithOptional(e => e.Game)
-            //    .WillCascadeOnDelete(false);
+            modelBuilder.Entity<Screenshot>()
+                .HasMany(e => e.Games)
+                .WithMany(e => e.Screenshots)
+                .Map(m => m.ToTable("ScreenshotsInGames").MapLeftKey("GameId").MapRightKey("ScreenshotId"));
 
-            //modelBuilder.Entity<Genre>()
-            //    .HasMany(e => e.Games)
-            //    .WithOptional(e => e.Genre)
-            //    .WillCascadeOnDelete(false);
         }
     }
 }

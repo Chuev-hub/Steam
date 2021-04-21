@@ -19,6 +19,17 @@
             </Label.Background> STEAM
         </Label>
         <Image x:Name="image" HorizontalAlignment="Left" Height="34" Margin="73,8,0,0" VerticalAlignment="Top" Width="33" Source="{Binding Logo}"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="112,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" BorderThickness="0.25"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="112,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
+        <TextBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="112,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
+        <Label x:Name="label" Content="Name
+               " HorizontalAlignment="Left" Margin="67,58,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="45" FontFamily="Nirmala UI Semilight" FontSize="11"/>
+        <Label x:Name="label_Copy" Content="Password                " HorizontalAlignment="Left" Margin="53,95,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="54" FontFamily="Nirmala UI Semilight" FontSize="11"/>
+        <CheckBox x:Name="checkBox" Content="Remember password" HorizontalAlignment="Left" Margin="112,132,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" BorderBrush="#FF4B5466" Foreground="#FFD0D0CF">
+            <CheckBox.Background>
+                <SolidColorBrush Color="#FF4B5466" Opacity="0"/>
+            </CheckBox.Background>
+        </CheckBox>
+        <Button HorizontalContentAlignment="Left" Padding="10 0 0 0" x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="275,162,0,0" VerticalAlignment="Top" Width="166" BorderThickness="0"/>
+        <Button HorizontalContentAlignment="Left" Padding="10 0 0 0" x:Name="button_Copy" Content="Button" HorizontalAlignment="Left" Margin="112,162,0,0" VerticalAlignment="Top" Width="158" BorderThickness="0"/>
     </Grid>
 </UserControl>

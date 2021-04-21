@@ -11,9 +11,11 @@ namespace Steam.DAL.Context
     {
         public Account()
         {
-            Games = new HashSet<GamesInAccounts>();
-            Chats = new HashSet<AccountsInChats>();
+            Games = new HashSet<Game>();
+            Chats = new HashSet<Chat>();
             Messages = new HashSet<Message>();
+            ProfileComments = new HashSet<ProfileComment>();
+            LeftComments = new HashSet<ProfileComment>();
         }
 
         [Key]
@@ -40,10 +42,10 @@ namespace Steam.DAL.Context
 
         public bool IsAdmin { get; set; }
 
-        public virtual ICollection<GamesInAccounts> Games { get; set; } //1
-        public virtual ICollection<AccountsInChats> Chats { get; set; } //2
+        public virtual ICollection<Game> Games { get; set; } //1
+        public virtual ICollection<Chat> Chats { get; set; } //2
         public virtual ICollection<Message> Messages { get; set; } //3
-        public virtual ICollection<ProfileComment> AccountComments { get; set; } //4
+        public virtual ICollection<ProfileComment> ProfileComments { get; set; } //4
         public virtual ICollection<ProfileComment> LeftComments { get; set; } //5
     }
 }
