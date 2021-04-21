@@ -84,6 +84,10 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Buffers.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Memory.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\CsQuery.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\RestSharp.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\CsQuery.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\RestSharp.xml
