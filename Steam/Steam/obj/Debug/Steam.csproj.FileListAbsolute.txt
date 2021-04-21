@@ -1,7 +1,6 @@
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csprojAssemblyReference.cache
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.g.cs
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\App.g.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -19,7 +18,6 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\EntityFramework.SqlServer.xml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\LoginView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyViewChilds\RegisterView.baml
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdetifyView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainView.baml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.g.resources
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.Properties.Resources.resources
@@ -91,3 +89,44 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\RestSharp.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\CsQuery.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\RestSharp.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\AutoMapper.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\CommonServiceLocator.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\CsQuery.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Extras.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Platform.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Ninject.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\RestSharp.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Buffers.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Windows.Interactivity.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Memory.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Numerics.Vectors.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.BLL.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll.config
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\AutoMapper.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\CsQuery.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Extras.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Platform.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Ninject.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\RestSharp.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Buffers.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\App.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\ChatView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\LibraryView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ProfileView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\ChatView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\LibraryView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ProfileView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\IdentifyView.baml

@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Steam"
              xmlns:locator="clr-namespace:Steam.Infrastructure"
-             StartupUri="Views/IdetifyView.xaml">
+             StartupUri="Views/MainView.xaml">
     <Application.Resources>
         <locator:ViewModelsLocator x:Key="locator"></locator:ViewModelsLocator>
     </Application.Resources>
