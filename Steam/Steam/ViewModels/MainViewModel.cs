@@ -14,14 +14,14 @@ namespace Steam.ViewModels
 {
     class MainViewModel : BaseNotifyPropertyChanged
     {
-        public AccountDTO Account { get; set; }
+        public string Login
+        {
+            get => Account.CurrentAccount.ProfileName;
+        }
         public UserControl CurrentView { get; set; }
-        AccountService accountService;
         public MainViewModel(AccountService accountService)
         {
             InitCommands(); 
-            this.accountService = accountService;
-            accountService.CreateOrUpdate(new AccountDTO() {  Login = "123",PassHash="shashasha", Email ="milo", ProfileName ="Chel"});
         }
         public void InitCommands()
         {

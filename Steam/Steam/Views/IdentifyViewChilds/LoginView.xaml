@@ -48,16 +48,16 @@
             </Label.Background>
         </Label>
         <Image x:Name="image" HorizontalAlignment="Left" Height="35" Margin="74,8,0,0" VerticalAlignment="Top" Width="35" Source="{Binding Logo}"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="118,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="330" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
+        <TextBox x:Name="textBox" Text="{Binding Logins}" HorizontalAlignment="Left" Height="23" Margin="119,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
         <PasswordBox x:Name="textBox_Copy" HorizontalAlignment="Left" Height="23" Margin="119,90,0,0" VerticalAlignment="Top" Width="329" BorderThickness="1" Background="#FF2A2E33" Foreground="#FFD0D0CF" Padding="0,3,0,0" BorderBrush="#FF4B5466" SelectionBrush="#FF1862FF"/>
         <Label x:Name="label" Content="Name                " HorizontalAlignment="Left" Margin="73,54,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="45" FontFamily="Nirmala UI Semilight" FontSize="11"/>
         <Label x:Name="label_Copy" Content="Password                " HorizontalAlignment="Left" Margin="60,90,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="54" FontFamily="Nirmala UI Semilight" FontSize="11"/>
-        <CheckBox x:Name="checkBox"  Content="Remember password" HorizontalAlignment="Left" Margin="117,124,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" BorderBrush="#FF919191" Foreground="#FFD0D0CF">
+        <CheckBox x:Name="checkBox" IsChecked="{Binding IsRemember}"  Content="Remember password" HorizontalAlignment="Left" Margin="117,124,0,0" VerticalAlignment="Top" Checked="checkBox_Checked" BorderBrush="#FF919191" Foreground="#FFD0D0CF">
             <CheckBox.Background>
                 <SolidColorBrush Color="#FF4B5466" Opacity="0"/>
             </CheckBox.Background>
         </CheckBox>
-        <Button HorizontalContentAlignment="Left" Padding="5,0,0,4.6" Style="{StaticResource ResourceKey=XButtonStyle}" x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="287,152,0,0" VerticalAlignment="Top" Width="161" BorderThickness="0" Foreground="#FFC8D0DC" Height="24">
+        <Button Command="{Binding Cancel}" HorizontalContentAlignment="Left" Padding="5,0,0,4.6" Style="{StaticResource ResourceKey=XButtonStyle}" x:Name="button" Content="Cancel" HorizontalAlignment="Left" Margin="287,152,0,0" VerticalAlignment="Top" Width="161" BorderThickness="0" Foreground="#FFC8D0DC" Height="24">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF33383E" Offset="1"/>
@@ -66,7 +66,7 @@
             </Button.Background>
         </Button>
         <Rectangle Fill="#FF3E454C" HorizontalAlignment="Left" Height="2" Margin="27,191,0,0" Stroke="#FF3E454C" VerticalAlignment="Top" Width="420"/>
-        <Button HorizontalContentAlignment="Left" Style="{StaticResource XButtonStyle}" Padding="5,0,0,4.6" x:Name="button_Copy" Content="Login" HorizontalAlignment="Left" Margin="117,152,0,0" VerticalAlignment="Top" Width="160" BorderThickness="0" Foreground="#FFC8D0DC" Height="24" Click="button_Copy_Click">
+        <Button Command="{Binding LoginCmd}" CommandParameter="{Binding ElementName=textBox_Copy}" HorizontalContentAlignment="Left" Style="{StaticResource XButtonStyle}" Padding="5,0,0,4.6" x:Name="button_Copy" Content="Login" HorizontalAlignment="Left" Margin="119,152,0,0" VerticalAlignment="Top" Width="158" BorderThickness="0" Foreground="#FFC8D0DC" Height="24" Click="button_Copy_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF33383E" Offset="1"/>
@@ -83,5 +83,6 @@
             </Button.Background>
         </Button>
         <Label x:Name="label_Copy1" Content="Don`t have an account?" HorizontalAlignment="Left" Margin="84,240,0,0" VerticalAlignment="Top" Foreground="#FFD0D0CF" Width="122" FontFamily="Nirmala UI Semilight" FontSize="11"/>
+        <Label x:Name="label_Copy2" Content="{Binding Error}" HorizontalAlignment="Left" Margin="84,198,0,0" VerticalAlignment="Top" Foreground="Red" Width="122" FontFamily="Nirmala UI Semilight" FontSize="14"/>
     </Grid>
 </UserControl>

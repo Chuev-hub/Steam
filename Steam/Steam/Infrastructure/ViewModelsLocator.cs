@@ -20,6 +20,7 @@ namespace Steam.Infrastructure
 
         public MainViewModel MainViewModel => kernel.Get<MainViewModel>();
         public IdetifyViewModel IdentifyViewModel => kernel.Get<IdetifyViewModel>();
-        public LoginViewModel LoginViewModel => kernel.Get<LoginViewModel>();
+        public LoginViewModel LoginViewModel => kernel.Get<LoginViewModel>(); 
+        public RegisterViewModel RegisterViewModel => kernel.Get<RegisterViewModel>(); 
     }
 }

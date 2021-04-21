@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:idf="clr-namespace:Steam.Infrastructure"
         xmlns:local="clr-namespace:Steam"
         xmlns:vm="clr-namespace:Steam.ViewModels"
         mc:Ignorable="d"
@@ -76,11 +77,11 @@
                         </Button.BorderBrush>
                         LIBRARY
                     </Button>
-                    <Button Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
+                    <Button Content="{Binding Login}" Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
                         <Button.BorderBrush>
                             <SolidColorBrush Color="#FF707070" Opacity="0"/>
                         </Button.BorderBrush>
-                        NAMEbind
+                        
                     </Button>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment ="Right" VerticalAlignment="Top">
