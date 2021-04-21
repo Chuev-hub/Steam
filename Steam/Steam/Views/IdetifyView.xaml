@@ -84,7 +84,7 @@
             </StackPanel>
         </Grid>
 
-        <UserControl Grid.Row="1"  Content="{Binding Current}" Loaded="UserControl_Loaded"/>
+        <ContentControl Grid.Row="1"  Content="{Binding Current}" Loaded="UserControl_Loaded"/>
     </Grid>
 
 </Window>

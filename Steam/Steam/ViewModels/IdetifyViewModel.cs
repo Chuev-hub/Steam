@@ -9,9 +9,18 @@ using System.Windows.Controls;
 
 namespace Steam.ViewModels
 {
-    class IdetifyViewModel : INavigate
+    class IdetifyViewModel : BaseNotifyPropertyChanged, INavigate
     {
-        public UserControl Current { get; set; }
+        public UserControl current;
+        public UserControl Current
+        {
+            get=>current;
+            set
+            {
+                current = value;
+                Notify();
+            }
+        }
         public IdetifyViewModel()
         {
             Switcher.ContentArea = this;

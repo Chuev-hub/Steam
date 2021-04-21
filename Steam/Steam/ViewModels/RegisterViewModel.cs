@@ -2,39 +2,36 @@
 using Steam.Views.IdentifyViewChilds;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Controls;
 using System.Windows.Input;
-using System.Windows.Media.Imaging;
 
 namespace Steam.ViewModels
 {
-    class LoginViewModel : BaseNotifyPropertyChanged
+    class RegisterViewModel:BaseNotifyPropertyChanged
     {
         public string logo;
         public string Logo
         {
-            get => logo; 
+            get => logo;
             set
             {
                 logo = value;
-                Notify(); 
-            } 
+                Notify();
+            }
         }
-        public LoginViewModel()
-        {           
-            Logo = Environment.CurrentDirectory+"\\Images\\Ico.png";
+        public RegisterViewModel()
+        {
+            Logo = Environment.CurrentDirectory + "\\Images\\Ico.png";
             Init();
         }
-        public ICommand GoRegister { get; set; }
+        public ICommand GoLogin { get; set; }
         void Init()
         {
-            GoRegister = new RelayCommand((x) =>
+            GoLogin = new RelayCommand((x) =>
             {
-                Switcher.Switch(new RegisterView());
+                Switcher.Switch(new LoginView());
             });
         }
     }
