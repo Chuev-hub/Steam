@@ -9,10 +9,10 @@ using System.Windows.Controls;
 
 namespace Steam.ViewModels
 {
-    class IdetifyViewModel : INavigate
+    class IdentifyViewModel : INavigate
     {
         public UserControl Current { get; set; }
-        public IdetifyViewModel()
+        public IdentifyViewModel()
         {
             Switcher.ContentArea = this;
             Switcher.Switch(new LoginView());

@@ -6,12 +6,8 @@
              xmlns:local="clr-namespace:Steam.Views.IdentifyViewChilds"
              xmlns:vm="clr-namespace:Steam.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="480">
-    <UserControl.DataContext>
-        <vm:LoginViewModel>
-
-        </vm:LoginViewModel>
-    </UserControl.DataContext>
+             d:DesignHeight="450" d:DesignWidth="480"
+             DataContext="{Binding Source={StaticResource locator}, Path=LoginViewModel}">
     <Grid>
         <Label Foreground="#FFD0D0CF" FontSize="18" Margin="106,10,0,0" Width="100" Height="48" HorizontalAlignment="Left" VerticalAlignment="Top" FontFamily="Microsoft Sans Serif" FontWeight="Bold" >
             <Label.Background>

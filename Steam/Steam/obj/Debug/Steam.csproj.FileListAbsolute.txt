@@ -28,3 +28,11 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.Cor
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Ninject.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\AutoMapper.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.BLL.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll.config
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Ninject.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\AutoMapper.xml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\App.baml

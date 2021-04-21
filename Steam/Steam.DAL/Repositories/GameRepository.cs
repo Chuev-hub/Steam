@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Steam.DAL.Repositories
 {
-    public class GameRepository : GenericRepository<Account>
+    public class GameRepository : GenericRepository<Game>
     {
         public GameRepository(DbContext context) : base(context)
         {
