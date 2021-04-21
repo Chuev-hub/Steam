@@ -44,6 +44,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -91,8 +94,9 @@
     <Compile Include="Infrastructure\RelayCommand.cs" />
     <Compile Include="Infrastructure\SteamClient.cs" />
     <Compile Include="Infrastructure\Switcher.cs" />
-    <Compile Include="ViewModels\IdetifyViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="Infrastructure\ViewModelsLocator.cs" />
+    <Compile Include="ViewModels\IdentifyViewModel.cs" />
+    <Compile Include="ViewModels\IdentifyViewModelChilds\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\RegisterViewModel.cs" />
     <Compile Include="Views\IdentifyViewChilds\LoginView.xaml.cs">
@@ -140,9 +144,9 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Steam.DAL\Steam.DAL.csproj">
-      <Project>{a06a9a8e-181f-44ee-803a-e94847e02284}</Project>
-      <Name>Steam.DAL</Name>
+    <ProjectReference Include="..\Steam.BLL\Steam.BLL.csproj">
+      <Project>{f9fb81d1-009c-4bb2-a56e-eda6aa1c7956}</Project>
+      <Name>Steam.BLL</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

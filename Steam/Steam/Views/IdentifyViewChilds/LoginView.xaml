@@ -6,12 +6,8 @@
              xmlns:local="clr-namespace:Steam.Views.IdentifyViewChilds"
              xmlns:vm="clr-namespace:Steam.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="480">
-    <UserControl.DataContext>
-        <vm:LoginViewModel>
-
-        </vm:LoginViewModel>
-    </UserControl.DataContext>
+             d:DesignHeight="450" d:DesignWidth="480"
+             DataContext="{Binding Source={StaticResource locator}, Path=LoginViewModel}">
     <UserControl.Resources>
         <Style x:Key="XButtonStyle"
            TargetType="{x:Type Button}">

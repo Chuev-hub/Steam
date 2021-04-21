@@ -73,7 +73,7 @@ namespace Steam.Views {
             {
             case 1:
             
-            #line 51 "..\..\..\Views\IdetifyView.xaml"
+            #line 49 "..\..\..\Views\IdetifyView.xaml"
             ((System.Windows.Controls.Grid)(target)).MouseLeftButtonDown += new System.Windows.Input.MouseButtonEventHandler(this.Grid_MouseLeftButtonDown);
             
             #line default
@@ -81,7 +81,7 @@ namespace Steam.Views {
             return;
             case 2:
             
-            #line 72 "..\..\..\Views\IdetifyView.xaml"
+            #line 70 "..\..\..\Views\IdetifyView.xaml"
             ((System.Windows.Controls.Button)(target)).Click += new System.Windows.RoutedEventHandler(this.Button_Click);
             
             #line default

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Steam.DAL.Repositories
 {
-    public class CommentRepository : GenericRepository<ProfileComment>
+    public class ProfileCommentRepository : GenericRepository<ProfileComment>
     {
-        public CommentRepository(DbContext context) : base(context)
+        public ProfileCommentRepository(DbContext context) : base(context)
         {
         }
     }

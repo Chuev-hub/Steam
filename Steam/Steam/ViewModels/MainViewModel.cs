@@ -1,5 +1,5 @@
-﻿using Steam.DAL.Context;
-using Steam.DAL.Repositories;
+﻿using Steam.BLL.DTO;
+using Steam.BLL.Services;
 using Steam.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -14,16 +14,14 @@ namespace Steam.ViewModels
 {
     class MainViewModel : BaseNotifyPropertyChanged
     {
-        public Account Account { get; set; }
+        public AccountDTO Account { get; set; }
         public UserControl CurrentView { get; set; }
-        public MainViewModel()
+        AccountService accountService;
+        public MainViewModel(AccountService accountService)
         {
-
-            AccountRepository repository = new AccountRepository(new SteamContext());
-            repository.CreateOrUpdate(new Account() {  Login = "123",PassHash="shashasha", Email ="milo", ProfileName ="Chel"});
-            repository.SaveChanges();
-            InitCommands();
-            
+            InitCommands(); 
+            this.accountService = accountService;
+            accountService.CreateOrUpdate(new AccountDTO() {  Login = "123",PassHash="shashasha", Email ="milo", ProfileName ="Chel"});
         }
         public void InitCommands()
         {

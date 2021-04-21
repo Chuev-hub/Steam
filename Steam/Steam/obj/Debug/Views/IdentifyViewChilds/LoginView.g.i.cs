@@ -42,7 +42,7 @@ namespace Steam.Views.IdentifyViewChilds {
     public partial class LoginView : System.Windows.Controls.UserControl, System.Windows.Markup.IComponentConnector {
         
         
-        #line 54 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 21 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Image image;
         
@@ -50,7 +50,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 55 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 22 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.TextBox textBox;
         
@@ -58,7 +58,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 56 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 23 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.PasswordBox textBox_Copy;
         
@@ -66,7 +66,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 57 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 24 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label label;
         
@@ -74,7 +74,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 58 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 26 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Label label_Copy;
         
@@ -82,7 +82,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 59 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 27 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.CheckBox checkBox;
         
@@ -90,7 +90,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 64 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 32 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button;
         
@@ -98,7 +98,7 @@ namespace Steam.Views.IdentifyViewChilds {
         #line hidden
         
         
-        #line 73 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+        #line 33 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
         [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
         internal System.Windows.Controls.Button button_Copy;
         
@@ -169,7 +169,7 @@ namespace Steam.Views.IdentifyViewChilds {
             case 6:
             this.checkBox = ((System.Windows.Controls.CheckBox)(target));
             
-            #line 59 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
+            #line 27 "..\..\..\..\Views\IdentifyViewChilds\LoginView.xaml"
             this.checkBox.Checked += new System.Windows.RoutedEventHandler(this.checkBox_Checked);
             
             #line default

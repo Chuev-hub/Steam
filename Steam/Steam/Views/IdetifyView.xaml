@@ -6,15 +6,13 @@
         xmlns:local="clr-namespace:Steam.Views"
         xmlns:vm="clr-namespace:Steam.ViewModels"
         mc:Ignorable="d"
-        Title="Steam" Height="330" Width="480"  Background="{x:Null}" MinWidth="480" MinHeight="330" AllowsTransparency="True" WindowStyle="None">
+        Title="Steam" Height="330" Width="480"  Background="{x:Null}" MinWidth="480" MinHeight="330" AllowsTransparency="True" WindowStyle="None"
+        DataContext="{Binding Source={StaticResource locator}, Path=IdentifyViewModel}">
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
         ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
-    <Window.DataContext>
-        <vm:IdetifyViewModel></vm:IdetifyViewModel>
-    </Window.DataContext>
     <Window.Resources>
         <Style x:Key="XButtonStyle"
            TargetType="{x:Type Button}">
