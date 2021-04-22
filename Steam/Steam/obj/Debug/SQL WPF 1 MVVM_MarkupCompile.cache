@@ -4,17 +4,30 @@
 winexe
 C#
 .cs
+<<<<<<< HEAD
+C:\Users\vanec\Desktop\Steam\Steam\Steam\obj\Debug\
+=======
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\
+>>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
 Steam
 none
 false
 DEBUG;TRACE
+<<<<<<< HEAD
+C:\Users\vanec\Desktop\Steam\Steam\Steam\App.xaml
+4-1741828857
+
+20-1932185302
+135-177075326
+Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdetifyView.xaml;Views\MainView.xaml;
+=======
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
 81440031917
 
 27-734498848
 135-946494716
 Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;
+>>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
 
 False
 

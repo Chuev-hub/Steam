@@ -1,0 +1,9 @@
+diff a/Steam/Steam/ViewModels/MainViewModel.cs b/Steam/Steam/ViewModels/MainViewModel.cs	(rejected hunks)
+@@ -24,6 +24,7 @@
+             InitCommands();
+             //SteamClient.GetAndSaveGamesByList(new List<string>()
+             //{
++            //    "The Witcher 3: Wild Hunt"
+             //});
+         }
+         public void InitCommands()

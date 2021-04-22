@@ -9,6 +9,7 @@ namespace Steam.DAL.Context
         public SteamContext()
             : base("name=SteamContext")
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         public virtual DbSet<Account> Account { get; set; }
