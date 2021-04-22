@@ -7,7 +7,50 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800" 
         DataContext="{Binding Source={StaticResource locator}, Path=ShopViewModel}">
-    <Grid>
-        <Image Stretch="Fill" Source="https://i.ibb.co/LkJt5ZX/2021-04-22-014946.png"></Image>
-    </Grid>
+    <ScrollViewer VerticalScrollBarVisibility = "Auto">
+        <StackPanel Margin="5,0,5,0">
+            <StackPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF184557" Offset="0"/>
+                    <GradientStop Color="#FF1B2838" Offset="1"/>
+                </LinearGradientBrush>
+            </StackPanel.Background>
+            <StackPanel>
+                <Button Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,10,10,0"/>
+                <Border Margin="10,5,10,5" Height="40">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#FF3B6490" Offset="0"/>
+                            <GradientStop Color="#FF0F216E" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Background="Transparent" BorderThickness="0">
+                            <TextBlock Text="Ваш магазин" FontWeight="Bold" Foreground="#FFDEDEDE"></TextBlock>
+                        </Button>
+                        <Border CornerRadius="5" Background="Black" Grid.Column="4" Margin="7">
+                            <TextBox   SelectedText="Поиск" FontStyle="Italic" Background="#FF316282" />
+                        </Border>
+                    </Grid>
+                </Border>
+            </StackPanel>
+            <StackPanel Height="400">
+            <TextBlock Foreground="White">ПОПУЛЯРНОЕ И РЕКОМЕНДУЕМОЕ</TextBlock>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                    </Grid.RowDefinitions>
+                </Grid>
+                <Image></Image>
+            </StackPanel>
+
+        </StackPanel>
+    </ScrollViewer>
 </UserControl>
