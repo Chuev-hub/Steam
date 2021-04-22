@@ -4,38 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-C:\Users\vanec\Desktop\Steam\Steam\Steam\obj\Debug\
-=======
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\
->>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
-=======
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\
->>>>>>> Stashed changes
 Steam
 none
 false
 DEBUG;TRACE
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-C:\Users\vanec\Desktop\Steam\Steam\Steam\App.xaml
-4-1741828857
-
-211520422627
-135-177075326
-Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdetifyView.xaml;Views\MainView.xaml;
-=======
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
-=======
 C:\Users\chuev\Steam\Steam\Steam\Steam\App.xaml
->>>>>>> Stashed changes
 81440031917
 
-28-1576858215
-135-1228599085
+29-1272990749
+13699763403
 Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;
->>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
 
-False
+True
 

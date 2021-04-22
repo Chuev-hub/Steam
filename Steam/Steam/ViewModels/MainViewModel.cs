@@ -39,20 +39,14 @@ namespace Steam.ViewModels
         public MainViewModel(AccountService accountService)
         {
             InitCommands();
-<<<<<<< HEAD
+
             string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
             SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
 
-=======
+
             Switcher.ContentArea = this;
             Switcher.Switch(new ShopView());
-           
-            //SteamClient.GetAndSaveGamesByList(new List<string>()
-            //{
-            //    //"The Witcher 3: Wild Hunt",
-            //    "Trove"
-            //});
->>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
+       
         }
         public void InitCommands()
         {

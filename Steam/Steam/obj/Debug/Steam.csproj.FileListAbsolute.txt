@@ -68,39 +68,8 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
 <<<<<<< HEAD
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\AutoMapper.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Ninject.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Steam.BLL.pdb
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Steam.BLL.dll.config
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\AutoMapper.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Ninject.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\App.baml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\CommonServiceLocator.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Extras.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Platform.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.pdb
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Extras.pdb
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Extras.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Platform.pdb
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\GalaSoft.MvvmLight.Platform.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Buffers.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Memory.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\BCrypt.Net-Next.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Buffers.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\CsQuery.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\RestSharp.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\CsQuery.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Newtonsoft.Json.xml
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\RestSharp.xml
 C:\Users\vanec\Desktop\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe.config
 C:\Users\vanec\Desktop\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.exe
 C:\Users\vanec\Desktop\Steam\Steam\Steam\bin\Debug\SQL WPF 1 MVVM.pdb
@@ -240,8 +209,8 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Runtime.C
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe.config
 <<<<<<< Updated upstream
 >>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
-=======
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe.config
 >>>>>>> Stashed changes
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\HtmlAgilityPack.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\HtmlAgilityPack.xml
