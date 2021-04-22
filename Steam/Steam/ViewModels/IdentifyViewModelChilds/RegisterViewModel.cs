@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 
@@ -77,9 +78,11 @@ namespace Steam.ViewModels
                 Environment.Exit(0);
             });
         }
+        bool a = false;
         AccountService accountService;
         void Register(object obj)
         {
+           
             Task.Run(() => {
                 string password = (obj as PasswordBox).Password.GetHashCode().ToString();
                 try
@@ -90,22 +93,30 @@ namespace Steam.ViewModels
                     }
                     else
                     {
-                        if(accountService.GetAll().ToList().Where(x => x.Login == Name).FirstOrDefault()==null)
-                        accountService.CreateOrUpdate(new AccountDTO()
+                        if (accountService.GetAll().ToList().Where(x => x.Login == Name).FirstOrDefault() == null)
                         {
-                            Email = Mail,
-                            Login = Name,
-                            ProfileName = Name,
-                            PassHash = password
-                        });
+                            accountService.CreateOrUpdate(new AccountDTO()
+                            {
+                                Email = Mail,
+                                Login = Name,
+                                ProfileName = Name,
+                                PassHash = password
+                            });
+                            a = true;
+                        }
                         else
                             Error = "Change Name";
                     }
                 }
-                catch { }
+                catch { a = false; }
+            }).ContinueWith((x)=> {
+                if (Name != "" && Mail != "" && (obj as PasswordBox).Password != ""&&a==true)
+                    Application.Current.Dispatcher.Invoke((Action)delegate {
+                        Switcher.Switch(new LoginView());
+                    });
+               
             });
-            if (Name != "" && Mail != "" && (obj as PasswordBox).Password != "")
-                Switcher.Switch(new LoginView());
+           
 
         }
     }

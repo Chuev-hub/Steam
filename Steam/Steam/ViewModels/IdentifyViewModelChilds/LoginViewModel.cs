@@ -59,22 +59,30 @@ namespace Steam.ViewModels
         AccountService accountService;
         void Login(object obj)
         {
-            AccountDTO a = accountService.GetAll().ToList().Where(x => x.Login == Logins).FirstOrDefault();
-            if (a != null && (obj as PasswordBox).Password.GetHashCode().ToString()== a.PassHash)
+            if((obj as PasswordBox).Password==""||Logins =="")
             {
-                Account.CurrentAccount = a;
-                if (IsRemember)
-                    File.WriteAllText("Remember.txt", a.Login);
-                else
-                    File.Delete("Remember.txt");
-                MainWindow mainWindow = new MainWindow();
-                mainWindow.Show();
-                Window ainWindow = Application.Current.MainWindow;
-                ainWindow.Close();
-
+                Error = "Fill all";
             }
             else
-                Error = "Not found";
+            {
+                AccountDTO a = accountService.GetAll().ToList().Where(x => x.Login == Logins).FirstOrDefault();
+                if (a != null && (obj as PasswordBox).Password.GetHashCode().ToString() == a.PassHash)
+                {
+                    Account.CurrentAccount = a;
+                    if (IsRemember)
+                        File.WriteAllText("Remember.txt", a.Login);
+                    else
+                        File.Delete("Remember.txt");
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    Window ainWindow = Application.Current.MainWindow;
+                    ainWindow.Close();
+
+                }
+                else
+                    Error = "Not found";
+            }
+           
 
         }
         public string error;
