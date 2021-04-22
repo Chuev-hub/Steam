@@ -152,3 +152,6 @@ C:\Users\vanec\Desktop\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInput
 C:\Users\vanec\Desktop\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 C:\Users\vanec\Desktop\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 C:\Users\vanec\Desktop\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+C:\Users\vanec\Desktop\Steam\Steam\Steam\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vanec\Desktop\Steam\Steam\Steam\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vanec\Desktop\Steam\Steam\Steam\bin\Debug\HtmlAgilityPack.xml

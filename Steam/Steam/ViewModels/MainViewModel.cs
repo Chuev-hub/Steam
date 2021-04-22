@@ -4,6 +4,7 @@ using Steam.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,10 +23,9 @@ namespace Steam.ViewModels
         public MainViewModel(AccountService accountService)
         {
             InitCommands();
-            SteamClient.GetAndSaveGamesByList(new List<string>()
-            {
-                "The Witcher 3: Wild Hunt"
-            });
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
+            SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
+
         }
         public void InitCommands()
         {
