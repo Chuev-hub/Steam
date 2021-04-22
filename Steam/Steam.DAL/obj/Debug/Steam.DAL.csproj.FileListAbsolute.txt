@@ -1,15 +1,3 @@
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll.config
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.pdb
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.dll
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.dll
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.xml
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.xml
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CoreCompileInputs.cache
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CopyComplete
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll.config
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.pdb
@@ -17,8 +5,8 @@ C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.xml
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CoreCompileInputs.cache
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CopyComplete
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
-C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache

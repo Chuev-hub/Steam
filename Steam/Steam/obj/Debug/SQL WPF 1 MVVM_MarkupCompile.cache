@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\
+C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\
 Steam
 none
 false
 DEBUG;TRACE
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
+C:\Users\chuev\Steam\Steam\Steam\Steam\App.xaml
 81440031917
 
 27-734498848
-134-773989623
+134-1122078760
 Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;
 
 False

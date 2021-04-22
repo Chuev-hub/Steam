@@ -60,7 +60,7 @@ namespace Steam.ViewModels
         void Login(object obj)
         {
             AccountDTO a = accountService.GetAll().ToList().Where(x => x.Login == Logins).FirstOrDefault();
-            if (a != null && BCrypt.Net.BCrypt.Verify((obj as PasswordBox).Password, a.PassHash))//textBox_Copy
+            if (a != null && (obj as PasswordBox).Password.GetHashCode().ToString()== a.PassHash)
             {
                 Account.CurrentAccount = a;
                 if (IsRemember)

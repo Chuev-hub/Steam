@@ -81,7 +81,7 @@ namespace Steam.ViewModels
         void Register(object obj)
         {
             Task.Run(() => {
-                string password = BCrypt.Net.BCrypt.HashPassword((obj as PasswordBox).Password);
+                string password = (obj as PasswordBox).Password.GetHashCode().ToString();
                 try
                 {
                     if (Name == "" || Mail == "" || (obj as PasswordBox).Password == "")
