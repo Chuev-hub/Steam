@@ -238,4 +238,10 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.p
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe.config
+<<<<<<< Updated upstream
 >>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
+=======
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe.config
+>>>>>>> Stashed changes
