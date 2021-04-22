@@ -59,14 +59,14 @@ namespace Steam.ViewModels
         AccountService accountService;
         void Login(object obj)
         {
-            if((obj as PasswordBox).Password==""||Logins =="")
+            if((obj as PasswordBox).Password == ""||Logins =="")
             {
                 Error = "Fill all";
             }
             else
             {
                 AccountDTO a = accountService.GetAll().ToList().Where(x => x.Login == Logins).FirstOrDefault();
-                if (a != null && (obj as PasswordBox).Password.GetHashCode().ToString() == a.PassHash)
+                if (a != null && BCrypt.Net.BCrypt.Verify((obj as PasswordBox).Password, a.PassHash))
                 {
                     Account.CurrentAccount = a;
                     if (IsRemember)
