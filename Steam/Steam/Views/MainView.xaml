@@ -7,8 +7,8 @@
         xmlns:local="clr-namespace:Steam"
         xmlns:vm="clr-namespace:Steam.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" WindowStyle="None"
- Height="600" Width="1000" Background="{x:Null}" MinWidth="800" MinHeight="450" AllowsTransparency="True"
+        Title="Steam" WindowStyle="None"
+ Height="600" Width="1000" Background="{x:Null}" MinWidth="1000" MinHeight="450" AllowsTransparency="True"
         DataContext="{Binding Source={StaticResource locator}, Path=MainViewModel}">
     <WindowChrome.WindowChrome>
         <WindowChrome 
@@ -56,7 +56,7 @@
                 <RowDefinition></RowDefinition>
                 <RowDefinition  Height="60"></RowDefinition>
             </Grid.RowDefinitions>
-            <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown" >
+            <Grid  MouseLeftButtonDown="Grid_MouseLeftButtonDown" >
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FF202123" Offset="1"/>
@@ -94,7 +94,6 @@
                         </Button.Foreground>
 
                     </Button>
-
                 </StackPanel>
 
 

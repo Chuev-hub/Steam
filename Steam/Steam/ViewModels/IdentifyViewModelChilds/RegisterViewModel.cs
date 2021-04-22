@@ -18,8 +18,9 @@ namespace Steam.ViewModels
 {
     class RegisterViewModel:BaseNotifyPropertyChanged
     {
+       
         public string logo;
-        public string Logo
+        public string Logo 
         {
             get => logo;
             set

@@ -17,6 +17,7 @@ namespace Steam.ViewModels
 {
     class MainViewModel : BaseNotifyPropertyChanged, INavigate
     {
+
         public string Login
         {
             get => Account.CurrentAccount.ProfileName;
@@ -64,6 +65,10 @@ namespace Steam.ViewModels
                 ChatView chatView = new ChatView();
                 chatView.Show();
             });
+            FSCommand = new RelayCommand(x =>
+            {
+                FullScreen();
+            });
 
         }
 
@@ -76,5 +81,15 @@ namespace Steam.ViewModels
         public ICommand ShopCommand { get; private set; }
         public ICommand ProfileCommand { get; private set; }
         public ICommand ChatCommand { get; private set; }
+        public ICommand FSCommand { get; private set; }
+        bool isFullScreen;
+        void FullScreen()
+        {
+            if (!isFullScreen)
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            else
+                Application.Current.MainWindow.WindowState = WindowState.Normal;
+            isFullScreen = !isFullScreen;
+        }
     }
 }
