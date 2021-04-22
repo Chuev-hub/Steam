@@ -39,6 +39,7 @@ namespace Steam.ViewModels
             InitCommands();
             Switcher.ContentArea = this;
             Switcher.Switch(new ShopView());
+           
             //SteamClient.GetAndSaveGamesByList(new List<string>()
             //{
             //    //"The Witcher 3: Wild Hunt",

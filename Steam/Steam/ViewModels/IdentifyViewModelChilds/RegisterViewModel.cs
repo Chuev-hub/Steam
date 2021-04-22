@@ -81,7 +81,7 @@ namespace Steam.ViewModels
         void Register(object obj)
         {
             Task.Run(() => {
-                string password = (obj as PasswordBox).Password.GetHashCode().ToString();
+                string password = BCrypt.Net.BCrypt.HashPassword((obj as PasswordBox).Password);
                 try
                 {
                     if (Name == "" || Mail == "" || (obj as PasswordBox).Password == "")
@@ -90,7 +90,7 @@ namespace Steam.ViewModels
                     }
                     else
                     {
-                        if(accountService.GetAll().ToList().Where(x => x.Login == Name).FirstOrDefault()==null)
+                        if(accountService.GetAll().Where(x => x.Login == Name).FirstOrDefault()==null)
                         accountService.CreateOrUpdate(new AccountDTO()
                         {
                             Email = Mail,
