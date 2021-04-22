@@ -8,6 +8,15 @@
              d:DesignHeight="450" d:DesignWidth="800"
              DataContext="{Binding Source={StaticResource locator}, Path=LibraryViewModel}">
     <Grid Background="Gray">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Background="#FF24282F">
+            <ListBox ItemsSource="{Binding Games}"  Background="Transparent"></ListBox>
+        </Grid>
+        <Grid Grid.Column="1" Background="#FF292E36">
             
+        </Grid>
     </Grid>
 </UserControl>
