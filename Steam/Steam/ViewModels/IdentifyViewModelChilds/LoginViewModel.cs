@@ -59,31 +59,35 @@ namespace Steam.ViewModels
         AccountService accountService;
         void Login(object obj)
         {
-            if((obj as PasswordBox).Password == ""||Logins =="")
-            {
-                Error = "Fill all";
-            }
-            else
-            {
-                AccountDTO a = accountService.GetAll().ToList().Where(x => x.Login == Logins).FirstOrDefault();
-                if (a != null && BCrypt.Net.BCrypt.Verify((obj as PasswordBox).Password, a.PassHash))
+            Task.Run(()=> {
+                if ((obj as PasswordBox).Password == "" || Logins == "")
                 {
-                    Account.CurrentAccount = a;
-                    if (IsRemember)
-                        File.WriteAllText("Remember.txt", a.Login);
-                    else
-                        File.Delete("Remember.txt");
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    Window ainWindow = Application.Current.MainWindow;
-                    ainWindow.Close();
-
+                    Error = "Fill all";
                 }
                 else
-                    Error = "Not found";
-            }
-           
+                {
+                    AccountDTO a = accountService.GetAll().ToList().Where(x => x.Login == Logins).FirstOrDefault();
+                    if (a != null && (obj as PasswordBox).Password.GetHashCode().ToString() == a.PassHash)
+                    {
+                        Account.CurrentAccount = a;
+                        if (IsRemember)
+                            File.WriteAllText("Remember.txt", a.Login);
+                        else
+                            File.Delete("Remember.txt");
+                        Application.Current.Dispatcher.Invoke((Action)delegate
+                        {
+                            MainWindow mainWindow = new MainWindow();
+                            mainWindow.Show();
+                            Window ainWindow = Application.Current.MainWindow;
+                            ainWindow.Close();
+                        });
+                    }
+                    else
+                        Error = "Not found";
+                }
 
+            });
+           
         }
         public string error;
         public string Error

@@ -5,9 +5,105 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Steam.Views.MainViewClilds"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="500" d:DesignWidth="1500"
              DataContext="{Binding Source={StaticResource locator}, Path=ProfileViewModel}">
-    <Grid Background="Black">
-            
+
+    <UserControl.Resources>
+        <Style x:Key="XButtonStyle"
+           TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Logo}"/>
+        </Grid.Background>
+        <ScrollViewer>
+
+            <StackPanel HorizontalAlignment="Center" Width="1000" >
+                <StackPanel.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF242834"/>
+                        <GradientStop Color="#FF2D232F" Offset="1"/>
+                    </RadialGradientBrush>
+                </StackPanel.Background>
+                <StackPanel Orientation="Horizontal">
+                    <Image x:Name="image" HorizontalAlignment="Left" Height="193" Margin="34,37,0,0" VerticalAlignment="Top" Width="211" Source="Image2.png" Stretch="Fill">
+                        <Image.OpacityMask>
+                            <ImageBrush ImageSource="Image1.png" Stretch="None"/>
+                        </Image.OpacityMask>
+                    </Image>
+                    <StackPanel  HorizontalAlignment="Left" Margin="16 40 0 0">
+                        <Label HorizontalAlignment="Left"  x:Name="label" Content="{Binding Name}"  Foreground="White" VerticalAlignment="Top" FontSize="24" Width="170" Height="39"/>
+                        <Label HorizontalAlignment="Left" x:Name="label_Copy" Content="{Binding RealName}" Width="172" VerticalAlignment="Top" Height="33" Foreground="#FF8F8F8F"/>
+                        <TextBlock HorizontalAlignment="Left" x:Name="label_Copy1" Text="{Binding More}" TextWrapping="Wrap"  VerticalAlignment="Top" Height="124" Foreground="#FF8F8F8F" Width="408" Margin="5,0,0,0"/>
+                     
+                    </StackPanel>
+                    <StackPanel VerticalAlignment="Bottom">
+
+                        <Button x:Name="but44on" Visibility="{Binding Visible}" Style="{StaticResource XButtonStyle}" Content="Edit as admin" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="145,0,0,0" >
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                        </Button>
+                        <Button x:Name="button" Style="{StaticResource XButtonStyle}" Content="Edit Profile" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="145,0,0,0" >
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                        </Button>
+                        
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label HorizontalAlignment="Left"  x:Name="ael" Margin="30 100 0 0" Content="Games:"  Foreground="White" VerticalAlignment="Top" FontSize="24" Width="100" Height="39"/>
+                        <StackPanel Height="532" Margin="30,10,0,100" HorizontalAlignment="Left" Width="700" Background="#FF1C171F">
+
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <Button x:Name="buton" Style="{StaticResource XButtonStyle}" Content="Friends" HorizontalAlignment="Right"  Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="68,148 0,0" >
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                        </Button>
+                        <Button x:Name="butn" Command="{Binding Logout}" Style="{StaticResource XButtonStyle}" Margin="0 10 00 0" Content="Log out" HorizontalAlignment="Right"  Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18"  >
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
+              
+            </StackPanel>
+        </ScrollViewer>
+
     </Grid>
 </UserControl>

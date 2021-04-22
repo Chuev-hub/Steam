@@ -20,10 +20,14 @@ namespace Steam.Infrastructure
         const string baseUrl = "https://store.steampowered.com/api/appdetails?appids=";
         const string fileName = "games.json";
         static WebClient webClient = new WebClient();
+<<<<<<< HEAD
+        static SteamContext sc = new SteamContext();
+=======
 
         static ScreenshotRepository sr = new ScreenshotRepository(new SteamContext());
         static DeveloperRepository dr = new DeveloperRepository(new SteamContext());
         static GenreRepository gr = new GenreRepository(new SteamContext());
+>>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
         public static void CheckData()
         {
             if (!File.Exists(fileName) || File.ReadAllText(fileName).Length == 0)
@@ -35,15 +39,13 @@ namespace Steam.Infrastructure
         public static List<Game> GetAndSaveGamesByList(List<string> names)
         {
             CheckData();
-            GameRepository gr = new GameRepository(new SteamContext());
             List<Game> games = new List<Game>();
             foreach (string name in names)
             {
                 Game game = GetGameById(GetGameId(name));
-                games.Add(game);
-                gr.CreateOrUpdate(game);
+                sc.Game.Add(game);
+                sc.SaveChanges();
             }
-            gr.SaveChanges();
             return games;
         }
         public static int GetGameId(string name)
@@ -60,11 +62,44 @@ namespace Steam.Infrastructure
                 Game game = new Game();
                 data = (JObject)data[id.ToString()]["data"];
                 game.GameName = data["name"].ToString();
-                game.GameInfo = data["about_the_game"].ToString();
-                game.Description = data["detailed_description"].ToString();
+                game.GameInfo = RefactoringHtmlString(data["about_the_game"].ToString());
+                game.Description = RefactoringHtmlString(data["detailed_description"].ToString());
                 game.HeaderImageURL = data["header_image"].ToString();
-                game.Requirements = GetRequirements(data["pc_requirements"]["minimum"].ToString());
+                game.Requirements = RefactoringHtmlString(data["pc_requirements"]["minimum"].ToString());
                 game.RealeaseDate = data["release_date"]["date"].ToString();
+<<<<<<< HEAD
+                List<Genre> genres = sc.Genres.ToList();
+                foreach (JObject obj in data["genres"])
+                {
+                    if (genres.Where(x => x.GenreName == obj["description"].ToString()).Count() > 0)
+                        foreach (Genre g in genres.Where(x => x.GenreName == obj["description"].ToString()).ToList())
+                            game.Genres.Add(g);
+                    else
+                        game.Genres.Add(new Genre() { GenreName = obj["description"].ToString() });
+                }
+                List<Developer> developers = sc.Developers.ToList();
+                if(data["developers"] != null)
+                    foreach (JValue obj in data["developers"])
+                    {
+                        if (developers.Where(x => x.DeveloperName == obj.ToString()).Count() > 0)
+                            foreach (Developer d in developers.Where(x => x.DeveloperName == obj.ToString()).ToList())
+                                game.Developers.Add(d);
+                        else
+                            game.Developers.Add(new Developer() { DeveloperName = obj.ToString() });
+                    }
+                int i = 0;
+                List<Screenshot> screenshots = sc.Screenshots.ToList();
+                foreach (JObject obj in data["screenshots"])
+                {
+                    if (screenshots.Where(x => x.ScreenshotURL == obj.ToString()).Count() > 0)
+                        foreach (Screenshot s in screenshots.Where(x => x.ScreenshotURL == obj.ToString()).ToList())
+                            game.Screenshots.Add(s);
+                    else
+                        game.Screenshots.Add(new Screenshot() { ScreenshotURL = obj["path_thumbnail"].ToString() });
+                    i++;
+                    if (i == 5)
+                        break;
+=======
                 List<Genre> genres = gr.GetAll().ToList();
                 foreach (JObject obj in data["genres"])
                 {
@@ -73,6 +108,7 @@ namespace Steam.Infrastructure
                             game.Genres.Add(g);
                     else
                         game.Genres.Add(new Genre() { GenreName = obj["description"].ToString() });
+>>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
                 }
                 genres.Clear();
                 //List<Developer> developers = dr.GetAll().ToList();
@@ -137,6 +173,13 @@ namespace Steam.Infrastructure
             foreach (string s in list)
                 str += s + "\n";    
             return str;
+        }
+        static string RefactoringHtmlString(string description)
+        {
+            if (!description.Contains("<"))
+                return description;
+            else
+                return HtmlUtilities.ConvertToPlainText(description);
         }
     }
 }

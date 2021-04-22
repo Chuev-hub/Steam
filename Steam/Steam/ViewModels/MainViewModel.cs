@@ -6,6 +6,7 @@ using Steam.Views.MainViewClilds;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace Steam.ViewModels
 {
     class MainViewModel : BaseNotifyPropertyChanged, INavigate
     {
+
         public string Login
         {
             get => Account.CurrentAccount.ProfileName;
@@ -37,6 +39,11 @@ namespace Steam.ViewModels
         public MainViewModel(AccountService accountService)
         {
             InitCommands();
+<<<<<<< HEAD
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
+            SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
+
+=======
             Switcher.ContentArea = this;
             Switcher.Switch(new ShopView());
            
@@ -45,6 +52,7 @@ namespace Steam.ViewModels
             //    //"The Witcher 3: Wild Hunt",
             //    "Trove"
             //});
+>>>>>>> b4fc2f812742ce4ef08a8d75df7a4a26067b8e91
         }
         public void InitCommands()
         {
@@ -65,6 +73,10 @@ namespace Steam.ViewModels
                 ChatView chatView = new ChatView();
                 chatView.Show();
             });
+            FSCommand = new RelayCommand(x =>
+            {
+                FullScreen();
+            });
 
         }
 
@@ -77,5 +89,15 @@ namespace Steam.ViewModels
         public ICommand ShopCommand { get; private set; }
         public ICommand ProfileCommand { get; private set; }
         public ICommand ChatCommand { get; private set; }
+        public ICommand FSCommand { get; private set; }
+        bool isFullScreen;
+        void FullScreen()
+        {
+            if (!isFullScreen)
+                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+            else
+                Application.Current.MainWindow.WindowState = WindowState.Normal;
+            isFullScreen = !isFullScreen;
+        }
     }
 }
