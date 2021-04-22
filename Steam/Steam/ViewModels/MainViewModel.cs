@@ -22,10 +22,10 @@ namespace Steam.ViewModels
         public MainViewModel(AccountService accountService)
         {
             InitCommands();
-            //SteamClient.GetAndSaveGamesByList(new List<string>()
-            //{
-            //    "The Witcher 3: Wild Hunt"
-            //});
+            SteamClient.GetAndSaveGamesByList(new List<string>()
+            {
+                "The Witcher 3: Wild Hunt"
+            });
         }
         public void InitCommands()
         {
