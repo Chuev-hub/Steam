@@ -65,19 +65,19 @@
                 </Grid.Background>
 
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                    <Button Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="30,0,0,0">
+                    <Button Command="{Binding ShopCommand}" Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="30,0,0,0">
                         <Button.BorderBrush>
                             <SolidColorBrush Color="#FF707070" Opacity="0"/>
                         </Button.BorderBrush>
                         SHOP
                     </Button>
-                    <Button Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
+                    <Button Command="{Binding LibraryCommand}" Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
                         <Button.BorderBrush>
                             <SolidColorBrush Color="#FF707070" Opacity="0"/>
                         </Button.BorderBrush>
                         LIBRARY
                     </Button>
-                    <Button Content="{Binding Login}" Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
+                    <Button Command="{Binding ProfileCommand}" Content="{Binding Login}" Style="{StaticResource XButtonStyle}" Background="{x:Null}" Foreground="#FFC8D0DC" FontSize="20" Margin="10,0,0,0">
                         <Button.BorderBrush>
                             <SolidColorBrush Color="#FF707070" Opacity="0"/>
                         </Button.BorderBrush>
@@ -101,7 +101,7 @@
             </Grid>
             <UserControl  Grid.Row="1" Content="{Binding CurrentView}" Background="#FF1A415D" Loaded="UserControl_Loaded"/>
             <Grid Grid.Row="2" Background="#FF2A2E33">
-                <Button Background="{x:Null}" Style="{StaticResource XButtonStyle}" HorizontalAlignment="Right" Foreground="#FFC8D0DC" FontSize="14" Margin="0,0,20,0">
+                <Button Command="{Binding ChatCommand}" Background="{x:Null}" Style="{StaticResource XButtonStyle}" HorizontalAlignment="Right" Foreground="#FFC8D0DC" FontSize="14" Margin="0,0,20,0">
                     <Button.BorderBrush>
                         <SolidColorBrush Color="#FF707070" Opacity="0"/>
                     </Button.BorderBrush>

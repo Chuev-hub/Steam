@@ -44,12 +44,12 @@ namespace Steam.DAL.Context
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Chats)
                 .WithMany(e => e.Accounts)
-                .Map(m => m.ToTable("AccountsInChats").MapLeftKey("AccountId").MapRightKey("ChatId"));
+                .Map(m => m.ToTable("ChatsInAccounts").MapLeftKey("ChatId").MapRightKey("AccountId"));
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Accounts)
-                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("AccountId").MapRightKey("GameId"));
+                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("GameId").MapRightKey("AccountId"));
 
             modelBuilder.Entity<Chat>()
                 .HasMany(e => e.Messages)
@@ -59,17 +59,17 @@ namespace Steam.DAL.Context
             modelBuilder.Entity<Developer>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Developers)
-                .Map(m => m.ToTable("DevelopersInGames").MapLeftKey("GameId").MapRightKey("DeveloperId"));
+                .Map(m => m.ToTable("DevelopersInGames").MapLeftKey("DeveloperId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Genre>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Genres)
-                .Map(m => m.ToTable("GenresInGames").MapLeftKey("GameId").MapRightKey("GenreId"));
+                .Map(m => m.ToTable("GenresInGames").MapLeftKey("GenreId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Screenshot>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Screenshots)
-                .Map(m => m.ToTable("ScreenshotsInGames").MapLeftKey("GameId").MapRightKey("ScreenshotId"));
+                .Map(m => m.ToTable("ScreenshotsInGames").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
 
         }
     }

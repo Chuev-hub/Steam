@@ -9,6 +9,6 @@ namespace Steam.Infrastructure
 {
     public static class Account
     {
-        public static AccountDTO CurrentAccount { get; set; }
+        public static AccountDTO CurrentAccount { get; set; } = new AccountDTO() { Login = "System", Email = "System", ProfileName = "System", PassHash = "System" };
     }
 }
