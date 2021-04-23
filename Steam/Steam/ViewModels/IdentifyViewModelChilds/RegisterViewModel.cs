@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿
+using GalaSoft.MvvmLight.Command;
 using Steam.BLL.DTO;
 using Steam.BLL.Services;
 using Steam.DAL.Repositories;
