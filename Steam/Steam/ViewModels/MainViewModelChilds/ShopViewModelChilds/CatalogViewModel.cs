@@ -34,7 +34,6 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
 
         private void InitCommands()
         {
-            
             Prev = new RelayCommand(x => {
 
                 if (Games.Count > 0)
@@ -45,6 +44,7 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
                 }
             });
             Next = new RelayCommand(x => {
+
 
                 if (Games.Count > 0)
                 {

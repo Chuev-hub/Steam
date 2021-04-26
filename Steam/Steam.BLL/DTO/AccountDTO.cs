@@ -18,6 +18,6 @@ namespace Steam.BLL.DTO
         public string More { get; set; }
         public bool IsAdmin { get; set; }
         public byte [] Avatar { get; set; }
-
+        public virtual ICollection<GameDTO> Games { get; set; }
     }
 }

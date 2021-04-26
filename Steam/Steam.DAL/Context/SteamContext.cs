@@ -45,12 +45,12 @@ namespace Steam.DAL.Context
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Chats)
                 .WithMany(e => e.Accounts)
-                .Map(m => m.ToTable("ChatsInAccounts").MapLeftKey("ChatId").MapRightKey("AccountId"));
+                .Map(m => m.ToTable("ChatsInAccounts").MapLeftKey("AccountId").MapRightKey("ChatId"));
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Accounts)
-                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("GameId").MapRightKey("AccountId"));
+                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("AccountId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Chat>()
                 .HasMany(e => e.Messages)

@@ -17,5 +17,6 @@ namespace Steam.BLL.DTO
         public string RealeaseDate { get; set; }
         public string Currency { get; set; }
         public decimal Price { get; set; }
+        public List<ScreenshotDTO> Screenshots { get; set; }
     }
 }

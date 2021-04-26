@@ -1,4 +1,5 @@
-﻿using Steam.BLL.DTO;
+﻿using CsQuery.ExtensionMethods.Internal;
+using Steam.BLL.DTO;
 using Steam.BLL.Services;
 using Steam.Infrastructure;
 using System;
@@ -15,14 +16,8 @@ namespace Steam.ViewModels.MainViewModelChilds
         GameService gameService;
         public LibraryViewModel(GameService gameService)
         {
-            //gameService.GetAll().Where(x => x.)
-            //Account.CurrentAccount.AccountId;
-            //this.gameService = gameService;
-            //foreach (var item in gameService.GetAll())
-            //{
-            //    Games.Add(item);
-            //}
-            
+            this.gameService = gameService;
+            Games.AddRange(Account.CurrentAccount.Games);
         }
         public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
     }
