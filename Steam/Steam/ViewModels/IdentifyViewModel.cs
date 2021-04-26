@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace Steam.ViewModels
 {
@@ -25,8 +26,16 @@ namespace Steam.ViewModels
             }
         }
         AccountService accountService;
+        public ICommand CloseCommand { get; private set; }
         public IdetifyViewModel(AccountService d)
         {
+            SetStyles();
+            InitCommand();
+            if(!File.Exists("firstStart.txt"))
+            {
+                Task.Run(() => d.GetAll());
+                File.Create("firstStart.txt");
+            }
             accountService = d;
             Switcher.ContentArea = this;
             Switcher.Switch(new LoginView());
@@ -42,9 +51,26 @@ namespace Steam.ViewModels
                     ainWindow.Close();
                 }
             }
-           
         }
 
+        private void InitCommand()
+        {
+            CloseCommand = new RelayCommand(x =>
+            {
+                Window window = x as Window;
+                window.Close();
+            });
+        }
+
+        void SetStyles()
+        {
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Environment.CurrentDirectory)) + "\\Styles";
+            if (Directory.Exists(path))
+            {
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri(path + "\\MouseEnterStyle.xaml") });
+            }
+        }
         public void Navigate(UserControl page)
         {
             Current = page;

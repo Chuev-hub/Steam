@@ -15,12 +15,10 @@ A Plague Tale: Innocence
 Metro Exodus
 POPULATION: ONE
 Spiritfarer
-Rust
 TerraTech
 Dead Rising 3
 ASTRONEER
 Green Hell
-Pummel Party
 Pummel Party
 Tropico 6
 Devil May Cry 5
@@ -43,10 +41,8 @@ Blood of Steel
 Stronghold Crusader HD
 Cities: Skylines
 Tabletop Simulator
-Destiny 2
 BeamNG.drive
 Teardown
-DayZ
 Total War: WARHAMMER II
 Stronghold: Warlords
 Frostpunk
