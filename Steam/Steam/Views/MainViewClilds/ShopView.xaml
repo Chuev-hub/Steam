@@ -44,7 +44,9 @@
                     </Grid>
                 </Border>
             </StackPanel>
-            <UserControl Content="{Binding CurrentView}"></UserControl>
+            <StackPanel>
+                <UserControl Content="{Binding CurrentView}"></UserControl>
+            </StackPanel>
         </Grid>
     </ScrollViewer>
 </UserControl>
