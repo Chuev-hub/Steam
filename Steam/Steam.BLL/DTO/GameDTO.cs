@@ -15,5 +15,7 @@ namespace Steam.BLL.DTO
         public string HeaderImageURL { get; set; }
         public string Requirements { get; set; }
         public string RealeaseDate { get; set; }
+        public string Currency { get; set; }
+        public decimal Price { get; set; }
     }
 }

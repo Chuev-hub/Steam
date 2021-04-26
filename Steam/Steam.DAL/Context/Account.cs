@@ -18,6 +18,7 @@ namespace Steam.DAL.Context
             LeftComments = new HashSet<ProfileComment>();
         }
 
+
         [Key]
         public int AccountId { get; set; }
         [Required]
@@ -39,6 +40,8 @@ namespace Steam.DAL.Context
 
         [StringLength(1024)]
         public string More { get; set; }
+
+        public byte[] Avatar { get; set; }
 
         public bool IsAdmin { get; set; }
 

@@ -17,7 +17,7 @@ namespace Steam.BLL.DTO
         public string Country { get; set; }
         public string More { get; set; }
         public bool IsAdmin { get; set; }
-
+        public byte [] Avatar { get; set; }
 
     }
 }

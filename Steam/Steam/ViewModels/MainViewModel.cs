@@ -44,7 +44,7 @@ namespace Steam.ViewModels
             string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
 
             //Долго запускается
-            //SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
+            SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
 
             Switcher.ContentArea = this;
             Switcher.Switch(new ShopView());
