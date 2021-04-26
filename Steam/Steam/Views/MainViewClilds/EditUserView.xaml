@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Steam.Views.MainViewClilds.EditUserView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Steam.Views.MainViewClilds"
+             mc:Ignorable="d" 
+                         d:DesignHeight="500" d:DesignWidth="1500"
+             DataContext="{Binding Source={StaticResource locator}, Path=EditUserViewModel}">
+
+    <UserControl.Resources>
+        <Style x:Key="XButtonStyle"
+           TargetType="{x:Type Button}">
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border"
+                    Background="{TemplateBinding Background}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter"
+                                Margin="{TemplateBinding Padding}"
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                Focusable="False"
+                                RecognizesAccessKey="True"
+                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="{Binding Logo}"/>
+        </Grid.Background>
+        <ScrollViewer>
+
+            <StackPanel HorizontalAlignment="Center" Width="1000" >
+                <StackPanel.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FF242834"/>
+                        <GradientStop Color="#FF2D232F" Offset="1"/>
+                    </RadialGradientBrush>
+                </StackPanel.Background>
+                <StackPanel Width="300" Margin="0 30 0 0">
+                    <Label FontSize="14" Foreground="#FFFEFFEB" >Email
+
+                    </Label>
+                    <TextBox Text="{Binding Email}" BorderThickness="0" Background="#FF2A2E33" Foreground="#FFDCDCDA"></TextBox>
+                    <Label  FontSize="14" Foreground="#FFFEFFEB" >
+                        ProfileName
+                    </Label>
+                    <TextBox Text="{Binding ProfileName}" BorderThickness="0" Background="#FF2A2E33" Foreground="#FFDCDCDA"></TextBox>
+                    <Label FontSize="14" Foreground="#FFFEFFEB"  >
+                        RealName
+                    </Label>
+                    <TextBox  Text="{Binding RealName}" BorderThickness="0" Background="#FF2A2E33" Foreground="#FFDCDCDA" IsReadOnly="False"></TextBox>
+                    <Label  FontSize="14" Foreground="#FFFEFFEB" >
+                        Country
+                    </Label>
+                    <TextBox Text="{Binding Country}" BorderThickness="0" Background="#FF2A2E33" Foreground="#FFDCDCDA"></TextBox>
+                    <Label  FontSize="14" Foreground="#FFFEFFEB" >
+                        More
+                    </Label>
+                    <TextBox AcceptsReturn="True"  Text="{Binding More}" TextWrapping="Wrap"  Background="#FF2A2E33" Height="120" Foreground="#FFDCDCDA" AutomationProperties.HelpText="xxx"/>
+
+                    <Label  Content="{Binding AvatarPath}" Foreground="#FFBBBBBB" Height="30"></Label>
+                    <Button Command="{Binding ChangePicture}" Margin="146,0,0,10" Foreground="LightGray" Background="#FF2B3444">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush> Change pictre
+                    </Button>
+
+                    <StackPanel VerticalAlignment="Bottom">
+                        <Button Command="{Binding Save}" x:Name="button" Style="{StaticResource XButtonStyle}" Content="Save edits" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18"  >
+                            <Button.BorderBrush>
+                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                            </Button.BorderBrush>
+                        </Button>
+
+                    </StackPanel>
+                </StackPanel>
+
+
+            </StackPanel>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>

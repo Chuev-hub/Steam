@@ -55,9 +55,9 @@
                     </RadialGradientBrush>
                 </StackPanel.Background>
                 <StackPanel Orientation="Horizontal">
-                    <Image x:Name="image" HorizontalAlignment="Left" Height="193" Margin="34,37,0,0" VerticalAlignment="Top" Width="211" Source="Image2.png" Stretch="Fill">
+                    <Image x:Name="image" Source="{Binding Avatar}"  HorizontalAlignment="Left" Height="193" Margin="34,37,0,0" VerticalAlignment="Top" Width="211"  Stretch="Fill">
                         <Image.OpacityMask>
-                            <ImageBrush ImageSource="Image1.png" Stretch="None"/>
+                            <ImageBrush ImageSource="{Binding Avatar}" Stretch="None"/>
                         </Image.OpacityMask>
                     </Image>
                     <StackPanel  HorizontalAlignment="Left" Margin="16 40 0 0">
@@ -73,7 +73,7 @@
                                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
                             </Button.BorderBrush>
                         </Button>
-                        <Button x:Name="button" Style="{StaticResource XButtonStyle}" Content="Edit Profile" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="145,0,0,0" >
+                        <Button x:Name="button" Command="{Binding Edit}" Style="{StaticResource XButtonStyle}" Content="Edit Profile" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="145,0,0,0" >
                             <Button.BorderBrush>
                                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
                             </Button.BorderBrush>

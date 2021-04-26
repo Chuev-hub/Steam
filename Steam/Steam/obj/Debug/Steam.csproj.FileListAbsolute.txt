@@ -160,3 +160,5 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompileInputs.
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\EditUserView.g.cs
+C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\EditUserView.baml

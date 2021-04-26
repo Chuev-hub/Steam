@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\chuev\Steam\Steam\Steam\Steam\App.xaml
-111269700077
+12-1228355966
 
-35-489123835
-13699763403
-Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
+371176784086
+138-1292217487
+Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\EditUserView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
 
 True
 

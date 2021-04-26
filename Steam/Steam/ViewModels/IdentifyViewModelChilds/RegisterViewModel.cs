@@ -7,6 +7,7 @@ using Steam.Infrastructure;
 using Steam.Views.IdentifyViewChilds;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -97,12 +98,18 @@ namespace Steam.ViewModels
                     {
                         if (accountService.GetAll().ToList().Where(x => x.Login == Name).FirstOrDefault() == null)
                         {
+                            System.Drawing.Image ImageFromFile = System.Drawing.Image.FromFile(Environment.CurrentDirectory+"\\Images\\default-user-image.png");
+                            Bitmap bmp = new Bitmap(ImageFromFile);
+
+                            ImageConverter converter = new ImageConverter();
+                            byte[] ImageInArray = (byte[])converter.ConvertTo(bmp, typeof(byte[]));
                             accountService.CreateOrUpdate(new AccountDTO()
                             {
                                 Email = Mail,
                                 Login = Name,
                                 ProfileName = Name,
-                                PassHash = password
+                                PassHash = password,
+                                Avatar = ImageInArray
                             });
                             a = true;
                         }

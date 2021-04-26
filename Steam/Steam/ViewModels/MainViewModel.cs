@@ -21,7 +21,7 @@ namespace Steam.ViewModels
 
         public string Login
         {
-            get => Account.CurrentAccount.ProfileName;
+            get => Account.CurrentAccount.Login;
         }
         UserControl currentView;
         public UserControl CurrentView
