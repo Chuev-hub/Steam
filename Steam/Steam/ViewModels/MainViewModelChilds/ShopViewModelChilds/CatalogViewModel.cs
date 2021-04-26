@@ -37,16 +37,19 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
             
             Prev = new RelayCommand(x => {
 
-                if (Games.Count > 0 &&  gamePos == 0)
+                if (Games.Count > 0 && gamePos == 0)
+                {
                     gamePos = Games.Count;
                     CurGame = Games[--gamePos];
-
+                }
             });
             Next = new RelayCommand(x => {
 
                 if (Games.Count > 0 && gamePos == Games.Count - 1)
+                {
                     gamePos = -1;
                     CurGame = Games[++gamePos];
+                }
 
             });
             Game = new RelayCommand(x => {
