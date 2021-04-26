@@ -37,15 +37,16 @@ namespace Steam.ViewModels
             }
         }
         public UserControl LibraryView { get; set; }
-        public MainViewModel(AccountService accountService)
+        public MainViewModel(AccountService accountService, GenreService gs)
         {
             InitCommands();
 
             string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
 
             //Долго запускается
-            SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
-
+            int count = gs.GetAll().Count();
+            if (count <= 0 || count < File.ReadAllLines(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\names.txt").Length)
+                SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
             Switcher.ContentArea = this;
             Switcher.Switch(new ShopView());
        
