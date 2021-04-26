@@ -6,21 +6,21 @@
              xmlns:local="clr-namespace:Steam.Views.MainViewClilds"
              mc:Ignorable="d" 
              d:DesignHeight="450" 
-        DataContext="{Binding Source={StaticResource locator}, Path=ShopViewModel}" Width="1000">
+        DataContext="{Binding Source={StaticResource locator}, Path=ShopViewModel}">
     <ScrollViewer VerticalScrollBarVisibility = "Auto">
-        <StackPanel HorizontalAlignment="Center" Width="1000">
-            <StackPanel.Background>
+        <Grid MinWidth="1000">
+            <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF184557" Offset="0"/>
+                    <GradientStop Color="#FF0E4257" Offset="0"/>
                     <GradientStop Color="#FF1B2838" Offset="1"/>
                 </LinearGradientBrush>
-            </StackPanel.Background>
-            <StackPanel>
-                <Button Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,10,10,0"/>
-                <Border Margin="10,5,10,5" Height="40">
+            </Grid.Background>
+            <StackPanel Width="1000">
+                <Button Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0"/>
+                <Border Margin="25,5,25,5" Height="40">
                     <Border.Background>
                         <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
-                            <GradientStop Color="#FF3B6490" Offset="0"/>
+                            <GradientStop Color="#FF2C5B8D" Offset="0"/>
                             <GradientStop Color="#FF0F216E" Offset="1"/>
                         </LinearGradientBrush>
                     </Border.Background>
@@ -31,38 +31,20 @@
                             <ColumnDefinition></ColumnDefinition>
                             <ColumnDefinition></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Button Background="Transparent" BorderThickness="0">
+                        <Button Background="Transparent" BorderThickness="0" Command="{Binding Catalog}">
                             <TextBlock Text="Ваш магазин" FontWeight="Bold" Foreground="#FFDEDEDE"></TextBlock>
                         </Button>
                         <Border CornerRadius="5" Background="Black" Grid.Column="4" Margin="7">
-                            <TextBox SelectedText="Поиск" FontStyle="Italic" Background="#FF316282" />
+                            <TextBox Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" FontStyle="Italic" Background="#FF316282" FontSize="16" >
+                                <TextBox.InputBindings>
+                                    <KeyBinding Key="Enter" Command="{Binding Search}"></KeyBinding>
+                                </TextBox.InputBindings>
+                            </TextBox>
                         </Border>
                     </Grid>
                 </Border>
             </StackPanel>
-            <StackPanel>
-                <TextBlock Margin="10,0,0,0" Foreground="White">ПОПУЛЯРНОЕ И РЕКОМЕНДУЕМОЕ</TextBlock>
-                <Grid Margin="10" Height="300">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1.2*"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                <Image Stretch="Fill"  Source="{Binding CurGame.HeaderImageURL}"></Image>
-                <StackPanel Grid.Column="1">
-                    <TextBlock HorizontalAlignment="Center" Text="{Binding CurGame.GameName}"></TextBlock>
-                    <TextBlock HorizontalAlignment="Center" Text="{Binding CurGame.GameInfo}" TextWrapping="Wrap"></TextBlock>
-                </StackPanel>
-                </Grid>
-            </StackPanel>
-            <Grid Margin="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <Button Command="{Binding Prev}">PREV</Button>
-                <Button Command="{Binding Next}" Grid.Column="1">NEXT</Button>
-            </Grid>
-
-        </StackPanel>
+            <UserControl Content="{Binding CurrentView}"></UserControl>
+        </Grid>
     </ScrollViewer>
 </UserControl>

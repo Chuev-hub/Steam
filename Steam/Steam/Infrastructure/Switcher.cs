@@ -14,5 +14,11 @@ namespace Steam.Infrastructure
         {
             ContentArea.Navigate(page);
         }
+
+        public static INavigate ContentAreaShop { get; set; }
+        public static void SwitchShop(UserControl page)
+        {
+            ContentAreaShop.Navigate(page);
+        }
     }
 }

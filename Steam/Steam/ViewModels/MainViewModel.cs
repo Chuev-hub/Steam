@@ -24,7 +24,8 @@ namespace Steam.ViewModels
             get => Account.CurrentAccount.ProfileName;
         }
         UserControl currentView;
-        public UserControl CurrentView { 
+        public UserControl CurrentView
+        {
             get
             {
                 return currentView;

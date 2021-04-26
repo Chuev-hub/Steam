@@ -73,3 +73,9 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.Cor
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\SearchView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\SearchView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\CatalogView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\CatalogView.baml
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\GameView.g.cs
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\GameView.baml
