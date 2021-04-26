@@ -2,6 +2,7 @@
 using Steam.BLL.Modules;
 using Steam.ViewModels;
 using Steam.ViewModels.MainViewModelChilds;
+using Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,5 +28,8 @@ namespace Steam.Infrastructure
         public ShopViewModel ShopViewModel => kernel.Get<ShopViewModel>(); 
         public ProfileViewModel ProfileViewModel => kernel.Get<ProfileViewModel>(); 
         public LibraryViewModel LibraryViewModel => kernel.Get<LibraryViewModel>(); 
+        public SearchViewModel SearchViewModel => kernel.Get<SearchViewModel>(); 
+        public CatalogViewModel CatalogViewModel => kernel.Get<CatalogViewModel>(); 
+        public GameViewModel GameViewModel => kernel.Get<GameViewModel>(); 
     }
 }

@@ -1,54 +1,76 @@
-﻿using Steam.BLL.DTO;
+﻿using CsQuery.ExtensionMethods.Internal;
+using Steam.BLL.DTO;
 using Steam.BLL.Services;
 using Steam.Infrastructure;
+using Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds;
+using Steam.Views.MainViewClilds.ShopViewChilds;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace Steam.ViewModels.MainViewModelChilds
 {
-    class ShopViewModel : BaseNotifyPropertyChanged
+    class ShopViewModel : BaseNotifyPropertyChanged, INavigate
     {
+        
+        string searchText;
+        public string SearchText { get { return searchText; } set { searchText = value; Notify(); } }
         GameService gs;
-        GameDTO curGame;
-        int gamePos = 0;
-        public GameDTO CurGame { get { return curGame; } set { curGame = value; Notify(); } }
         public ShopViewModel(GameService gameService)
         {
-            InitCommands();
+            Switcher.ContentAreaShop = this;
             gs = gameService;
-            foreach (var item in gs.GetAll())
-            {
-                Games.Add(item);
-            }
-            CurGame = Games[gamePos];
-
+            InitCommands();
+            Catalog.Execute(this);
         }
 
         private void InitCommands()
         {
-            Prev = new RelayCommand(x => {
+            Search = new RelayCommand(x =>
+            {
+                var SV = new SearchView();
+                (SV.DataContext as SearchViewModel).SearchText = SearchText;
+                (SV.DataContext as SearchViewModel).Search.Execute(this);
+                CurrentView = SV;
 
-                if (gamePos == 0)
-                    gamePos = Games.Count;
-                CurGame = Games[--gamePos];
+            });
 
-            }); 
-            Next = new RelayCommand(x => {
-
-                if (gamePos == Games.Count-1)
-                    gamePos = -1;
-                CurGame = Games[++gamePos];
-
+            Catalog = new RelayCommand(x =>
+            {
+                CurrentView = new CatalogView();
             });
         }
 
-        public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
-        public ICommand Prev { get; set; }
-        public ICommand Next { get; set; }
+        public void Navigate(UserControl page)
+        {
+            CurrentView = page;
+        }
+
+        public ICommand Search { get; set; }
+        public ICommand Catalog { get; set; }
+
+
+
+        UserControl currentView;
+        public UserControl CurrentView
+        {
+            get
+            {
+                return currentView;
+            }
+            set
+            {
+                currentView = value;
+                Notify();
+            }
+        }
+
+        
     }
 }
