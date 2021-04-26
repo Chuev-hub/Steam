@@ -13,39 +13,6 @@
         CaptionHeight="0"
         ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
-    <Window.Resources>
-        <Style x:Key="XButtonStyle"
-           TargetType="{x:Type Button}">
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border"
-                    Background="{TemplateBinding Background}"
-                    BorderBrush="{TemplateBinding BorderBrush}"
-                    BorderThickness="{TemplateBinding BorderThickness}"
-                    SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter"
-                                Margin="{TemplateBinding Padding}"
-                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Focusable="False"
-                                RecognizesAccessKey="True"
-                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter TargetName="border" Property="BorderBrush" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}" />
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-    </Window.Resources>
     <Grid MouseLeftButtonDown="Grid_MouseLeftButtonDown">
         
         <Grid.Background>
@@ -67,7 +34,17 @@
                 </Label>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                <Button Content="X" Style="{StaticResource XButtonStyle}" HorizontalAlignment="Right"  Width="30" Height="30" Margin="0 0 10 0" Click="Button_Click" FontFamily="Microsoft Yi Baiti" FontSize="18" FontWeight="Bold" >
+                <Button Content="X"
+                        Style="{DynamicResource XButtonStyle}"
+                        HorizontalAlignment="Right"
+                        Width="30"
+                        Height="30"
+                        Margin="0 0 10 0" 
+                        Command="{Binding CloseCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                        FontFamily="Microsoft Yi Baiti"
+                        FontSize="18"
+                        FontWeight="Bold" >
                     <Button.Background>
                         <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
                     </Button.Background>
@@ -82,7 +59,7 @@
             </StackPanel>
         </Grid>
 
-        <ContentControl Grid.Row="1"  Content="{Binding Current}" Loaded="UserControl_Loaded"/>
+        <ContentControl Grid.Row="1"  Content="{Binding Current}"/>
     </Grid>
 
 </Window>

@@ -13,12 +13,13 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Steam.ViewModels
 {
     class MainViewModel : BaseNotifyPropertyChanged, INavigate
     {
-
+        string baseDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
         public string Login
         {
             get => Account.CurrentAccount.ProfileName;
@@ -37,19 +38,40 @@ namespace Steam.ViewModels
             }
         }
         public UserControl LibraryView { get; set; }
+        BitmapImage windowResizeImage;
+        public BitmapImage WindowResizeImage
+        {
+            get => windowResizeImage;
+            set
+            {
+                windowResizeImage = value;
+                Notify();
+            }
+        }
+
         public MainViewModel(AccountService accountService, GenreService gs)
         {
+            SetStyles();
             InitCommands();
 
-            string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
+            WindowResizeImage = new BitmapImage(new Uri(baseDirectory + "\\WindowResize.png"));
 
-            //Долго запускается
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
             int count = gs.GetAll().Count();
-            if (count <= 0 || count < File.ReadAllLines(Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory())) + "\\names.txt").Length)
+            if (count <= 0 || count < File.ReadAllLines(baseDirectory + "\\names.txt").Length)
                 SteamClient.GetAndSaveGamesByList(File.ReadAllLines(path + "\\names.txt").ToList());
             Switcher.ContentArea = this;
             Switcher.Switch(new ShopView());
        
+        }
+        void SetStyles()
+        {
+            string path = Path.GetDirectoryName(Path.GetDirectoryName(Environment.CurrentDirectory)) + "\\Styles";
+            if (Directory.Exists(path))
+            {
+                Application.Current.Resources.MergedDictionaries.Clear();
+                Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary() { Source = new Uri(path + "\\MouseEnterStyle.xaml") });
+            }
         }
         public void InitCommands()
         {
@@ -72,9 +94,13 @@ namespace Steam.ViewModels
             });
             FSCommand = new RelayCommand(x =>
             {
-                FullScreen();
+                FullScreen(x as Window);
             });
-
+            CloseCommand = new RelayCommand(x =>
+            {
+                Window window = x as Window;
+                window.Close();
+            });
         }
 
         public void Navigate(UserControl page)
@@ -87,13 +113,14 @@ namespace Steam.ViewModels
         public ICommand ProfileCommand { get; private set; }
         public ICommand ChatCommand { get; private set; }
         public ICommand FSCommand { get; private set; }
+        public ICommand CloseCommand { get; private set; }
         bool isFullScreen;
-        void FullScreen()
+        void FullScreen(Window mainView)
         {
             if (!isFullScreen)
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
+                mainView.WindowState = WindowState.Maximized;
             else
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
+                mainView.WindowState = WindowState.Normal;
             isFullScreen = !isFullScreen;
         }
     }

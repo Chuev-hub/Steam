@@ -219,7 +219,6 @@ C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\Sh
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\GameView.g.cs
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\Views\MainViewClilds\ShopViewChilds\SearchView.g.cs
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\App.g.cs
-C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.cache
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM_MarkupCompile.lref
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\App.baml
@@ -241,3 +240,5 @@ C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CoreCompil
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
+C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\Styles\MouseEnterStyle.baml
+C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\GeneratedInternalTypeHelper.g.cs
