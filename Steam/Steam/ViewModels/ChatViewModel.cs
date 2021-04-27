@@ -1,6 +1,8 @@
-﻿using Steam.Infrastructure;
+﻿using Steam.BLL.DTO;
+using Steam.Infrastructure;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -27,6 +29,16 @@ namespace Steam.ViewModels
                 Notify();
             }
         }
+        ObservableCollection<MessageDTO> messages;
+        public ObservableCollection<MessageDTO> Messages
+        {
+            get => messages;
+            set
+            {
+                messages = value;
+                Notify();
+            }
+        }
 
         public ChatViewModel()
         {
@@ -34,7 +46,11 @@ namespace Steam.ViewModels
             InitCommands();
             WindowResizeImage = new BitmapImage(new Uri(baseDirectory + "\\WindowResize.png"));
         }
-        public void InitCommands()
+        public void SetChat(ChatDTO chat)
+        {
+
+        }
+        void InitCommands()
         {
             CloseCommand = new RelayCommand(x =>
             {

@@ -8,7 +8,7 @@
              d:DesignHeight="450" 
         DataContext="{Binding Source={StaticResource locator}, Path=ShopViewModel}">
     <ScrollViewer VerticalScrollBarVisibility = "Auto">
-        <Grid MinWidth="1000">
+        <Grid >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF0E4257" Offset="0"/>
@@ -17,7 +17,7 @@
             </Grid.Background>
             <StackPanel Width="1000">
                 <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                    <Button Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0"/>
+                    <Button Command="{Binding Wishlist}" Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0"/>
                     <Button Command="{Binding Basket}" Content="КОРЗИНА" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0">
                         <Button.Background>
                             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -55,7 +55,7 @@
                 </Border>
             </StackPanel>
             <StackPanel>
-                <UserControl Content="{Binding CurrentView}"></UserControl>
+                <UserControl Content="{Binding CurrentView}" Loaded="UserControl_Loaded"></UserControl>
             </StackPanel>
         </Grid>
     </ScrollViewer>

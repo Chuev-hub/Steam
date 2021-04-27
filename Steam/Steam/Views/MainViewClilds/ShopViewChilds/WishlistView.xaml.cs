@@ -10,23 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Steam.Views
+namespace Steam.Views.MainViewClilds.ShopViewChilds
 {
     /// <summary>
-    /// Логика взаимодействия для ChatView.xaml
+    /// Логика взаимодействия для WishlistView.xaml
     /// </summary>
-    public partial class ChatView : Window
+    public partial class WishlistView : UserControl
     {
-        public ChatView()
+        public WishlistView()
         {
             InitializeComponent();
-        }
-
-        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
         }
     }
 }

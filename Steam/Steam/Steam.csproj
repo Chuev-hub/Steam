@@ -17,6 +17,21 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,6 +51,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
@@ -110,6 +130,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="ViewModels\ChatViewModel.cs" />
+    <Compile Include="ViewModels\FriendsViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\EditUserViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\LibraryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ProfileViewModel.cs" />
@@ -118,11 +139,15 @@
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\CatalogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\GameViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\SearchViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\WishlistViewModel.cs" />
     <Compile Include="Views\ChatView.xaml.cs">
       <DependentUpon>ChatView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainViewClilds\EditUserView.xaml.cs">
       <DependentUpon>EditUserView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FriendsView.xaml.cs">
+      <DependentUpon>FriendsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainViewClilds\LibraryView.xaml.cs">
       <DependentUpon>LibraryView.xaml</DependentUpon>
@@ -145,11 +170,18 @@
     <Compile Include="Views\MainViewClilds\ShopViewChilds\SearchView.xaml.cs">
       <DependentUpon>SearchView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\MainViewClilds\ShopViewChilds\WishlistView.xaml.cs">
+      <DependentUpon>WishlistView.xaml</DependentUpon>
+    </Compile>
     <Page Include="Styles\MouseEnterStyle.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\ChatView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\FriendsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +262,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\MainViewClilds\ShopViewChilds\WishlistView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -282,6 +318,18 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\MainViewClilds\Image2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

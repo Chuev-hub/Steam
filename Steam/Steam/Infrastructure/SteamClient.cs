@@ -24,6 +24,8 @@ namespace Steam.Infrastructure
 
         static SteamContext sc = new SteamContext();
 
+        static JObject obj;
+
         public static void CheckData()
         {
             if (!File.Exists(fileName) || File.ReadAllText(fileName).Length == 0)
@@ -35,6 +37,7 @@ namespace Steam.Infrastructure
         public static List<Game> GetAndSaveGamesByList(List<string> names)
         {
             CheckData();
+            obj = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(fileName)); 
             List<Game> games = sc.Game.ToList();
             for (int i = 0; i < names.Count; i++) 
             {
@@ -47,9 +50,6 @@ namespace Steam.Infrastructure
             }
             return games;
         }
-
-
-        static JObject obj = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(fileName));
         public static int GetGameId(string name)
         {            
             JArray array = (JArray)obj["apps"];

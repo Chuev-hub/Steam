@@ -9,21 +9,12 @@ Steam
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
-13-1772142840
+161771228174
 
-371217501907
-136-1775485942
-Styles\MouseEnterStyle.xaml;Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\BasketView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
-=======
-C:\Users\chuev\Steam\Steam\Steam\Steam\App.xaml
-12-1228355966
+43-620823043
+1381127500464
+Styles\MouseEnterStyle.xaml;Views\ChatView.xaml;Views\FriendsView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\EditUserView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\BasketView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;Views\MainViewClilds\ShopViewChilds\WishlistView.xaml;
 
-371176784086
-138-1292217487
-Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\EditUserView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
->>>>>>> editprofilewithoutpsw
-
-True
+False
 

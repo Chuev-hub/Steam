@@ -8,18 +8,20 @@
              d:DesignHeight="450" d:DesignWidth="1000"
              DataContext="{Binding Source= {StaticResource locator}, Path=GameViewModel}">
     <StackPanel Margin="25,80,25,10" MaxWidth="1000">
-        <Grid MaxHeight="450">
+        <Grid MaxHeight="470">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="6*"></ColumnDefinition>
                 <ColumnDefinition Width="4*"></ColumnDefinition>
             </Grid.ColumnDefinitions>
+            <StackPanel>
+                
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="7*"></RowDefinition>
                     <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
-                <Image Stretch="Fill" Source="{Binding SelectedScreenshot.ScreenshotURL}"></Image>
-                <ListView Grid.Row="1" Background="Transparent" ItemsSource="{Binding Game.Screenshots}" SelectedItem="{Binding SelectedScreenshot}" >
+                <Image Margin="5" Stretch="Fill" Source="{Binding SelectedScreenshot.ScreenshotURL}"></Image>
+                <ListView ScrollViewer.CanContentScroll="False" BorderThickness="0" Margin="5" Grid.Row="1" Background="Transparent" ItemsSource="{Binding Game.Screenshots}" SelectedItem="{Binding SelectedScreenshot}" >
                     <ListView.ItemsPanel>
                         <ItemsPanelTemplate>
                             <StackPanel Orientation="Horizontal"></StackPanel>
@@ -32,8 +34,10 @@
                     </ListView.ItemTemplate>
                 </ListView>
             </Grid>
+                 <Button Command="{Binding InWishlist}" HorizontalAlignment="Left" Height="25" Width="100" VerticalAlignment="Bottom" Background="#FF274257" Foreground="#FF53C1F5" FontSize="16">В желаемое</Button>
+            </StackPanel>
             <Grid Grid.Column="1">
-                <StackPanel>
+                <StackPanel Margin="5">
                     <Image Source="{Binding Game.HeaderImageURL}"></Image>
                     <TextBlock Text="{Binding Game.GameName}" HorizontalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="24" ></TextBlock>
                     <TextBlock Text="{Binding Game.GameInfo}"  Foreground="White" TextWrapping="Wrap"></TextBlock>
@@ -46,20 +50,25 @@
                     <TextBlock Foreground="White" Text="Купить " FontSize="24" />
                     <TextBlock Foreground="White" Text="{Binding Game.GameName}" FontSize="24" ></TextBlock>
                 </StackPanel>
-                
-                <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,-20" Background="Black" Width="200" Height="40">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
-                            <TextBlock HorizontalAlignment="Left" Foreground="#FFA5B1BA" Text="{Binding Game.Price}" ></TextBlock>
-                            <TextBlock HorizontalAlignment="Left" Foreground="#FFA5B1BA" Text="{Binding Game.Currency}" ></TextBlock>
-                        </StackPanel>
-                        <Button Grid.Column="1" Margin="5" Background="#FF72AC21" Foreground="#FFC2FFA5" FontSize="16" Command="{ Binding InBasket}">В корзину</Button>
-                    </Grid>
-                </Border>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+
+                    <Border HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,50,-20" Background="Black" Width="200" Height="40">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition></ColumnDefinition>
+                                <ColumnDefinition></ColumnDefinition>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+                                <TextBlock HorizontalAlignment="Left" Foreground="#FFA5B1BA" Text="{Binding Game.Price}" ></TextBlock>
+                                <TextBlock HorizontalAlignment="Left" Foreground="#FFA5B1BA" Text="{Binding Game.Currency}" ></TextBlock>
+                            </StackPanel>
+
+                            <Button Grid.Column="1" Margin="5" Background="#FF72AC21" Foreground="#FFC2FFA5" FontSize="16" Command="{ Binding InBasket}">В корзину</Button>
+                        </Grid>
+
+                    </Border>
+                </StackPanel>
             </Grid>
         </Border>
 
