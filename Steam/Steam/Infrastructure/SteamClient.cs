@@ -47,9 +47,11 @@ namespace Steam.Infrastructure
             }
             return games;
         }
+
+
+        static JObject obj = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(fileName));
         public static int GetGameId(string name)
         {            
-            JObject obj = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(fileName));
             JArray array = (JArray)obj["apps"];
             return Convert.ToInt32(array.Where(x => x["name"].ToString() == name).ToList()[0]["appid"]);
         }

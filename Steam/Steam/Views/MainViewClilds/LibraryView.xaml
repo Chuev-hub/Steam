@@ -18,8 +18,8 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding HeaderImageURL}" Width="10" Height="10"></Image>
-                            <TextBlock Text="{Binding GameName}"></TextBlock>
+                            <Image Source="{Binding HeaderImageURL}" Width="10"></Image>
+                            <TextBlock Margin="5,0,0,0" Foreground="White" Text="{Binding GameName}"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -16,7 +16,17 @@
                 </LinearGradientBrush>
             </Grid.Background>
             <StackPanel Width="1000">
-                <Button Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0"/>
+                <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                    <Button Content="СПИСОК ЖЕЛАЕМОГО" Background="#FFB6DEEA" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0"/>
+                    <Button Command="{Binding Basket}" Content="КОРЗИНА" Foreground="White" Width="200" HorizontalAlignment="Right" Margin="0,5,25,0">
+                        <Button.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#FF769602" Offset="0"/>
+                                <GradientStop Color="#FF658301" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Button.Background>
+                    </Button>
+                </StackPanel>
                 <Border Margin="25,5,25,5" Height="40">
                     <Border.Background>
                         <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
@@ -35,7 +45,7 @@
                             <TextBlock Text="Ваш магазин" FontWeight="Bold" Foreground="#FFDEDEDE"></TextBlock>
                         </Button>
                         <Border CornerRadius="5" Background="Black" Grid.Column="4" Margin="7">
-                            <TextBox Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" FontStyle="Italic" Background="#FF316282" FontSize="16" >
+                            <TextBox Foreground="White" Text="{Binding SearchText, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" FontStyle="Italic" Background="#FF316282" FontSize="16" >
                                 <TextBox.InputBindings>
                                     <KeyBinding Key="Enter" Command="{Binding Search}"></KeyBinding>
                                 </TextBox.InputBindings>

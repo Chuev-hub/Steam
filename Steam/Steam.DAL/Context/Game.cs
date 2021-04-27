@@ -30,7 +30,9 @@ namespace Steam.DAL.Context
         public string Currency { get; set; }
         public decimal Price { get; set; }
 
-        public virtual ICollection<Account> Accounts { get; set; } // 8
+        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<Account> InTheBasket { get; set; }
+        public virtual ICollection<Account> TnTheDesired { get; set; }
         public virtual ICollection<Screenshot> Screenshots { get; set; }
 
         public virtual ICollection<Genre> Genres { get; set; }

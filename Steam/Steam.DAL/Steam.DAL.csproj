@@ -60,15 +60,6 @@
     <Compile Include="Context\ProfileComment.cs" />
     <Compile Include="Context\Screenshot.cs" />
     <Compile Include="Context\SteamContext.cs" />
-    <Compile Include="Migrations\202104261352129_InitialCreate.cs" />
-    <Compile Include="Migrations\202104261352129_InitialCreate.designer.cs">
-      <DependentUpon>202104261352129_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104261716533_RenameDB.cs" />
-    <Compile Include="Migrations\202104261716533_RenameDB.designer.cs">
-      <DependentUpon>202104261716533_RenameDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\ChatRepository.cs" />
@@ -84,14 +75,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\202104261352129_InitialCreate.resx">
-      <DependentUpon>202104261352129_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104261716533_RenameDB.resx">
-      <DependentUpon>202104261716533_RenameDB.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

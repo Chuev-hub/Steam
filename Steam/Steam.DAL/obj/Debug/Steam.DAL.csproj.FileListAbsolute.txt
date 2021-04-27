@@ -10,6 +10,3 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.Migrations.InitialCreate.resources
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.GenerateResource.cache
-D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.Migrations.RenameDB.resources

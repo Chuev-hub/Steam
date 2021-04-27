@@ -15,6 +15,7 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
 {
     class SearchViewModel : BaseNotifyPropertyChanged
     {
+        public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
         string searchText;
         public string SearchText
         {
@@ -79,6 +80,6 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
             } 
         }
         public ICommand Search { get; set; }
-        public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
+        
     }
 }

@@ -45,6 +45,10 @@ namespace Steam.ViewModels.MainViewModelChilds
             {
                 CurrentView = new CatalogView();
             });
+            Basket = new RelayCommand(x =>
+            {
+                CurrentView = new BasketView();
+            });
         }
 
         public void Navigate(UserControl page)
@@ -54,6 +58,7 @@ namespace Steam.ViewModels.MainViewModelChilds
 
         public ICommand Search { get; set; }
         public ICommand Catalog { get; set; }
+        public ICommand Basket { get; set; }
 
 
 

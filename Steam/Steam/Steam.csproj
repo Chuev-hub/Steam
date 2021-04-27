@@ -111,6 +111,7 @@
     <Compile Include="ViewModels\MainViewModelChilds\LibraryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ProfileViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\BasketViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\CatalogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\GameViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\SearchViewModel.cs" />
@@ -125,6 +126,9 @@
     </Compile>
     <Compile Include="Views\MainViewClilds\ShopView.xaml.cs">
       <DependentUpon>ShopView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViewClilds\ShopViewChilds\BasketView.xaml.cs">
+      <DependentUpon>BasketView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\MainViewClilds\ShopViewChilds\CatalogView.xaml.cs">
       <DependentUpon>CatalogView.xaml</DependentUpon>
@@ -197,6 +201,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainViewClilds\ShopView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViewClilds\ShopViewChilds\BasketView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
