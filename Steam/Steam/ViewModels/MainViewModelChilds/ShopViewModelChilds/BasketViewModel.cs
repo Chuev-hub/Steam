@@ -15,7 +15,7 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
         public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
         public BasketViewModel()
         {
-            Games.AddRange(Account.CurrentAccount.GamesInBasket);
+            Games.AddRange(Account.CurrentAccount.Basket);
         }
     }
 }

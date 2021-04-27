@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
@@ -15,7 +16,7 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
         ScreenshotDTO selectedScreenshot;
         public ScreenshotDTO SelectedScreenshot { get { return selectedScreenshot; } set { selectedScreenshot = value;Notify(); } }
         GameDTO game;
-        public GameDTO Game { get { return game; } set { game = value; Notify(); if (value.Screenshots.Count>0)SelectedScreenshot = value.Screenshots[0]; } }
+        public GameDTO Game { get { return game; } set { game = value; Notify(); if (value.Screenshots.Count>0)SelectedScreenshot = value.Screenshots.FirstOrDefault(); } }
 
         AccountService accs;
 
@@ -29,9 +30,12 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
         {
             InBasket = new RelayCommand(x =>
             {
-                if (!Account.CurrentAccount.GamesInBasket.Contains(Game))
-                    Account.CurrentAccount.GamesInBasket.Add(Game);
-                accs.CreateOrUpdate(Account.CurrentAccount);
+                //MessageBox.Show(accs.GetAll().ToList()[0].Games.Count.ToString());
+                if (!Account.CurrentAccount.Basket.Contains(Game))
+                {
+                    Account.CurrentAccount.Basket.Add(Game);
+                    accs.CreateOrUpdate(Account.CurrentAccount);
+                }
             });
         }
         public ICommand InBasket { get; set; }

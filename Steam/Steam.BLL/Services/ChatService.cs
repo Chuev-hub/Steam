@@ -13,7 +13,7 @@ namespace Steam.BLL.Services
     public class ChatService : IService<ChatDTO>
     {
         IRepository<Chat> repository;
-        IMapper mapper;//
+        IMapper mapper;
         public ChatService(IRepository<Chat> repository)
         {
             this.repository = repository;

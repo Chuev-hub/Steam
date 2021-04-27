@@ -21,11 +21,11 @@ namespace Steam.DAL.Context
         [Required]
         public int SenderId { get; set; }
 
-        public virtual Account Sender { get; set; } //3
+        public virtual Account Sender { get; set; }
 
         [Required]
         public int ChatId { get; set; }
 
-        public virtual Chat Chat { get; set; } //7
+        public virtual Chat Chat { get; set; }
     }
 }
