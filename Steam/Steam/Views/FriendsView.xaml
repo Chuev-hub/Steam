@@ -1,0 +1,128 @@
+﻿<Window x:Class="Steam.Views.FriendsView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Steam.Views"
+        mc:Ignorable="d"
+        Title="FriendsView"
+        Height="600"
+        Width="320"
+        AllowsTransparency="True"
+        DataContext="{Binding Source={StaticResource locator}, Path=FriendsViewModel}"
+        WindowStyle="None"
+        Background="#FF222731">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="61*"></RowDefinition>
+            <RowDefinition Height="539*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" MouseDown="Grid_MouseDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="283*"></ColumnDefinition>
+                <ColumnDefinition Width="37*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal" Margin="0,0,63.2,-0.2">
+                <Image Source="{Binding AccountAvatar}"
+                   Height="50"
+                   Width="50"
+                   Margin="10 0"></Image>
+                <TextBlock Text="{Binding AccountName}"
+                       Foreground="White"></TextBlock>
+            </StackPanel>
+            <Button Grid.Column="1"
+                    Background="{x:Null}"
+                    BorderBrush="{x:Null}"
+                    Command="{Binding CloseCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                    Foreground="White"
+                    Style="{DynamicResource XButtonStyle}">X</Button>
+        </Grid>
+        <StackPanel Grid.Row="1">
+            <Ellipse Height="4"
+                       Fill="#FF959595"
+                       Margin="10 0 10 10"></Ellipse>
+            <StackPanel Orientation="Horizontal"
+                        Background="#FF959595"
+                        HorizontalAlignment="Right">
+                <TextBox IsReadOnly="True"
+                         Background="#FF959595"
+                         Height="40"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         Text="Friends"
+                         FontSize="23"
+                         Width="200"
+                         Foreground="White"
+                         BorderBrush="{x:Null}"></TextBox>
+                <Button Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Height="40"
+                        Width="40"
+                        Command="{Binding OpenSearchCommand}"
+                        Style="{DynamicResource XButtonStyle}">
+                    <Image Source="{Binding SearchImage}"></Image>
+                </Button>
+                <Button Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Height="40"
+                        Width="40"
+                        Command="{Binding AddFriendCommand}"
+                        Style="{DynamicResource XButtonStyle}">
+                    <Image Source="{Binding AddFriendsImage}"></Image>
+                </Button>
+                <Button Background="{x:Null}"
+                        BorderBrush="{x:Null}"
+                        Height="40"
+                        Width="40"
+                        Command="{Binding RemoveFriendCommand}"
+                        Style="{DynamicResource XButtonStyle}">
+                    <Image Source="{Binding RemoveFriendsImage}"></Image>
+                </Button>
+            </StackPanel>
+            <TextBox Background="#FF1D2226"
+                     SelectionBrush="{x:Null}"
+                     BorderBrush="Black"
+                     Height="30"
+                     Foreground="White"
+                     FontSize="18"
+                     HorizontalContentAlignment="Center"
+                     Visibility="{Binding SearchVisibility}"
+                     Name="TextBox">
+                <TextBox.InputBindings>
+                    <KeyBinding Key="Enter"
+                                Command="{Binding SearchCommand}"
+                                CommandParameter="{Binding ElementName=TextBox, Path=Text}"></KeyBinding>
+                    <KeyBinding Key="Esc"
+                                Command="{Binding RestoreCommand}"></KeyBinding>
+                </TextBox.InputBindings>
+            </TextBox>
+            <ListBox Background="{x:Null}"
+                     BorderBrush="{x:Null}"
+                     ItemsSource="{Binding Friends}"
+                     SelectedItem="{Binding SelectedFriend}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Width="290"
+                                    Orientation="Horizontal"
+                                    Background="#FF23262E"
+                                    Margin="5">
+                            <Image Source="{Binding Avatar}"
+                                   Height="30"
+                                   Width="30">
+                            </Image>
+                            <TextBlock Text="{Binding Login}"
+                                       Foreground="White"
+                                       TextAlignment="Center"
+                                       VerticalAlignment="Center"></TextBlock>
+                            <StackPanel.InputBindings>
+                                <MouseBinding MouseAction="LeftDoubleClick"
+                                  Command="{Binding RelativeSource={RelativeSource AncestorType=Window, Mode=FindAncestor}, Path=DataContext.OpenChatCommand}"></MouseBinding>
+                            </StackPanel.InputBindings>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </StackPanel>
+    </Grid>
+</Window>

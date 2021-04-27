@@ -34,7 +34,7 @@ namespace Steam.ViewModels
             InitCommand();
             if(!File.Exists("firstStart.txt"))
             {
-                Task.Run(() => d.GetAll());
+                Task.Run(() => d.GetAll().ToList());
                 File.Create("firstStart.txt");
             }
             accountService = d;

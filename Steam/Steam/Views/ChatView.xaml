@@ -18,7 +18,7 @@
             <RowDefinition Height="492*"></RowDefinition>
             <RowDefinition Height="59*"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Margin="0,0,0.2,2.6">
+        <StackPanel MouseDown="StackPanel_MouseDown">
             <StackPanel HorizontalAlignment="Right"
                         VerticalAlignment="Top"
                         Orientation="Horizontal">

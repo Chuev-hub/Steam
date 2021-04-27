@@ -78,12 +78,17 @@
             </Grid>
             <UserControl  Grid.Row="1" Content="{Binding CurrentView}" Background="#FF1B2939"/>
             <Grid Grid.Row="2" Background="#FF2A2E33">
-                <Button Command="{Binding ChatCommand}" Background="{x:Null}" Style="{DynamicResource XButtonStyle}" HorizontalAlignment="Right" Foreground="#FFC8D0DC" FontSize="14" Margin="0,0,20,0">
+                <Button Command="{Binding ChatCommand}"
+                        Background="{x:Null}"
+                        Style="{DynamicResource XButtonStyle}"
+                        HorizontalAlignment="Right"
+                        Foreground="#FFC8D0DC"
+                        FontSize="14"
+                        Margin="0,0,20,0">
                     <Button.BorderBrush>
                         <SolidColorBrush Color="#FF707070" Opacity="0"/>
                     </Button.BorderBrush>
-                    CHAT
-
+                    Friends And CHAT
                 </Button>
             </Grid>
         </Grid>

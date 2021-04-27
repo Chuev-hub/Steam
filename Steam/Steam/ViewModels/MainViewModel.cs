@@ -89,8 +89,11 @@ namespace Steam.ViewModels
             });
             ChatCommand = new RelayCommand(x =>
             {
-                ChatView chatView = new ChatView();
-                chatView.Show();
+                if (!FriendsViewModel.IsOpen)
+                {
+                    FriendsView view = new FriendsView();
+                    view.Show();
+                }
             });
             FSCommand = new RelayCommand(x =>
             {

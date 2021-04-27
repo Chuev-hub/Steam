@@ -20,7 +20,6 @@ namespace Steam.DAL.Context
         public virtual DbSet<Developer> Developers { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<Screenshot> Screenshots { get; set; }
-        //public virtual DbSet<FriendsList> FriendsList { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>()
@@ -80,17 +79,6 @@ namespace Steam.DAL.Context
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Screenshots)
                 .Map(m => m.ToTable("Screenshots_Games").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
-
-            //modelBuilder.Entity<FriendsList>()
-            //    .HasMany(e => e.Friends)
-            //    .WithRequired(e => e.AccountFriends)
-            //    .HasForeignKey(e => e.AccountFriendsId)
-            //    .WillCascadeOnDelete(false);
-            //modelBuilder.Entity<FriendsList>()
-            //    .HasMany(e => e.Accounts)
-            //    .WithRequired(e => e.FriendsList)
-            //    .HasForeignKey(e => e.FriendsLitsId)
-            //    .WillCascadeOnDelete(false);
         }
     }
 }

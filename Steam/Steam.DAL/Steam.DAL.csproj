@@ -54,7 +54,6 @@
     <Compile Include="Context\Account.cs" />
     <Compile Include="Context\Chat.cs" />
     <Compile Include="Context\Developer.cs" />
-    <Compile Include="Context\FriendsList.cs" />
     <Compile Include="Context\Game.cs" />
     <Compile Include="Context\Genre.cs" />
     <Compile Include="Context\Message.cs" />
