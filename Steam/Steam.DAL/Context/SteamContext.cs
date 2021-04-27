@@ -20,8 +20,6 @@ namespace Steam.DAL.Context
         public virtual DbSet<Developer> Developers { get; set; }
         public virtual DbSet<Genre> Genres { get; set; }
         public virtual DbSet<Screenshot> Screenshots { get; set; }
-
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Account>()
@@ -81,12 +79,6 @@ namespace Steam.DAL.Context
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Screenshots)
                 .Map(m => m.ToTable("Screenshots_Games").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
-
-            //modelBuilder.Entity<Account>()
-            //    .HasMany(e => e.Friends)
-            //    .WithMany(e => e.AccountFriends)
-            //    .Map(m => m.ToTable("FriendList").MapLeftKey("AccountId").MapRightKey("AccountId"));
-
         }
     }
 }

@@ -15,16 +15,16 @@ using System.Windows.Shapes;
 namespace Steam.Views
 {
     /// <summary>
-    /// Логика взаимодействия для ChatView.xaml
+    /// Interaction logic for FriendsView.xaml
     /// </summary>
-    public partial class ChatView : Window
+    public partial class FriendsView : Window
     {
-        public ChatView()
+        public FriendsView()
         {
             InitializeComponent();
         }
 
-        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
             this.DragMove();
         }

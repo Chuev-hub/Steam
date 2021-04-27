@@ -89,12 +89,7 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel>
-                        <Button x:Name="buton" Style="{StaticResource XButtonStyle}" Content="Friends" HorizontalAlignment="Right"  Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="68,148 0,0" >
-                            <Button.BorderBrush>
-                                <SolidColorBrush Color="#FF707070" Opacity="0"/>
-                            </Button.BorderBrush>
-                        </Button>
-                        <Button x:Name="butn" Command="{Binding Logout}" Style="{StaticResource XButtonStyle}" Margin="0 10 00 0" Content="Log out" HorizontalAlignment="Right"  Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18"  >
+                        <Button x:Name="butn" Command="{Binding Logout}" Style="{StaticResource XButtonStyle}" Margin="68,148 0,0" Content="Log out" HorizontalAlignment="Right"  Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18"  >
                             <Button.BorderBrush>
                                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
                             </Button.BorderBrush>
