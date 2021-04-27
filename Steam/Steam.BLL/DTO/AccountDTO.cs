@@ -21,5 +21,6 @@ namespace Steam.BLL.DTO
         public virtual List<GameDTO> Games { get; set; }
         public virtual List<GameDTO> Basket { get; set; }
         public virtual List<GameDTO> Wishlist { get; set; }
+        public virtual List<AccountDTO> AccountFriends { get; set; }
     }
 }
