@@ -41,13 +41,14 @@
         </Style>
 
     </UserControl.Resources>
-    <Grid>
+    <Grid HorizontalAlignment="Center">
         <Grid.Background>
             <ImageBrush ImageSource="{Binding Logo}"/>
         </Grid.Background>
-        <ScrollViewer>
 
-            <StackPanel HorizontalAlignment="Center" Width="1000" >
+        <StackPanel Orientation="Horizontal">
+
+            <StackPanel HorizontalAlignment="Center" Width="500" >
                 <StackPanel.Background>
                     <RadialGradientBrush>
                         <GradientStop Color="#FF242834"/>
@@ -74,7 +75,11 @@
                     <Label  FontSize="14" Foreground="#FFFEFFEB" >
                         More
                     </Label>
-                    <TextBox AcceptsReturn="True"  Text="{Binding More}" TextWrapping="Wrap"  Background="#FF2A2E33" Height="120" Foreground="#FFDCDCDA" AutomationProperties.HelpText="xxx"/>
+                    <TextBox AcceptsReturn="True"  Text="{Binding More}" TextWrapping="Wrap"  Background="#FF2A2E33" Height="120" Foreground="#FFDCDCDA" AutomationProperties.HelpText="xxx">
+                        <TextBox.BorderBrush>
+                            <SolidColorBrush Color="#FFABADB3" Opacity="0"/>
+                        </TextBox.BorderBrush>
+                    </TextBox>
 
                     <Label  Content="{Binding AvatarPath}" Foreground="#FFBBBBBB" Height="30"></Label>
                     <Button Command="{Binding ChangePicture}" Margin="146,0,0,10" Foreground="LightGray" Background="#FF2B3444">
@@ -94,8 +99,46 @@
                 </StackPanel>
 
 
+
+
             </StackPanel>
-        </ScrollViewer>
+
+            <StackPanel  Orientation="Horizontal" Background="#FF2B2430">
+                <Label Margin="0 30 0 0" Foreground="#FFFEFFEB" FontSize="16" Content="Change Password:" FontWeight="Bold"></Label>
+                <StackPanel Margin="40,30,0,0" Width="150">
+                    <Label Foreground="#FFFEFFEB" FontSize="12" Content="Old Password:" FontWeight="Bold"></Label>
+                    <PasswordBox x:Name="PasswordBox"   FontSize="16"  FontStyle="Italic" Foreground="#FFFEFFEB" Background="#FF2A2E33">
+                        <PasswordBox.BorderBrush>
+                            <SolidColorBrush Color="#FFABADB3" Opacity="0"/>
+                        </PasswordBox.BorderBrush>
+                    </PasswordBox>
+                    <Label Foreground="#FFFEFFEB" FontSize="12" Content="New Password:" FontWeight="Bold"></Label>
+                    <PasswordBox x:Name="PasswordBox2" FontSize="16"  FontStyle="Italic" Foreground="#FFFEFFEB" Background="#FF2A2E33">
+                        <PasswordBox.BorderBrush>
+                            <SolidColorBrush Color="#FFABADB3" Opacity="0"/>
+                        </PasswordBox.BorderBrush>
+                    </PasswordBox>
+                </StackPanel>
+                <StackPanel Width="128">
+                    <Button Margin="20 55 0 0" Command="{Binding CheckCmd}" CommandParameter="{Binding ElementName=PasswordBox}"  Width="70" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"   Background="#FF2B3444" Content="Check" Foreground="White">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                    </Button>
+                    <Label Content="{Binding Exc}" Margin="10,10,0,0" FontSize="14" Foreground="Red"></Label>
+
+                    <Button Command="{Binding SavePswCmd}" CommandParameter="{Binding ElementName=PasswordBox2}"  Width="102" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top"  Margin="10,40,0,0" Background="#FF2B3444" Content="Save Password" Foreground="White">
+                        <Button.BorderBrush>
+                            <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                        </Button.BorderBrush>
+                    </Button>
+                </StackPanel>
+
+                <Ellipse Fill="{Binding ElipseColor}" Width="10" Height="10" HorizontalAlignment="Right" VerticalAlignment="Top"  Margin="-10,60,0,0"  ></Ellipse>
+            </StackPanel>
+
+        </StackPanel>
+
 
     </Grid>
 </UserControl>

@@ -5,16 +5,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Steam.Views.MainViewClilds"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800"
+             d:DesignHeight="1490" d:DesignWidth="2488"
              DataContext="{Binding Source={StaticResource locator}, Path=LibraryViewModel}">
     <Grid Background="Gray">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" MinWidth="150"></ColumnDefinition>
-            <ColumnDefinition Width="Auto"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="300"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Background="#FF24282F">
-            <ListView ItemsSource="{Binding Games}" Background="Transparent">
+            <ListView Margin="0 50 0 0" ItemsSource="{Binding Games}" Background="Transparent">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -28,6 +27,42 @@
         <GridSplitter Grid.Column="1" Background="Gray" ShowsPreview="False" Width="5"
         HorizontalAlignment="Center" VerticalAlignment="Stretch" />
         <Grid Grid.Column="2" Background="#FF292E36">
+            <ScrollViewer>
+                <StackPanel Margin="30 50 0 0 ">
+                    <Image Height="300" Source="{Binding Selected.HeaderImageURL}" HorizontalAlignment="Left" ></Image>
+                    <StackPanel Orientation="Horizontal">
+                        <Label VerticalAlignment="Bottom" Content="{Binding Selected.GameName}" FontSize="22" Foreground="White"></Label>
+                        <Label VerticalAlignment="Bottom" Content="{Binding Selected.RealeaseDate}" Margin="20 0 0 0" FontSize="16" Foreground="#FFBDBDBD"></Label>
+                    </StackPanel>
+                    <StackPanel Margin="0 50 0 0" Orientation="Horizontal">
+
+                        <Button BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Content="❮" Foreground="White" Command = "{Binding ChangeRight}" FontSize="30" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                                    <GradientStop Color="#FF121D29" Offset="1"/>
+                                    <GradientStop Color="#FF2F3D4B" Offset="0"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                        <Image  Height="300" Source="{Binding Screen}" />
+                        <Button BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Foreground="White"  Content="❯" Command="{Binding ChangeLeft}" Grid.Column="2" FontSize="30" FontWeight="Bold">
+                            <Button.Background>
+                                <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
+                                    <GradientStop Color="#FF121D29" Offset="0"/>
+                                    <GradientStop Color="#FF2F3D4B" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Button.Background>
+                        </Button>
+                    </StackPanel>
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding Selected.Requirements}" Margin="20 0 0 0" FontSize="16" Foreground="#FF8B8B8B"></TextBlock>
+                     
+                    <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding Selected.GameInfo}" Margin="20 0 0 0" FontSize="16" Foreground="#FFBDBDBD"></TextBlock>
+                   
+                    <!-- 
+         
+        Screenshots -->
+                </StackPanel>
+            </ScrollViewer>
             
         </Grid>
     </Grid>

@@ -35,6 +35,7 @@ namespace Steam.Infrastructure
         public static List<Game> GetAndSaveGamesByList(List<string> names)
         {
             CheckData();
+            obj = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(fileName)); 
             List<Game> games = sc.Game.ToList();
             for (int i = 0; i < names.Count; i++) 
             {
@@ -49,7 +50,7 @@ namespace Steam.Infrastructure
         }
 
 
-        static JObject obj = JsonConvert.DeserializeObject<JObject>(File.ReadAllText(fileName));
+        static JObject obj;
         public static int GetGameId(string name)
         {            
             JArray array = (JArray)obj["apps"];
