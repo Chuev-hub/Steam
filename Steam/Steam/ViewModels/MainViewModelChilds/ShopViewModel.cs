@@ -48,6 +48,10 @@ namespace Steam.ViewModels.MainViewModelChilds
             Basket = new RelayCommand(x =>
             {
                 CurrentView = new BasketView();
+            }); 
+            Wishlist = new RelayCommand(x =>
+            {
+                CurrentView = new WishlistView();
             });
         }
 
@@ -59,6 +63,7 @@ namespace Steam.ViewModels.MainViewModelChilds
         public ICommand Search { get; set; }
         public ICommand Catalog { get; set; }
         public ICommand Basket { get; set; }
+        public ICommand Wishlist { get; set; }
 
 
 

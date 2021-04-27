@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace Steam.DAL.Repositories
 {
@@ -16,7 +17,14 @@ namespace Steam.DAL.Repositories
         }
         public void ReadAll()
         {
-            Game g = context.Set<Game>().Include(c => c.Screenshots).ToList()[0];
+            try
+            {
+                Game g = context.Set<Game>().Include(c => c.Screenshots).Include(c => c.Baskets).ToList()[0];
+            }
+            catch 
+            {
+                MessageBox.Show("ReadAll GameRep");
+            }
         }
     }
 }

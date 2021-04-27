@@ -82,6 +82,11 @@ namespace Steam.DAL.Context
                 .WithMany(e => e.Screenshots)
                 .Map(m => m.ToTable("Screenshots_Games").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
 
+            //modelBuilder.Entity<Account>()
+            //    .HasMany(e => e.Friends)
+            //    .WithMany(e => e.AccountFriends)
+            //    .Map(m => m.ToTable("FriendList").MapLeftKey("AccountId").MapRightKey("AccountId"));
+
         }
     }
 }

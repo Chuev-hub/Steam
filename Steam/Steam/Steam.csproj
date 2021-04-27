@@ -115,6 +115,7 @@
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\CatalogViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\GameViewModel.cs" />
     <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\SearchViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModelChilds\ShopViewModelChilds\WishlistViewModel.cs" />
     <Compile Include="Views\ChatView.xaml.cs">
       <DependentUpon>ChatView.xaml</DependentUpon>
     </Compile>
@@ -138,6 +139,9 @@
     </Compile>
     <Compile Include="Views\MainViewClilds\ShopViewChilds\SearchView.xaml.cs">
       <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainViewClilds\ShopViewChilds\WishlistView.xaml.cs">
+      <DependentUpon>WishlistView.xaml</DependentUpon>
     </Compile>
     <Page Include="Styles\MouseEnterStyle.xaml">
       <SubType>Designer</SubType>
@@ -217,6 +221,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MainViewClilds\ShopViewChilds\SearchView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MainViewClilds\ShopViewChilds\WishlistView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
