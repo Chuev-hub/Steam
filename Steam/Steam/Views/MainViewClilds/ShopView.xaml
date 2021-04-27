@@ -55,7 +55,7 @@
                 </Border>
             </StackPanel>
             <StackPanel>
-                <UserControl Content="{Binding CurrentView}"></UserControl>
+                <UserControl Content="{Binding CurrentView}" Loaded="UserControl_Loaded"></UserControl>
             </StackPanel>
         </Grid>
     </ScrollViewer>

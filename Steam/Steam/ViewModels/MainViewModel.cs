@@ -22,7 +22,7 @@ namespace Steam.ViewModels
         string baseDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
         public string Login
         {
-            get => Account.CurrentAccount.ProfileName;
+            get => Account.CurrentAccount.Login;
         }
         UserControl currentView;
         public UserControl CurrentView

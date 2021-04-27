@@ -1,5 +1,6 @@
 ﻿using Steam.Infrastructure;
 using Steam.Views;
+using Steam.Views.MainViewClilds;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media.Imaging;
 
 namespace Steam.ViewModels.MainViewModelChilds
 {
@@ -29,7 +31,17 @@ namespace Steam.ViewModels.MainViewModelChilds
         }
         public string RealName
         {
-            get => Account.CurrentAccount.RealName+", "+Account.CurrentAccount.Country;
+            get => Account.CurrentAccount.RealName + ", " + Account.CurrentAccount.Country;
+        }
+        public BitmapImage Avatar
+        {
+            get {
+                BitmapImage image = new BitmapImage();
+                image.BeginInit();
+                image.StreamSource = new System.IO.MemoryStream(Account.CurrentAccount.Avatar);
+                image.EndInit();
+                return image;
+            } 
         }
         public string More
         {
@@ -38,7 +50,11 @@ namespace Steam.ViewModels.MainViewModelChilds
         public ProfileViewModel()
         {
             Logo = Environment.CurrentDirectory + "\\Images\\back.png";
-            Logout = new RelayCommand(x => {
+            Edit = new RelayCommand(x => {
+                Switcher.Switch(new EditUserView());
+            });
+
+                Logout = new RelayCommand(x => {
                 Account.CurrentAccount = null;
                 if (File.Exists("Remember.txt"))
                     File.Delete("Remember.txt");
@@ -52,6 +68,7 @@ namespace Steam.ViewModels.MainViewModelChilds
             });
         }
         public ICommand Logout { get; set; }
+        public ICommand Edit { get; set; }
         public Visibility Visible
         {
             get

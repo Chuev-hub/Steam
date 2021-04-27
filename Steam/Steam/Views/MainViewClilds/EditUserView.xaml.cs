@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace Steam.Views.MainViewClilds
 {
     /// <summary>
-    /// Логика взаимодействия для ShopView.xaml
+    /// Interaction logic for EditUserView.xaml
     /// </summary>
-    public partial class ShopView : UserControl
+    public partial class EditUserView : UserControl
     {
-        public ShopView()
+        public EditUserView()
         {
             InitializeComponent();
-        }
-
-        private void UserControl_Loaded(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

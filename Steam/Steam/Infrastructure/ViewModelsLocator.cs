@@ -31,6 +31,7 @@ namespace Steam.Infrastructure
         public SearchViewModel SearchViewModel => kernel.Get<SearchViewModel>(); 
         public CatalogViewModel CatalogViewModel => kernel.Get<CatalogViewModel>(); 
         public GameViewModel GameViewModel => kernel.Get<GameViewModel>(); 
+        public EditUserViewModel EditUserViewModel => kernel.Get<EditUserViewModel>(); 
         public BasketViewModel BasketViewModel => kernel.Get<BasketViewModel>(); 
         public FriendsViewModel FriendsViewModel => kernel.Get<FriendsViewModel>(); 
         public WishlistViewModel WishlistViewModel => kernel.Get<WishlistViewModel>(); 
