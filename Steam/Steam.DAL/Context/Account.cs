@@ -19,8 +19,6 @@ namespace Steam.DAL.Context
             Wishlist = new HashSet<Game>();
             Basket = new HashSet<Game>();
         }
-
-
         [Key]
         public int AccountId { get; set; }
         [Required]
@@ -46,7 +44,8 @@ namespace Steam.DAL.Context
         public byte[] Avatar { get; set; }
 
         public bool IsAdmin { get; set; }
-
+        //public int FriendsLitsId { get; set; }
+        //public virtual FriendsList FriendsList { get; set; } 
         public virtual ICollection<Game> Games { get; set; }
         public virtual ICollection<Game> Wishlist { get; set; }
         public virtual ICollection<Game> Basket { get; set; }

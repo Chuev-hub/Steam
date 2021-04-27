@@ -17,7 +17,7 @@ namespace Steam.DAL.Repositories
         {
             try
             {
-                Account g = context.Set<Account>().Include(c => c.Games).Include(c => c.Basket).ToList()[0];
+                //Account g = context.Set<Account>().Include(c => c.Games).Include(c => c.Basket).ToList()[0];
             }
             catch { }
         }

@@ -13,31 +13,97 @@
         ResizeBorderThickness="5" />
     </WindowChrome.WindowChrome>
     <Grid Background="#FF222731">
-        <StackPanel HorizontalAlignment="Right"
-                    VerticalAlignment="Top"
-                    Orientation="Horizontal">
-            <Button Width="15"
-                    Height="15"
-                    Margin="0 10 0 0"
-                    Background="{x:Null}"
-                    Command="{Binding FSCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
-                    BorderBrush="{x:Null}">
-                <Image Source="{Binding WindowResizeImage}"></Image>
-            </Button>
-            <Button Content="X" 
-                Width="30" 
-                Height="30" 
-                Margin="0 10 10 0"  
-                FontWeight="Bold"
-                FontSize="14"
-                Background="#FF1F2530"
-                Command="{Binding CloseCommand}"
-                CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="492*"></RowDefinition>
+            <RowDefinition Height="59*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,0,0.2,2.6">
+            <StackPanel HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Orientation="Horizontal">
+                <StackPanel Margin="0 5 200 0"
+                            Width="100"
+                            Background="#FF959595"
+                            Orientation="Horizontal">
+                    <Image Height="30"
+                           Width="30"
+                           Source="{Binding FriendImage}"></Image>
+                    <TextBox Height="30"
+                             Width="65"
+                             IsReadOnly="True"
+                             HorizontalContentAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             Background="{x:Null}"
+                             Foreground="White"
+                             Text="{Binding FriendName}"></TextBox>
+                </StackPanel>
+                <Button Width="15"
+                        Height="15"
+                        Margin="0 10 0 0"
+                        Background="{x:Null}"
+                        Command="{Binding FSCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+                        BorderBrush="{x:Null}">
+                    <Image Source="{Binding WindowResizeImage}"></Image>
+                </Button>
+                <Button Content="X" 
+                        Width="30" 
+                        Height="30" 
+                        Margin="0 10 10 0"  
+                        FontWeight="Bold"
+                        FontSize="14"
+                        Background="#FF1F2530"
+                        Command="{Binding CloseCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
                 
-                BorderBrush="{x:Null}"
-                Foreground="#FF959595"
-                Style="{DynamicResource XButtonStyle}"></Button>
+                        BorderBrush="{x:Null}"
+                        Foreground="#FF959595"
+                        Style="{DynamicResource XButtonStyle}"></Button>
+            </StackPanel>
+            <Ellipse Height="4"
+                       Fill="#FF959595"
+                       Margin="10 0"></Ellipse>
         </StackPanel>
+        <DockPanel Grid.Row="1">
+            <ListBox Background="{x:Null}"
+                     BorderBrush="{x:Null}"
+                     ItemsSource="{Binding Messages}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <WrapPanel MaxWidth="160"
+                                   Orientation="Horizontal"
+                                   HorizontalAlignment="Left">
+                                <TextBlock Text="{Binding MessageText}"></TextBlock>
+                            </WrapPanel>
+                            <WrapPanel MaxWidth="160"
+                                   Orientation="Horizontal"
+                                   HorizontalAlignment="Right">
+
+                            </WrapPanel>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </DockPanel>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="309*"></ColumnDefinition>
+                <ColumnDefinition Width="62*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <DockPanel>
+                <TextBox BorderBrush="#FF959595"
+                         BorderThickness="4"
+                         Background="{x:Null}"></TextBox>
+            </DockPanel>
+            <DockPanel Grid.Column="1">
+                <Button Background="#FF959595"
+                        BorderBrush="#FF959595"
+                        Style="{DynamicResource XButtonStyle}" 
+                        FontSize="30"
+                        Foreground="White">-></Button>
+            </DockPanel>
+        </Grid>
     </Grid>
 </Window>
