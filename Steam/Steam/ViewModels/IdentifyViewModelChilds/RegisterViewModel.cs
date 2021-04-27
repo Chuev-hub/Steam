@@ -60,7 +60,7 @@ namespace Steam.ViewModels
                 Notify();
             }
         }
-        public RegisterViewModel(AccountService s)
+        public RegisterViewModel(AccountService s,ChatService cs)
         {
             accountService = s;
             Logo = Environment.CurrentDirectory + "\\Images\\Ico.png";
@@ -84,6 +84,7 @@ namespace Steam.ViewModels
         AccountService accountService;
         void Register(object obj)
         {
+            
            
             Task.Run(() => {
                 string password = BCrypt.Net.BCrypt.HashPassword((obj as PasswordBox).Password);
@@ -110,7 +111,7 @@ namespace Steam.ViewModels
                             Error = "Change Name";
                     }
                 }
-                catch { a = false; }
+                catch { a = false; MessageBox.Show("Всё плохо с регистрацией xD"); }
             }).ContinueWith((x)=> {
                 if (Name != "" && Mail != "" && (obj as PasswordBox).Password != ""&&a==true)
                     Application.Current.Dispatcher.Invoke((Action)delegate {

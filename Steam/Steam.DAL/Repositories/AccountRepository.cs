@@ -13,5 +13,13 @@ namespace Steam.DAL.Repositories
         public AccountRepository(DbContext context) : base(context)
         {
         }
+        public void ReadAll()
+        {
+            try
+            {
+                Account g = context.Set<Account>().Include(c => c.Games).Include(c => c.Basket).ToList()[0];
+            }
+            catch { }
+        }
     }
 }

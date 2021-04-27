@@ -12,6 +12,11 @@ namespace Steam.DAL.Repositories
     {
         public GameRepository(DbContext context) : base(context)
         {
+
+        }
+        public void ReadAll()
+        {
+            Game g = context.Set<Game>().Include(c => c.Screenshots).ToList()[0];
         }
     }
 }

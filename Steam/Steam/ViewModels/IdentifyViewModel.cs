@@ -50,6 +50,8 @@ namespace Steam.ViewModels
                     Window ainWindow = Application.Current.MainWindow;
                     ainWindow.Close();
                 }
+                else
+                    File.Delete("Remember.txt");
             }
         }
 

@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Steam.Views.MainViewClilds.ShopViewChilds.BasketView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Steam.Views.MainViewClilds.ShopViewChilds"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000"
+             DataContext="{Binding Source={StaticResource locator}, Path=BasketViewModel}">
+    <Grid Margin="50,70,50,0" MaxWidth="1000">
+        <ListView Background="Transparent" ItemsSource="{Binding Games}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                            <ColumnDefinition Width="200"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{Binding HeaderImageURL}"></Image>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Grid.Column="1" Text="{Binding GameName}"> </TextBlock>
+                        <StackPanel Grid.Column="2" VerticalAlignment="Center" Orientation="Horizontal" HorizontalAlignment="Center">
+                            <TextBlock Foreground="#FFA5B1BA" Text="{Binding Price}" ></TextBlock>
+                            <TextBlock Foreground="#FFA5B1BA" Text="{Binding Currency}" ></TextBlock>
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

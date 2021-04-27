@@ -12,26 +12,29 @@ namespace Steam.BLL.Services
 {
     public class GameService : IService<GameDTO>
     {
-        IRepository<Game> repository;
+        GameRepository repository;
         IMapper mapper;
         public GameService(IRepository<Game> repository)
         {
-            this.repository = repository;
+            this.repository = (GameRepository)repository;
             MapperConfiguration mapperConfiguration = new MapperConfiguration(x =>
             {
                 x.CreateMap<Game, GameDTO>();
                 x.CreateMap<GameDTO, Game>();
+                x.CreateMap<Screenshot, ScreenshotDTO>();
             });
             mapper = new Mapper(mapperConfiguration);
         }
 
         public GameDTO Get(int gameId)
         {
+            repository.ReadAll();
             return mapper.Map<Game, GameDTO>(repository.Get(gameId));
         }
 
         public IEnumerable<GameDTO> GetAll()
         {
+            repository.ReadAll();
             return mapper.Map<IEnumerable<Game>, IEnumerable<GameDTO>>(repository.GetAll());
         }
 

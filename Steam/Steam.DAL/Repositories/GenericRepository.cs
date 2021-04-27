@@ -10,7 +10,7 @@ namespace Steam.DAL.Repositories
 {
     public abstract class GenericRepository<T> : IRepository<T> where T : class
     {
-        DbContext context;
+        public DbContext context;
         DbSet<T> table;
         public GenericRepository(DbContext context)
         {

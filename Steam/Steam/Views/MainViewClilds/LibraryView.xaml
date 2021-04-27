@@ -9,13 +9,25 @@
              DataContext="{Binding Source={StaticResource locator}, Path=LibraryViewModel}">
     <Grid Background="Gray">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*" MinWidth="150"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Background="#FF24282F">
-            <ListBox ItemsSource="{Binding Games}"  Background="Transparent"></ListBox>
+            <ListView ItemsSource="{Binding Games}" Background="Transparent">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding HeaderImageURL}" Width="10"></Image>
+                            <TextBlock Margin="5,0,0,0" Foreground="White" Text="{Binding GameName}"></TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </Grid>
-        <Grid Grid.Column="1" Background="#FF292E36">
+        <GridSplitter Grid.Column="1" Background="Gray" ShowsPreview="False" Width="5"
+        HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        <Grid Grid.Column="2" Background="#FF292E36">
             
         </Grid>
     </Grid>

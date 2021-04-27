@@ -16,6 +16,8 @@ namespace Steam.DAL.Context
             Messages = new HashSet<Message>();
             ProfileComments = new HashSet<ProfileComment>();
             LeftComments = new HashSet<ProfileComment>();
+            Wishlist = new HashSet<Game>();
+            Basket = new HashSet<Game>();
         }
 
 
@@ -45,10 +47,12 @@ namespace Steam.DAL.Context
 
         public bool IsAdmin { get; set; }
 
-        public virtual ICollection<Game> Games { get; set; } //1
-        public virtual ICollection<Chat> Chats { get; set; } //2
-        public virtual ICollection<Message> Messages { get; set; } //3
-        public virtual ICollection<ProfileComment> ProfileComments { get; set; } //4
-        public virtual ICollection<ProfileComment> LeftComments { get; set; } //5
+        public virtual ICollection<Game> Games { get; set; }
+        public virtual ICollection<Game> Wishlist { get; set; }
+        public virtual ICollection<Game> Basket { get; set; }
+        public virtual ICollection<Chat> Chats { get; set; }
+        public virtual ICollection<Message> Messages { get; set; }
+        public virtual ICollection<ProfileComment> ProfileComments { get; set; }
+        public virtual ICollection<ProfileComment> LeftComments { get; set; }
     }
 }

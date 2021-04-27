@@ -45,12 +45,22 @@ namespace Steam.DAL.Context
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Chats)
                 .WithMany(e => e.Accounts)
-                .Map(m => m.ToTable("ChatsInAccounts").MapLeftKey("ChatId").MapRightKey("AccountId"));
+                .Map(m => m.ToTable("Chats_Accounts").MapLeftKey("AccountId").MapRightKey("ChatId"));
 
             modelBuilder.Entity<Account>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Accounts)
-                .Map(m => m.ToTable("GamesInAccounts").MapLeftKey("GameId").MapRightKey("AccountId"));
+                .Map(m => m.ToTable("Games_Accounts").MapLeftKey("AccountId").MapRightKey("GameId"));
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Basket)
+                .WithMany(e => e.Baskets)
+                .Map(m => m.ToTable("Games_Baskets").MapLeftKey("AccountId").MapRightKey("GameId"));
+
+            modelBuilder.Entity<Account>()
+                .HasMany(e => e.Wishlist)
+                .WithMany(e => e.Wishlists)
+                .Map(m => m.ToTable("Games_Wishlists").MapLeftKey("AccountId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Chat>()
                 .HasMany(e => e.Messages)
@@ -60,17 +70,17 @@ namespace Steam.DAL.Context
             modelBuilder.Entity<Developer>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Developers)
-                .Map(m => m.ToTable("DevelopersInGames").MapLeftKey("DeveloperId").MapRightKey("GameId"));
+                .Map(m => m.ToTable("Developers_Games").MapLeftKey("DeveloperId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Genre>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Genres)
-                .Map(m => m.ToTable("GenresInGames").MapLeftKey("GenreId").MapRightKey("GameId"));
+                .Map(m => m.ToTable("Genres_Games").MapLeftKey("GenreId").MapRightKey("GameId"));
 
             modelBuilder.Entity<Screenshot>()
                 .HasMany(e => e.Games)
                 .WithMany(e => e.Screenshots)
-                .Map(m => m.ToTable("ScreenshotsInGames").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
+                .Map(m => m.ToTable("Screenshots_Games").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
 
         }
     }

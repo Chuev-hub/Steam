@@ -15,6 +15,8 @@ namespace Steam.DAL.Context
             Genres = new HashSet<Genre>();
             Screenshots = new HashSet<Screenshot>();
             Developers = new HashSet<Developer>();
+            Baskets = new HashSet<Account>();
+            Wishlists = new HashSet<Account>();
         }
 
         [Key]
@@ -30,7 +32,9 @@ namespace Steam.DAL.Context
         public string Currency { get; set; }
         public decimal Price { get; set; }
 
-        public virtual ICollection<Account> Accounts { get; set; } // 8
+        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<Account> Baskets { get; set; }
+        public virtual ICollection<Account> Wishlists { get; set; }
         public virtual ICollection<Screenshot> Screenshots { get; set; }
 
         public virtual ICollection<Genre> Genres { get; set; }

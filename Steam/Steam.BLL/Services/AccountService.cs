@@ -12,26 +12,32 @@ namespace Steam.BLL.Services
 {
     public class AccountService : IService<AccountDTO>
     {
-        IRepository<Account> repository;
+        AccountRepository repository;
         IMapper mapper;
         public AccountService(IRepository<Account> repository)
         {
-            this.repository = repository;
+            this.repository = (AccountRepository)repository;
             MapperConfiguration mapperConfiguration = new MapperConfiguration(x =>
             {
                 x.CreateMap<Account, AccountDTO>();
                 x.CreateMap<AccountDTO, Account>();
+                x.CreateMap<Game, GameDTO>();
+                x.CreateMap<GameDTO, Game>();
+                x.CreateMap<Screenshot, ScreenshotDTO>();
+                x.CreateMap<ScreenshotDTO, Screenshot>();
             });
             mapper = new Mapper(mapperConfiguration);
         }
 
         public AccountDTO Get(int accountId)
         {
+            repository.ReadAll();
             return mapper.Map<Account, AccountDTO>(repository.Get(accountId));
         }
 
         public IEnumerable<AccountDTO> GetAll()
         {
+            repository.ReadAll();
             return mapper.Map<IEnumerable<Account>, IEnumerable<AccountDTO>>(repository.GetAll());
         }
 

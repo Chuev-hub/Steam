@@ -24,7 +24,7 @@ namespace Steam.DAL.Context
         [StringLength(512)]
         public string CommentText { get; set; }
 
-        public virtual Account Author { get; set; } //5
-        public virtual Account Profile { get; set; } //4
+        public virtual Account Author { get; set; }
+        public virtual Account Profile { get; set; }
     }
 }

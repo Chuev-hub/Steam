@@ -4,30 +4,17 @@
 winexe
 C#
 .cs
-<<<<<<< HEAD
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\obj\Debug\
-=======
-C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\obj\Debug\
->>>>>>> Filling
 Steam
 none
 false
 DEBUG;TRACE
-<<<<<<< HEAD
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\App.xaml
-111269700077
+13-1772142840
 
-34353235532
+362059861274
 136-1775485942
-Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
-=======
-C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam\App.xaml
-12-436350713
-
-34353235532
-1361808677244
-Styles\MouseEnterStyle.xaml;Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
->>>>>>> Filling
+Styles\MouseEnterStyle.xaml;Views\ChatView.xaml;Views\IdentifyViewChilds\LoginView.xaml;Views\IdentifyViewChilds\RegisterView.xaml;Views\IdentifyView.xaml;Views\MainView.xaml;Views\MainViewClilds\LibraryView.xaml;Views\MainViewClilds\ProfileView.xaml;Views\MainViewClilds\ShopView.xaml;Views\MainViewClilds\ShopViewChilds\BasketView.xaml;Views\MainViewClilds\ShopViewChilds\CatalogView.xaml;Views\MainViewClilds\ShopViewChilds\GameView.xaml;Views\MainViewClilds\ShopViewChilds\SearchView.xaml;
 
 False
 

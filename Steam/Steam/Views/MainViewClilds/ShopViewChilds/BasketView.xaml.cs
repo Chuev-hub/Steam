@@ -13,17 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Steam.Views.MainViewClilds
+namespace Steam.Views.MainViewClilds.ShopViewChilds
 {
     /// <summary>
-    /// Логика взаимодействия для ShopView.xaml
+    /// Логика взаимодействия для BasketView.xaml
     /// </summary>
-    public partial class ShopView : UserControl
+    public partial class BasketView : UserControl
     {
-        public ShopView()
+        public BasketView()
         {
             InitializeComponent();
         }
-
     }
 }
