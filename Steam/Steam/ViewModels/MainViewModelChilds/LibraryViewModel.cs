@@ -30,7 +30,7 @@ namespace Steam.ViewModels.MainViewModelChilds
         {
             this.gameService = gameService;
             Games.AddRange(Account.CurrentAccount.Games);
-            Selected = gameService.GetAll().FirstOrDefault();
+          
             ChangeLeft = new RelayCommand(x => {
                 if (CurrentScreen == CountScreens - 1)
                     CurrentScreen = 0;
