@@ -29,22 +29,43 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
 
         private void InitCommands()
         {
-            accs.GetAll();
+            
+
             InBasket = new RelayCommand(x =>
             {
-                if (!Account.CurrentAccount.Basket.Any(y => y.GameId == Game.GameId))
+                using (var DB = new DAL.Context.SteamContext())
                 {
-                    Account.CurrentAccount.Basket.Add(Game);
-                    accs.CreateOrUpdate(Account.CurrentAccount);
+                    var curAcc = DB.Account.Include("Basket").FirstOrDefault(y => y.AccountId == Infrastructure.Account.CurrentAccount.AccountId);
+
+                    if (!curAcc.Basket.Any(y => y.GameId == Game.GameId))
+                    {
+                        curAcc.Basket.Add(DB.Game.FirstOrDefault(y => y.GameId == Game.GameId));
+                    }
+                    DB.SaveChanges();
                 }
+                //if (!Account.CurrentAccount.Basket.Any(y => y.GameId == Game.GameId))
+                //{
+                //    Account.CurrentAccount.Basket.Add(Game);
+                //    accs.CreateOrUpdate(Account.CurrentAccount);
+                //}
             });
             InWishlist = new RelayCommand(x =>
             {
-                if (!Account.CurrentAccount.Wishlist.Any(y => y.GameId == Game.GameId))
+                using (var DB = new DAL.Context.SteamContext())
                 {
-                    Account.CurrentAccount.Wishlist.Add(Game);
-                    accs.CreateOrUpdate(Account.CurrentAccount);
+                    var curAcc = DB.Account.Include("Wishlist").FirstOrDefault(y => y.AccountId == Infrastructure.Account.CurrentAccount.AccountId);
+
+                    if (!curAcc.Wishlist.Any(y => y.GameId == Game.GameId))
+                    {
+                        curAcc.Wishlist.Add(DB.Game.FirstOrDefault(y => y.GameId == Game.GameId));
+                    }
+                    DB.SaveChanges();
                 }
+                //if (!Account.CurrentAccount.Wishlist.Any(y => y.GameId == Game.GameId))
+                //{
+                //    Account.CurrentAccount.Wishlist.Add(Game);
+                //    accs.CreateOrUpdate(Account.CurrentAccount);
+                //}
             });
         }
         public ICommand InBasket { get; set; }

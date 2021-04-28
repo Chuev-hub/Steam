@@ -31,9 +31,29 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
                 var g = x as GameDTO;
                 FullPrice -= g.Price;
                 Games.Remove(g);
-                Account.CurrentAccount.Basket.Remove(g);
+                using (var DB = new DAL.Context.SteamContext())
+                {
+                    DB.Account.Include("Basket").FirstOrDefault(y => y.AccountId == Infrastructure.Account.CurrentAccount.AccountId).Basket.Remove(DB.Game.FirstOrDefault(y => y.GameId == g.GameId));
+                }
+            });
+            Buy = new RelayCommand(x =>
+            {
+                using (var DB = new DAL.Context.SteamContext())
+                {
+                    var curAcc = DB.Account.Include("Basket").Include("Games").FirstOrDefault(y => y.AccountId == Infrastructure.Account.CurrentAccount.AccountId);
+
+                    foreach (var item in curAcc.Basket)
+                    {
+                        curAcc.Games.Add(item);
+                    }
+                    curAcc.Basket.Clear();
+                    Games.Clear();
+                    FullPrice = 0;
+                    DB.SaveChanges();
+                }
             });
         }
         public ICommand RemoveGame { get; set; }
+        public ICommand Buy { get; set; }
     }
 }
