@@ -37,7 +37,7 @@
                     </StackPanel>
                     <StackPanel Margin="0 50 0 0" Orientation="Horizontal">
 
-                        <Button BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Content="❮" Foreground="White" Command = "{Binding ChangeRight}" FontSize="30" FontWeight="Bold">
+                        <Button   Visibility="{Binding Visibility}" BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Content="❮" Foreground="White" Command = "{Binding ChangeRight}" FontSize="30" FontWeight="Bold">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
                                     <GradientStop Color="#FF121D29" Offset="1"/>
@@ -46,7 +46,7 @@
                             </Button.Background>
                         </Button>
                         <Image  Height="300" Source="{Binding Screen}" />
-                        <Button BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Foreground="White"  Content="❯" Command="{Binding ChangeLeft}" Grid.Column="2" FontSize="30" FontWeight="Bold">
+                        <Button Visibility="{Binding Visibility}"  BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Foreground="White"  Content="❯" Command="{Binding ChangeLeft}" Grid.Column="2" FontSize="30" FontWeight="Bold">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
                                     <GradientStop Color="#FF121D29" Offset="0"/>

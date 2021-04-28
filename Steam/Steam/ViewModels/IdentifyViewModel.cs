@@ -44,15 +44,23 @@ namespace Steam.ViewModels
             {
                 string s = File.ReadAllText("Remember.txt");
                 Account.CurrentAccount = accountService.GetAll().Where(x => x.Login == s).FirstOrDefault();
-                if(Account.CurrentAccount!=null)
+                try
                 {
-                    MainWindow mainWindow = new MainWindow();
-                    mainWindow.Show();
-                    Window ainWindow = Application.Current.MainWindow;
-                    ainWindow.Close();
+                    if (Account.CurrentAccount != null)
+                    {
+                        MainWindow mainWindow = new MainWindow();
+                        mainWindow.Show();
+                        Window ainWindow = Application.Current.MainWindow;
+                        ainWindow.Close();
+                    }
+                    else
+                        File.Delete("Remember.txt");
                 }
-                else
+                catch
+                {
                     File.Delete("Remember.txt");
+                }
+
             }
         }
 
