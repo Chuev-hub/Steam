@@ -1,6 +1,8 @@
 ﻿<UserControl x:Class="Steam.Views.MainViewClilds.ProfileView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Steam.Views.MainViewClilds"
@@ -84,8 +86,13 @@
                 <StackPanel Orientation="Horizontal">
                     <StackPanel>
                         <Label HorizontalAlignment="Left"  x:Name="ael" Margin="30 100 0 0" Content="Games:"  Foreground="White" VerticalAlignment="Top" FontSize="24" Width="100" Height="39"/>
-                        <ListView Height="532" Margin="30,10,0,100" ItemsSource="{Binding Games}" HorizontalAlignment="Left" Width="700" Background="#FF1C171F">
-                            <ListView.ItemTemplate>
+                        <ListView SelectedItem="{Binding SelectedS}" Height="532" Margin="30,10,0,100" ItemsSource="{Binding Games}" HorizontalAlignment="Left" Width="700" Background="#FF1C171F">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDoubleClick">
+                                    <ei:CallMethodAction MethodName="DoubleClickMethod" TargetObject="{Binding}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers> 
+                                <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="200" Source="{Binding HeaderImageURL}"></Image>
