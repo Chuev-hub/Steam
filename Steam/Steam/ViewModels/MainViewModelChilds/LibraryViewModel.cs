@@ -13,44 +13,95 @@ using System.Windows.Media.Imaging;
 
 namespace Steam.ViewModels.MainViewModelChilds
 {
-    class LibraryViewModel:BaseNotifyPropertyChanged
+    class LibraryViewModel : BaseNotifyPropertyChanged
     {
         public GameDTO selected;
-        public GameDTO Selected { get => selected; set { selected = value; Notify(); } }
-
-        public string screen;
-        public string Screen { get => screen; 
-            set { screen = value; Notify(); } 
+        public GameDTO Selected
+        {
+            get => selected; set
+            {
+                selected = value;
+                urls = new List<string>(screenService.GetAll().Where(x => x.GameId == Selected.GameId).Select(x => x.ScreenshotURL));
+                CountScreens = urls.Count;
+                Screen = urls[0];
+                if (urls == null || urls.Count == 0)
+                    Visibility = System.Windows.Visibility.Hidden;
+                else
+                    Visibility = System.Windows.Visibility.Visible;
+                Notify();
+            }
         }
 
-        int CountScreens { get => Selected.Screenshots.Count; }
+        public string screen;
+        public string Screen
+        {
+            get => screen;
+            set { screen = value; Notify(); }
+        }
+
+        int CountScreens;
         int CurrentScreen;
         GameService gameService;
-        public LibraryViewModel(GameService gameService)
+        ScreenshotService screenService;
+        List<string> urls;
+        public LibraryViewModel(GameService gameService, ScreenshotService screenService)
         {
+
             this.gameService = gameService;
+            this.screenService = screenService;
             Games.AddRange(Account.CurrentAccount.Games);
-            Selected = gameService.GetAll().FirstOrDefault();
-            ChangeLeft = new RelayCommand(x => {
+
+            ChangeLeft = new RelayCommand(x =>
+            {
                 if (CurrentScreen == CountScreens - 1)
                     CurrentScreen = 0;
                 else
                     CurrentScreen++;
-                Screen = Selected.Screenshots.ToList()[CurrentScreen].ScreenshotURL ; 
+                Screen = urls[CurrentScreen];
             });
-            ChangeRight = new RelayCommand(x => {
+            ChangeRight = new RelayCommand(x =>
+            {
                 if (CurrentScreen == 0)
                     CurrentScreen = CountScreens - 1;
                 else
                     CurrentScreen--;
-                Screen = Selected.Screenshots.ToList()[CurrentScreen].ScreenshotURL;
+                Screen = urls[CurrentScreen];
 
             });
-            Screen = Selected.Screenshots.ToList()[0].ScreenshotURL;
+            if (Account.CurrentAccount.Games.Count > 0)
+                Selected = Account.CurrentAccount.Games[0];
+            if (Selected != null && Selected.Screenshots.Count > 0)
+            {
+                Screen = urls[0];
+
+            }
+            if (urls == null || urls.Count == 0)
+                Visibility = System.Windows.Visibility.Hidden;
+            else
+                Visibility = System.Windows.Visibility.Visible;
 
         }
+        public void Reload()
+        {
+            Games.Clear();
+            Games.AddRange(Account.CurrentAccount.Games);
+
+            if (urls == null || urls.Count == 0)
+                Visibility = System.Windows.Visibility.Hidden;
+            else
+                Visibility = System.Windows.Visibility.Visible;
+
+        }
+
         public ICommand ChangeLeft { get; set; }
         public ICommand ChangeRight { get; set; }
         public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
+        public System.Windows.Visibility visibility;
+        public System.Windows.Visibility Visibility
+        {
+            get => visibility;
+            set { visibility = value; Notify(); }
+
+        }
     }
 }

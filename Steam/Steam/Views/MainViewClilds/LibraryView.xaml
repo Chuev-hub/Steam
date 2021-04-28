@@ -13,7 +13,8 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Background="#FF24282F">
-            <ListView Margin="0 50 0 0" ItemsSource="{Binding Games}" Background="Transparent">
+            <TextBlock Text="Games:" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,20,0,0" FontSize="20" Padding="18,0,0,0"></TextBlock>
+            <ListView SelectedItem="{Binding Selected}" Margin="5 50 0 0" ItemsSource="{Binding Games}" Background="#FF292929" BorderBrush="#FF292929">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -36,7 +37,7 @@
                     </StackPanel>
                     <StackPanel Margin="0 50 0 0" Orientation="Horizontal">
 
-                        <Button BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Content="❮" Foreground="White" Command = "{Binding ChangeRight}" FontSize="30" FontWeight="Bold">
+                        <Button   Visibility="{Binding Visibility}" BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Content="❮" Foreground="White" Command = "{Binding ChangeRight}" FontSize="30" FontWeight="Bold">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
                                     <GradientStop Color="#FF121D29" Offset="1"/>
@@ -45,7 +46,7 @@
                             </Button.Background>
                         </Button>
                         <Image  Height="300" Source="{Binding Screen}" />
-                        <Button BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Foreground="White"  Content="❯" Command="{Binding ChangeLeft}" Grid.Column="2" FontSize="30" FontWeight="Bold">
+                        <Button Visibility="{Binding Visibility}"  BorderThickness="0" Width="50" Height="100" VerticalAlignment="Center" Foreground="White"  Content="❯" Command="{Binding ChangeLeft}" Grid.Column="2" FontSize="30" FontWeight="Bold">
                             <Button.Background>
                                 <LinearGradientBrush EndPoint="0,0" StartPoint="1,1">
                                     <GradientStop Color="#FF121D29" Offset="0"/>
@@ -57,11 +58,10 @@
                     <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding Selected.Requirements}" Margin="20 0 0 0" FontSize="16" Foreground="#FF8B8B8B"></TextBlock>
                      
                     <TextBlock TextWrapping="Wrap" VerticalAlignment="Bottom" Text="{Binding Selected.GameInfo}" Margin="20 0 0 0" FontSize="16" Foreground="#FFBDBDBD"></TextBlock>
-                   
-                    <!-- 
-         
-        Screenshots -->
+
+                    <StackPanel Height="100"></StackPanel>
                 </StackPanel>
+              
             </ScrollViewer>
             
         </Grid>

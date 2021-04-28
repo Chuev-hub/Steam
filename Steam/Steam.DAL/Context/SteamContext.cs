@@ -75,10 +75,9 @@ namespace Steam.DAL.Context
                 .WithMany(e => e.Genres)
                 .Map(m => m.ToTable("Genres_Games").MapLeftKey("GenreId").MapRightKey("GameId"));
 
-            modelBuilder.Entity<Screenshot>()
-                .HasMany(e => e.Games)
-                .WithMany(e => e.Screenshots)
-                .Map(m => m.ToTable("Screenshots_Games").MapLeftKey("ScreenshotId").MapRightKey("GameId"));
+            modelBuilder.Entity<Game>().HasMany(e => e.Screenshots)
+              .WithRequired(e=>e.Game)
+                .WillCascadeOnDelete(false);
         }
     }
 }

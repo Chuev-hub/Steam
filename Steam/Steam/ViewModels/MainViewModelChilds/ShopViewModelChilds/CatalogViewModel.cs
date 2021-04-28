@@ -18,6 +18,10 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
         GameService gs;
         GameDTO curGame;
         int gamePos = 0;
+        public ObservableCollection<GameDTO> gamesS;
+        public ObservableCollection<GameDTO> GamesS { get => gamesS; set { gamesS = value; Notify(); } }
+        public GameDTO selectedS;
+        public GameDTO SelectedS { get => selectedS; set { selectedS = value; Notify(); } }
         public GameDTO CurGame { get { return curGame; } set { curGame = value; Notify(); } }
         public CatalogViewModel(GameService gameService)
         {
@@ -30,6 +34,7 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
 
             if (Games.Count > 0)
                 CurGame = Games[gamePos];
+            GamesS = new ObservableCollection<GameDTO>(gs.GetAll().Skip(10));
         }
 
         private void InitCommands()
@@ -67,7 +72,12 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
         public ICommand Prev { get; set; }
         public ICommand Next { get; set; }
         public ICommand Game { get; set; }
-        
+        public void DoubleClickMethod()
+        {
+            var GV = new GameView();
+            (GV.DataContext as GameViewModel).Game = SelectedS;
+            Switcher.SwitchShop(GV);
+        }
     }
 
 }

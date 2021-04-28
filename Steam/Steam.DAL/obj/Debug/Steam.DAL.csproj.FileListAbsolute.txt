@@ -10,6 +10,7 @@ D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.cs
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache
+<<<<<<< HEAD
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll.config
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.pdb
@@ -22,3 +23,15 @@ C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.Co
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CopyComplete
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
 C:\Users\vanec\Desktop\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
+=======
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll.config
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\Steam.DAL.pdb
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojResolveAssemblyReference.cache
+>>>>>>> master
