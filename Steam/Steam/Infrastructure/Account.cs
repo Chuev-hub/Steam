@@ -20,6 +20,5 @@ namespace Steam.Infrastructure
         }
         static AccountDTO acc;
         static AccountService Service { get; set; } = new AccountService(new AccountRepository(new SteamContext()));
-        static public void Method() { }
     }
 }
