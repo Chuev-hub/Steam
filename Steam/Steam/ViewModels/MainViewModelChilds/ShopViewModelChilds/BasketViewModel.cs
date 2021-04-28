@@ -1,5 +1,6 @@
 ﻿using CsQuery.ExtensionMethods.Internal;
 using Steam.BLL.DTO;
+using Steam.DAL.Context;
 using Steam.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -13,10 +14,15 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
 {
     class BasketViewModel : BaseNotifyPropertyChanged
     {
-        public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();
+        public ObservableCollection<Game> Games { get; set; } = new ObservableCollection<Game>();
         public BasketViewModel()
         {
-            Games.AddRange(Account.CurrentAccount.Basket);
+            using (var DB = new DAL.Context.SteamContext())
+            {
+                var cur = DB.Account.Include("Basket").FirstOrDefault(y => y.AccountId == Infrastructure.Account.CurrentAccount.AccountId);
+                Games.AddRange(cur.Basket);
+            }
+
             FullPrice = Games.Sum(x => x.Price);
             InitCommands();
         }
@@ -28,12 +34,13 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
         {
             RemoveGame = new RelayCommand(x =>
             {
-                var g = x as GameDTO;
+                var g = x as Game;
                 FullPrice -= g.Price;
                 Games.Remove(g);
                 using (var DB = new DAL.Context.SteamContext())
                 {
                     DB.Account.Include("Basket").FirstOrDefault(y => y.AccountId == Infrastructure.Account.CurrentAccount.AccountId).Basket.Remove(DB.Game.FirstOrDefault(y => y.GameId == g.GameId));
+                    DB.SaveChanges();
                 }
             });
             Buy = new RelayCommand(x =>
