@@ -179,14 +179,4 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\Steam.csproj.CopyComplete
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.exe
 C:\Users\chuev\Steam\Steam\Steam\Steam\obj\Debug\SQL WPF 1 MVVM.pdb
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\Microsoft.Expression.Interactions.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\de\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\en\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\es\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\fr\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\it\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\ja\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\ko\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
-C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
 D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Microsoft.Expression.Interactions.dll

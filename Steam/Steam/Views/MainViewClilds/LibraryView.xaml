@@ -14,7 +14,7 @@
         </Grid.ColumnDefinitions>
         <Grid Background="#FF24282F">
             <TextBlock Text="Games:" Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,20,0,0" FontSize="20" Padding="18,0,0,0"></TextBlock>
-            <ListView Margin="5 50 0 0" ItemsSource="{Binding Games}" Background="#FF292929" BorderBrush="#FF292929">
+            <ListView SelectedItem="{Binding Selected}" Margin="5 50 0 0" ItemsSource="{Binding Games}" Background="#FF292929" BorderBrush="#FF292929">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
