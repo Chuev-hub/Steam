@@ -84,9 +84,16 @@
                 <StackPanel Orientation="Horizontal">
                     <StackPanel>
                         <Label HorizontalAlignment="Left"  x:Name="ael" Margin="30 100 0 0" Content="Games:"  Foreground="White" VerticalAlignment="Top" FontSize="24" Width="100" Height="39"/>
-                        <StackPanel Height="532" Margin="30,10,0,100" HorizontalAlignment="Left" Width="700" Background="#FF1C171F">
-
-                        </StackPanel>
+                        <ListView Height="532" Margin="30,10,0,100" ItemsSource="{Binding Games}" HorizontalAlignment="Left" Width="700" Background="#FF1C171F">
+                            <ListView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Image Width="200" Source="{Binding HeaderImageURL}"></Image>
+                                        <TextBlock Text="{Binding GameName}" FontSize="22" Foreground="White" Margin="25 0 0 0"></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListView.ItemTemplate>
+                        </ListView>
                     </StackPanel>
                     <StackPanel>
                         <Button x:Name="butn" Command="{Binding Logout}" Style="{StaticResource XButtonStyle}" Margin="68,148 0,0" Content="Log out" HorizontalAlignment="Right"  Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18"  >

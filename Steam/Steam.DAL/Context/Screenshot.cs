@@ -11,12 +11,12 @@ namespace Steam.DAL.Context
     {
         public Screenshot()
         {
-            Games = new HashSet<Game>();
         }
 
         [Key]
         public int ScreenshotId { get; set; }
+        public int GameId { get; set; }
         public string ScreenshotURL { get; set; }
-        public virtual ICollection<Game> Games { get; set; }
+        public virtual Game Game { get; set; }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Steam.Infrastructure;
+﻿using Steam.BLL.DTO;
+using Steam.Infrastructure;
 using Steam.Views;
 using Steam.Views.MainViewClilds;
 using System;
@@ -32,6 +33,10 @@ namespace Steam.ViewModels.MainViewModelChilds
         public string RealName
         {
             get => Account.CurrentAccount.RealName + ", " + Account.CurrentAccount.Country;
+        }
+        public List<GameDTO> Games
+        {
+            get => Account.CurrentAccount.Games;
         }
         public BitmapImage Avatar
         {
