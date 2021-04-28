@@ -22,7 +22,7 @@ namespace Steam.DAL.Repositories
             }
             catch 
             {
-                MessageBox.Show("ReadAll AccountRep");
+              //  MessageBox.Show("ReadAll AccountRep");
             }
         }
     }
