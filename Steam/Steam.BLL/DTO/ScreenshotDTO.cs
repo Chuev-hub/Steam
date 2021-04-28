@@ -9,7 +9,7 @@ namespace Steam.BLL.DTO
     public class ScreenshotDTO
     {
         public int ScreenshotId { get; set; }
+        public int GameId { get; set; }
         public string ScreenshotURL { get; set; }
-        //public ICollection<GameDTO> Games { get; set; }
     }
 }
