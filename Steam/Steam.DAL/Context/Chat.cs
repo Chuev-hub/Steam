@@ -18,7 +18,6 @@ namespace Steam.DAL.Context
         public int ChatId { get; set; }
 
         public virtual ICollection<Account> Accounts { get; set; } //6
-
         public virtual ICollection<Message> Messages { get; set; } //7
     }
 }

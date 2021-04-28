@@ -25,6 +25,10 @@ namespace Steam.BLL.Services
                 x.CreateMap<GameDTO, Game>();
                 x.CreateMap<Screenshot, ScreenshotDTO>();
                 x.CreateMap<ScreenshotDTO, Screenshot>();
+                x.CreateMap<Chat, ChatDTO>();
+                x.CreateMap<ChatDTO, Chat>();
+                x.CreateMap<Message, MessageDTO>();
+                x.CreateMap<MessageDTO, Message>();
             });
             mapper = new Mapper(mapperConfiguration);
         }

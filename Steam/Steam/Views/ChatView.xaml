@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Steam.Views"
         mc:Ignorable="d"
-        Title="ChatView" Height="600.89" Width="371.364" AllowsTransparency="True"
-        DataContext="{Binding Source={StaticResource locator}, Path=ChatViewModel}" WindowStyle="None">
+        Title="ChatView"
+        Height="600.89"
+        Width="371.364"
+        AllowsTransparency="True"
+        DataContext="{Binding Source={StaticResource locator}, Path=ChatViewModel}"
+        WindowStyle="None"
+        ResizeMode="NoResize">
     <WindowChrome.WindowChrome>
         <WindowChrome 
         CaptionHeight="0"
@@ -38,15 +43,6 @@
                              Foreground="White"
                              Text="{Binding FriendName}"></TextBox>
                 </StackPanel>
-                <Button Width="15"
-                        Height="15"
-                        Margin="0 10 0 0"
-                        Background="{x:Null}"
-                        Command="{Binding FSCommand}"
-                        CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
-                        BorderBrush="{x:Null}">
-                    <Image Source="{Binding WindowResizeImage}"></Image>
-                </Button>
                 <Button Content="X" 
                         Width="30" 
                         Height="30" 
@@ -71,18 +67,31 @@
                      ItemsSource="{Binding Messages}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
-                        <WrapPanel>
-                            <WrapPanel MaxWidth="160"
-                                   Orientation="Horizontal"
-                                   HorizontalAlignment="Left">
-                                <TextBlock Text="{Binding MessageText}"></TextBlock>
-                            </WrapPanel>
-                            <WrapPanel MaxWidth="160"
-                                   Orientation="Horizontal"
-                                   HorizontalAlignment="Right">
-
-                            </WrapPanel>
-                        </WrapPanel>
+                        <StackPanel MaxWidth="300"
+                                       Orientation="Horizontal"
+                                       HorizontalAlignment="Left">
+                            <Image Source="{Binding Sender.Avatar}"
+                                       Height="30"
+                                       Width="30"></Image>
+                            <Rectangle Height="30"
+                                           Width="4"
+                                           Fill="#FF959595"
+                                       Margin="3"></Rectangle>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Sender.Login}"
+                                               Foreground="#FF589A3F"
+                                               FontSize="14"></TextBlock>
+                                    <TextBlock Text="{Binding MessageTime}"
+                                               Foreground="#4fbbc9"
+                                               FontSize="14"
+                                               Margin="10 0 0 0"></TextBlock>
+                                </StackPanel>
+                                <TextBlock Text="{Binding MessageText}"
+                                           Foreground="White"
+                                           FontSize="16"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
@@ -95,14 +104,18 @@
             <DockPanel>
                 <TextBox BorderBrush="#FF959595"
                          BorderThickness="4"
-                         Background="{x:Null}"></TextBox>
+                         Background="{x:Null}"
+                         Text="{Binding MessageText}"
+                         Foreground="White"
+                         FontSize="20"></TextBox>
             </DockPanel>
             <DockPanel Grid.Column="1">
                 <Button Background="#FF959595"
                         BorderBrush="#FF959595"
                         Style="{DynamicResource XButtonStyle}" 
                         FontSize="30"
-                        Foreground="White">-></Button>
+                        Foreground="White"
+                        Command="{Binding SendMessageCommand}">-></Button>
             </DockPanel>
         </Grid>
     </Grid>

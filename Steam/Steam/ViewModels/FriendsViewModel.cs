@@ -13,13 +13,16 @@ using CsQuery.ExtensionMethods.Internal;
 using Steam.BLL.DTO;
 using Steam.BLL.Services;
 using Steam.Views;
+using Steam.DAL.Context;
+using Account = Steam.Infrastructure.Account;
+using AutoMapper;
 
 namespace Steam.ViewModels
 {
     class FriendsViewModel : BaseNotifyPropertyChanged
     {
         public static bool IsOpen = false;
-        string baseDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
+        static string baseDirectory = Path.GetDirectoryName(Path.GetDirectoryName(Directory.GetCurrentDirectory()));
         Visibility searchVisibility;
         public Visibility SearchVisibility
         {
@@ -105,8 +108,6 @@ namespace Steam.ViewModels
             {
                 selectedFriend = value;
                 Notify();
-                //if(SearchVisibility == Visibility.Collapsed)
-                //    OpenChat();
             }
         }
 
@@ -140,16 +141,38 @@ namespace Steam.ViewModels
             OpenSearchCommand = new RelayCommand(x =>
             {
                 if (Account.CurrentAccount != null)
-                    SearchVisibility = Visibility.Visible;
+                {
+                    if(SearchVisibility == Visibility.Collapsed)
+                        SearchVisibility = Visibility.Visible;
+                    else
+                    {
+                        SearchVisibility = Visibility.Collapsed;
+                        Friends.Clear();
+                        Friends.AddRange(Account.CurrentAccount.AccountFriends);
+                    }
+                }
             });
             RemoveFriendCommand = new RelayCommand(x =>
             {
                 if (SelectedFriend != null)
                 {
-                    Account.CurrentAccount.AccountFriends.Remove(SelectedFriend);
-                    AccountService.CreateOrUpdate(Account.CurrentAccount);
-                    Friends.Clear();
-                    Friends.AddRange(Account.CurrentAccount.AccountFriends);
+                    using (SteamContext Context = new SteamContext())
+                    {
+                        List<Chat> chats = Context.Account.Where(y => y.AccountId == Account.CurrentAccount.AccountId).FirstOrDefault().Chats.ToList();
+                        Chat chat = chats.Where(y => y.Accounts
+                                            .Contains(Context
+                                            .Account
+                                            .Where(c => c.AccountId == SelectedFriend.AccountId)
+                                            .FirstOrDefault()))
+                                            .FirstOrDefault();
+                        Context.Chat.Remove(Context.Chat.Where(c => c.ChatId == chat.ChatId).FirstOrDefault());
+                        Context.SaveChanges();
+                        Context.Account.Where(c => c.AccountId == Account.CurrentAccount.AccountId).FirstOrDefault()
+                        .AccountFriends.Remove(Context.Account.Where(c => c.AccountId == SelectedFriend.AccountId).FirstOrDefault());
+                        Context.SaveChanges();
+                        Friends.Clear();
+                        Friends.AddRange(Account.CurrentAccount.AccountFriends);
+                    }
                 }
             });
             CloseCommand = new RelayCommand(x =>
@@ -181,11 +204,13 @@ namespace Steam.ViewModels
                 if (SearchVisibility == Visibility.Collapsed)
                 {
                     ChatView view = new ChatView();
+                    ChatViewModel model = view.DataContext as ChatViewModel;
+                    model.SetFriend(SelectedFriend);
                     view.Show();
                 }
             });
         }
-        public BitmapImage ToImage(byte[] array)
+        public static BitmapImage ToImage(byte[] array)
         {
             if (array.Length > 0)
             {
@@ -203,14 +228,21 @@ namespace Steam.ViewModels
         {
             if (value.Login.Length > 0)
             {
-                Account.CurrentAccount.AccountFriends.Add(value);
-                AccountService.CreateOrUpdate(Account.CurrentAccount);
+                using (SteamContext Context = new SteamContext())
+                {
+                    Steam.DAL.Context.Account acc = Context.Account.Include("AccountFriends")
+                                      .Where(x => x.AccountId == Account.CurrentAccount.AccountId).FirstOrDefault();
+                    Steam.DAL.Context.Account acc1 = Context.Account.Where(x => x.AccountId == value.AccountId).FirstOrDefault();
+                    acc.AccountFriends.Add(acc1);
+                    acc1.AccountFriends.Add(acc);
+                    Context.SaveChanges();
+                    Chat chat = new Chat();
+                    chat.Accounts.Add(acc);
+                    chat.Accounts.Add(acc1);
+                    Context.Chat.Add(chat);
+                    Context.SaveChanges();
+                }
             }
-        }
-        private void OpenChat()
-        {
-            ChatView view = new ChatView();
-            view.Show();
         }
         private void SetStyles()
         {

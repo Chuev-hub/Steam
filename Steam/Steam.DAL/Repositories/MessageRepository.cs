@@ -13,5 +13,13 @@ namespace Steam.DAL.Repositories
         public MessageRepository(DbContext context) : base(context)
         {
         }
+        public void ReadAll()
+        {
+            try
+            {
+                Message m = context.Set<Message>().Include(c => c.Sender).ToList()[0];
+            }
+            catch { }
+        }
     }
 }

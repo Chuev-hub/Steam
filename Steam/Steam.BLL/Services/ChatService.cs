@@ -12,26 +12,36 @@ namespace Steam.BLL.Services
 {
     public class ChatService : IService<ChatDTO>
     {
-        IRepository<Chat> repository;
+        ChatRepository repository;
         IMapper mapper;
         public ChatService(IRepository<Chat> repository)
         {
-            this.repository = repository;
+            this.repository = repository as ChatRepository;
             MapperConfiguration mapperConfiguration = new MapperConfiguration(x =>
             {
                 x.CreateMap<Chat, ChatDTO>();
                 x.CreateMap<ChatDTO, Chat>();
+                x.CreateMap<Message, MessageDTO>();
+                x.CreateMap<MessageDTO, Message>();
+                x.CreateMap<Account, AccountDTO>();
+                x.CreateMap<AccountDTO, Account>();
+                x.CreateMap<Game, GameDTO>();
+                x.CreateMap<GameDTO, Game>();
+                x.CreateMap<Screenshot, ScreenshotDTO>();
+                x.CreateMap<ScreenshotDTO, Screenshot>();
             });
             mapper = new Mapper(mapperConfiguration);
         }
 
         public ChatDTO Get(int chatId)
         {
+            repository.ReadAll();
             return mapper.Map<Chat, ChatDTO>(repository.Get(chatId));
         }
 
         public IEnumerable<ChatDTO> GetAll()
         {
+            repository.ReadAll();
             return mapper.Map<IEnumerable<Chat>, IEnumerable<ChatDTO>>(repository.GetAll());
         }
 
