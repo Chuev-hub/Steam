@@ -51,10 +51,10 @@
 
             <StackPanel HorizontalAlignment="Center" Width="1000" >
                 <StackPanel.Background>
-                    <RadialGradientBrush>
-                        <GradientStop Color="#FF242834"/>
-                        <GradientStop Color="#FF2D232F" Offset="1"/>
-                    </RadialGradientBrush>
+                    <LinearGradientBrush EndPoint="1,1" MappingMode="RelativeToBoundingBox" StartPoint="-1,-1" Opacity="0.86">
+                        <GradientStop Color="#FF222430" Offset="0.586"/>
+                        <GradientStop Color="#FF38242E" Offset="0.837"/>
+                    </LinearGradientBrush>
                 </StackPanel.Background>
                 <StackPanel Orientation="Horizontal">
                     <Image x:Name="image" Source="{Binding Avatar}"  HorizontalAlignment="Left" Height="193" Margin="34,37,0,0" VerticalAlignment="Top" Width="211"  Stretch="Fill">
@@ -66,21 +66,21 @@
                         <Label HorizontalAlignment="Left"  x:Name="label" Content="{Binding Name}"  Foreground="White" VerticalAlignment="Top" FontSize="24" Width="170" Height="39"/>
                         <Label HorizontalAlignment="Left" x:Name="label_Copy" Content="{Binding RealName}" Width="172" VerticalAlignment="Top" Height="33" Foreground="#FF8F8F8F"/>
                         <TextBlock HorizontalAlignment="Left" x:Name="label_Copy1" Text="{Binding More}" TextWrapping="Wrap"  VerticalAlignment="Top" Height="124" Foreground="#FF8F8F8F" Width="408" Margin="5,0,0,0"/>
-                     
+
                     </StackPanel>
                     <StackPanel VerticalAlignment="Bottom">
 
-                        <Button x:Name="but44on" Visibility="{Binding Visible}" Style="{StaticResource XButtonStyle}" Content="Edit as admin" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="145,0,0,0" >
+                        <Button x:Name="but44on" Visibility="{Binding Visible}" Style="{StaticResource XButtonStyle}" Content="Edit as admin" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="120,0,50,0" >
                             <Button.BorderBrush>
                                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
                             </Button.BorderBrush>
                         </Button>
-                        <Button x:Name="button" Command="{Binding Edit}" Style="{StaticResource XButtonStyle}" Content="Edit Profile" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="145,0,0,0" >
+                        <Button x:Name="button" Command="{Binding Edit}" Style="{StaticResource XButtonStyle}" Content="Edit Profile" HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="156" Height="38" Background="#FF2B3444" Foreground="LightGray" FontSize="18" Margin="120,0,50,0" >
                             <Button.BorderBrush>
                                 <SolidColorBrush Color="#FF707070" Opacity="0"/>
                             </Button.BorderBrush>
                         </Button>
-                        
+
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal">
@@ -91,8 +91,8 @@
                                 <i:EventTrigger EventName="MouseDoubleClick">
                                     <ei:CallMethodAction MethodName="DoubleClickMethod" TargetObject="{Binding}"/>
                                 </i:EventTrigger>
-                            </i:Interaction.Triggers> 
-                                <ListView.ItemTemplate>
+                            </i:Interaction.Triggers>
+                            <ListView.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <Image Width="200" Source="{Binding HeaderImageURL}"></Image>
@@ -110,7 +110,7 @@
                         </Button>
                     </StackPanel>
                 </StackPanel>
-              
+
             </StackPanel>
         </ScrollViewer>
 

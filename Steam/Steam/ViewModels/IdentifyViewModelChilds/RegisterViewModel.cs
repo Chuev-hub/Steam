@@ -118,7 +118,7 @@ namespace Steam.ViewModels
                             Error = "Change Name";
                     }
                 }
-                catch { a = false; MessageBox.Show("Всё плохо с регистрацией xD"); }
+                catch { a = false; MessageBox.Show("Wait xD"); }
             }).ContinueWith((x)=> {
                 if (Name != "" && Mail != "" && (obj as PasswordBox).Password != ""&&a==true)
                     Application.Current.Dispatcher.Invoke((Action)delegate {
