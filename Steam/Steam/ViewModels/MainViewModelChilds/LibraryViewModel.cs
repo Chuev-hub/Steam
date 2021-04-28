@@ -69,7 +69,7 @@ namespace Steam.ViewModels.MainViewModelChilds
 
             });
             if (Account.CurrentAccount.Games.Count > 0)
-                Selected = Account.CurrentAccount.Games[0]
+                Selected = Account.CurrentAccount.Games[0];
             if (Selected != null && Selected.Screenshots.Count > 0)
             {
                 Screen = urls[0];
