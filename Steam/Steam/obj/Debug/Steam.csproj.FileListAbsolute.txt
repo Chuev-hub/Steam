@@ -189,3 +189,4 @@ C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\ko\Microsoft.Expression.Interac
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\ru\Microsoft.Expression.Interactions.resources.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\zh-Hans\Microsoft.Expression.Interactions.resources.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam\bin\Debug\zh-Hant\Microsoft.Expression.Interactions.resources.dll
+D:\OneDrive\Рабочий стол\Steam\Steam\Steam\bin\Debug\Microsoft.Expression.Interactions.dll

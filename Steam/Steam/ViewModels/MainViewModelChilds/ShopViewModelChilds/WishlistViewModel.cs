@@ -35,11 +35,24 @@ namespace Steam.ViewModels.MainViewModelChilds.ShopViewModelChilds
             InBasket = new RelayCommand(x =>
             {
                 var Game = x as GameDTO;
-                if (!Account.CurrentAccount.Basket.Any(y => y.GameId == Game.GameId))
+                using (var DB = new DAL.Context.SteamContext())
                 {
-                    Account.CurrentAccount.Basket.Add(Game);
-                    accs.CreateOrUpdate(Account.CurrentAccount);
+                    var curAcc = DB.Account.Include("Wishlist").Include("Basket").FirstOrDefault(y => y.AccountId == Account.CurrentAccount.AccountId);
+                    var curGame = DB.Game.FirstOrDefault(y => y.GameId == Game.GameId);
+
+                    curAcc.Basket.Add(curGame);
+                    curAcc.Wishlist.Remove(curGame);
+                    Games.Remove(Game);
+                    DB.SaveChanges();
                 }
+
+
+                //var Game = x as GameDTO;
+                //if (!Account.CurrentAccount.Basket.Any(y => y.GameId == Game.GameId))
+                //{
+                //    Account.CurrentAccount.Basket.Add(Game);
+                //    accs.CreateOrUpdate(Account.CurrentAccount);
+                //}
             });
         }
         public ICommand RemoveGame { get; set; }
