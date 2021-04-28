@@ -15,10 +15,15 @@ namespace Steam.Infrastructure
     {
         public static AccountDTO CurrentAccount
         {
-            get => Service.Get(acc.AccountId);
+            get
+            {
+                Service = new AccountService(new AccountRepository(new SteamContext()));
+                acc = Service.Get(acc.AccountId);
+                return acc;
+            }
             set => acc = value;
         }
         static AccountDTO acc;
-        static AccountService Service { get; set; } = new AccountService(new AccountRepository(new SteamContext()));
+        static AccountService Service { get; set; } 
     }
 }

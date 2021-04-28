@@ -35,3 +35,6 @@ C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.dll
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.pdb
 C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojResolveAssemblyReference.cache
 >>>>>>> master
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csprojAssemblyReference.cache
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CoreCompileInputs.cache
+C:\Users\chuev\Steam\Steam\Steam\Steam.DAL\obj\Debug\Steam.DAL.csproj.CopyComplete

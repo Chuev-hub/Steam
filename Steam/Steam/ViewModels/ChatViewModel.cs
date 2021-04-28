@@ -80,7 +80,7 @@ namespace Steam.ViewModels
         {
             timer = new DispatcherTimer();
             timer.Tick += new EventHandler(ReloadMessage);
-            timer.Interval = new TimeSpan(0, 0, 0, 0, 700);
+            timer.Interval = new TimeSpan(0, 0, 0, 0, 300);
             
             timer.IsEnabled = true;
         }

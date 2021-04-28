@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using Microsoft.Win32;
 using Steam.BLL.Services;
+using Steam.DAL.Context;
 using Steam.Infrastructure;
 using Steam.Views.MainViewClilds;
 using System;
@@ -42,12 +43,12 @@ namespace Steam.ViewModels.MainViewModelChilds
         }
         bool IsChecked;
         public ICommand CheckCmd { get => new RelayCommand<object>(Check); }
-        public ICommand  SavePswCmd { get => new RelayCommand<object>(Savea); }
+        public ICommand SavePswCmd { get => new RelayCommand<object>(Savea); }
         string oldpsw { get; set; }
         private void Check(object o)
         {
             oldpsw = (o as PasswordBox).Password;
-            if (BCrypt.Net.BCrypt.Verify(oldpsw, Account.CurrentAccount.PassHash))
+            if (BCrypt.Net.BCrypt.Verify(oldpsw, Steam.Infrastructure.Account.CurrentAccount.PassHash))
             {
                 IsChecked = true;
                 ElipseColor = "Green";
@@ -61,18 +62,18 @@ namespace Steam.ViewModels.MainViewModelChilds
         }
         private void Savea(object o)
         {
+            DAL.Context.Account a = steamContext.Account.Where(r => r.AccountId == Steam.Infrastructure.Account.CurrentAccount.AccountId).FirstOrDefault();
             Exc = "";
             if (IsChecked)
-                Account.CurrentAccount.PassHash = BCrypt.Net.BCrypt.HashPassword((o as PasswordBox).Password);
+               a.PassHash = BCrypt.Net.BCrypt.HashPassword((o as PasswordBox).Password);
             else
             {
                 if ((o as PasswordBox).Password != "")
                     Exc = "Check password";
             }
 
-           
 
-            ass.CreateOrUpdate(Account.CurrentAccount);
+            steamContext.SaveChanges();
             oldpsw = "";
             (o as PasswordBox).Password = "";
         }
@@ -94,7 +95,7 @@ namespace Steam.ViewModels.MainViewModelChilds
         {
             get => psw;
             set
-            { 
+            {
                 psw = value;
                 Notify();
             }
@@ -180,30 +181,37 @@ namespace Steam.ViewModels.MainViewModelChilds
             });
             Save = new Infrastructure.RelayCommand(x =>
             {
+                DAL.Context.Account a = steamContext.Account.Where(r => r.AccountId == Steam.Infrastructure.Account.CurrentAccount.AccountId).FirstOrDefault();
                 if (Photo != null)
-                    Account.CurrentAccount.Avatar = Photo;
-
+                {
+                   a.Avatar = Photo;
+                }
                 if (Country != null)
-                    Account.CurrentAccount.Country = Country;
-
+                {
+                    a.Country = Country;
+                }
                 if (Email != null)
-                    Account.CurrentAccount.Email = Email;
-
+                {
+                    a.Email = Email;
+                }
                 if (More != null)
-                    Account.CurrentAccount.More = More;
-
+                {
+                    a.More = More;
+                }
                 if (ProfileName != null)
-                    Account.CurrentAccount.ProfileName = ProfileName;
-
+                {
+                    a.ProfileName = ProfileName;
+                }
                 if (RealName != null)
-                    Account.CurrentAccount.RealName = RealName;
-
-                
-                ass.CreateOrUpdate(Account.CurrentAccount);
+                {
+                    a.RealName = RealName;
+                }
+                steamContext.SaveChanges();
                 Switcher.Switch(new ProfileView());
             });
         }
         AccountService ass;
+        SteamContext steamContext = new SteamContext();
         public ICommand ChangePicture { get; set; }
         public ICommand Save { get; set; }
     }
