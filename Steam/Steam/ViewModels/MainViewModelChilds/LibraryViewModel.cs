@@ -49,6 +49,12 @@ namespace Steam.ViewModels.MainViewModelChilds
             Screen = Selected.Screenshots.ToList()[0].ScreenshotURL;
 
         }
+        public void Reload()
+        {
+            Games.Clear();
+            Games.AddRange(Account.CurrentAccount.Games);
+        }
+
         public ICommand ChangeLeft { get; set; }
         public ICommand ChangeRight { get; set; }
         public ObservableCollection<GameDTO> Games { get; set; } = new ObservableCollection<GameDTO>();

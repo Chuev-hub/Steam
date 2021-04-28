@@ -1,6 +1,7 @@
 ﻿using Steam.BLL.DTO;
 using Steam.BLL.Services;
 using Steam.Infrastructure;
+using Steam.ViewModels.MainViewModelChilds;
 using Steam.Views;
 using Steam.Views.MainViewClilds;
 using System;
@@ -77,7 +78,8 @@ namespace Steam.ViewModels
         {
             LibraryCommand = new RelayCommand(x =>
             {
-                Switcher.Switch(LibraryView ?? (LibraryView = new LibraryView()));
+                Switcher.Switch(LibraryView ?? ( LibraryView = new LibraryView())) ;
+                (LibraryView.DataContext as LibraryViewModel).Reload();
             });
             ShopCommand = new RelayCommand(x =>
             {
