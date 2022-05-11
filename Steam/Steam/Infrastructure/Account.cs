@@ -18,8 +18,10 @@ namespace Steam.Infrastructure
             get
             {
                 Service = new AccountService(new AccountRepository(new SteamContext()));
-                acc = Service.Get(acc.AccountId);
-                return acc;
+                if (acc != null)
+                    return Service.Get(acc.AccountId);
+                else
+                    return null;
             }
             set => acc = value;
         }
